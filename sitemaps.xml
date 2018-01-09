@@ -2,23 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://gaoshangs.github.io/2018/01/09/excellent-blog/</loc>
+    <loc>https://gaoshangs.github.io/categories/index.html</loc>
+    
+    <lastmod>2018-01-09T09:41:41.049Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://gaoshangs.github.io/2018-01-09-excellent-blog.html</loc>
     
     <lastmod>2018-01-09T07:15:37.271Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://gaoshangs.github.io/2018/01/09/hello-world/</loc>
+    <loc>https://gaoshangs.github.io/2018-01-09-hello-world.html</loc>
     
     <lastmod>2018-01-09T07:10:03.168Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://gaoshangs.github.io/categories/index.html</loc>
-    
-    <lastmod>2018-01-09T06:58:21.577Z</lastmod>
     
   </url>
   
