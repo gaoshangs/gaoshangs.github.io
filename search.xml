@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[知识体系分类]]></title>
+    <url>%2F2018-01-14-knowledge-system-catgory.html</url>
+    <content type="text"><![CDATA[个人知识体系(持续完善~~) 包含未触及但想学习的领域 编程语言 Java Python GoLang PHP C++ C Node.js JavaScript HTML5 CSS3 技术支撑 操作系统 Linux MacOS Windows iOS 网络工程 OSI TCP/IP HTTP/HTTPS HTTP 1.X / HTTP 2 软件工程 算法 数据结构 设计模式 代码规范 后端开发 Linux网络编程 Web前端 前端框架 jQuery Vue.js 数据格式 JSON XML JSONP Protobuf 测试 单元测试 JUnit 集成测试 自动化测试 研发工具 思维导图&amp;建模 UML 版本控制系统 Git Svn 调试工具 Charles、Wireshark Postman IDE Jetbrains IntelliJ IDEA PhpStorm Sublime Text Android Studio 构建工具 Gradle Maven 效率工具 番茄钟 Markdown 滴答清单 运维管理 监控 告警 日志 架构师 性能优化 应用技术 消息队列(MQ) 缓存 软技能 知识管理 开源项目 技术博客 技术分享 时间管理 番茄工作法 目标管理 甘特图 思维导图 项目管理 团队管理 安全 移动开发 云计算 OpenStack 容器(Container) 微服务(MicroService) 大数据 MySQL NoSQL Redis MongoDB Memcached Zookeeper Kafka ElasticStack Hadoop Spark 人工智能(AI) 机器学习 财经 参考 程序员技能图谱]]></content>
+      <tags>
+        <tag>知识系统</tag>
+        <tag>技能图谱</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[优秀博客]]></title>
     <url>%2F2018-01-09-excellent-blog.html</url>
-    <content type="text"><![CDATA[java Hollis 机器学习 码农场- 前端 IIssNan- hexo+next Doublemine]]></content>
+    <content type="text"><![CDATA[java Hollis 机器学习 码农场 前端 IIssNan hexo+next Doublemine]]></content>
       <tags>
         <tag>blog</tag>
       </tags>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://gaoshangs.github.io/"/>
-  <updated>2018-01-12T08:16:58.212Z</updated>
+  <updated>2018-01-15T02:12:32.301Z</updated>
   <id>https://gaoshangs.github.io/</id>
   
   <author>
@@ -17,13 +17,39 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>知识体系分类</title>
+    <link href="https://gaoshangs.github.io/2018-01-14-knowledge-system-catgory.html"/>
+    <id>https://gaoshangs.github.io/2018-01-14-knowledge-system-catgory.html</id>
+    <published>2018-01-13T16:28:00.000Z</published>
+    <updated>2018-01-15T02:12:32.301Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="个人知识体系-持续完善"><a href="#个人知识体系-持续完善" class="headerlink" title="个人知识体系(持续完善~~)"></a>个人知识体系(持续完善~~)</h1><blockquote><p>包含未触及但想学习的领域</p></blockquote><ul><li><p>编程语言</p><ul><li>Java</li><li>Python</li><li>GoLang</li><li>PHP</li><li>C++</li><li>C</li><li>Node.js</li><li>JavaScript</li><li>HTML5</li><li>CSS3</li></ul></li><li><p>技术支撑</p><ul><li>操作系统<ul><li>Linux</li><li>MacOS</li><li>Windows</li><li>iOS</li><li></li></ul></li><li>网络工程<ul><li>OSI</li><li>TCP/IP</li><li>HTTP/HTTPS</li><li>HTTP 1.X / HTTP 2</li></ul></li><li>软件工程<ul><li>算法</li><li>数据结构</li><li>设计模式</li><li>代码规范</li></ul></li></ul></li><li><p>后端开发</p><ul><li>Linux网络编程</li><li></li></ul></li><li><p>Web前端</p><ul><li>前端框架<ul><li>jQuery</li><li>Vue.js</li></ul></li><li>数据格式<ul><li>JSON</li><li>XML</li><li>JSONP</li><li>Protobuf</li></ul></li></ul></li><li><p>测试</p><ul><li>单元测试<ul><li>JUnit</li><li></li></ul></li><li>集成测试</li><li>自动化测试</li></ul></li></ul><ul><li><p>研发工具</p><ul><li>思维导图&amp;建模<ul><li>UML</li></ul></li><li>版本控制系统<ul><li>Git</li><li>Svn</li><li></li></ul></li><li>调试工具<ul><li>Charles、Wireshark</li><li>Postman</li></ul></li><li><p>IDE</p><ul><li>Jetbrains</li><li>IntelliJ IDEA</li><li>PhpStorm</li><li>Sublime Text</li><li>Android Studio</li></ul></li><li><p>构建工具</p><ul><li>Gradle</li><li>Maven</li><li></li></ul></li><li>效率工具<ul><li>番茄钟</li><li>Markdown</li><li>滴答清单</li></ul></li></ul></li><li><p>运维管理</p><ul><li>监控</li><li>告警</li><li>日志</li></ul></li></ul><ul><li>架构师<ul><li>性能优化</li><li>应用技术<ul><li>消息队列(MQ)</li><li>缓存</li></ul></li><li></li></ul></li><li><p>软技能</p><ul><li>知识管理<ul><li>开源项目</li><li>技术博客</li><li>技术分享</li><li></li></ul></li><li>时间管理<ul><li>番茄工作法</li></ul></li><li>目标管理<ul><li>甘特图</li><li>思维导图</li></ul></li><li>项目管理</li><li>团队管理</li></ul></li><li><p>安全</p></li><li><p>移动开发</p></li><li><p>云计算</p><ul><li>OpenStack</li><li>容器(Container)</li><li>微服务(MicroService)</li></ul></li><li><p>大数据</p><ul><li>MySQL</li><li>NoSQL<ul><li>Redis</li><li>MongoDB</li><li>Memcached</li></ul></li><li>Zookeeper</li><li>Kafka</li><li>ElasticStack</li><li>Hadoop</li><li>Spark</li></ul></li><li><p>人工智能(AI)</p><ul><li>机器学习</li></ul></li><li><p>财经</p></li></ul><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul><li><a href="https://github.com/TeamStuQ/skill-map" target="_blank" rel="noopener">程序员技能图谱</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;个人知识体系-持续完善&quot;&gt;&lt;a href=&quot;#个人知识体系-持续完善&quot; class=&quot;headerlink&quot; title=&quot;个人知识体系(持续完善~~)&quot;&gt;&lt;/a&gt;个人知识体系(持续完善~~)&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;包含未触及但想学习的领域&lt;/p
+      
+    
+    </summary>
+    
+    
+      <category term="知识系统" scheme="https://gaoshangs.github.io/tags/%E7%9F%A5%E8%AF%86%E7%B3%BB%E7%BB%9F/"/>
+    
+      <category term="技能图谱" scheme="https://gaoshangs.github.io/tags/%E6%8A%80%E8%83%BD%E5%9B%BE%E8%B0%B1/"/>
+    
+  </entry>
+  
+  <entry>
     <title>优秀博客</title>
     <link href="https://gaoshangs.github.io/2018-01-09-excellent-blog.html"/>
     <id>https://gaoshangs.github.io/2018-01-09-excellent-blog.html</id>
     <published>2018-01-09T07:13:12.000Z</published>
-    <updated>2018-01-12T08:16:58.212Z</updated>
+    <updated>2018-01-15T01:04:44.448Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="java"><a href="#java" class="headerlink" title="java"></a>java</h2><ul><li><a href="http://www.hollischuang.com/" target="_blank" rel="noopener">Hollis</a></li></ul><h2 id="机器学习"><a href="#机器学习" class="headerlink" title="机器学习"></a>机器学习</h2><ul><li><a href="http://www.hankcs.com/" target="_blank" rel="noopener">码农场</a><br>-</li></ul><h2 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h2><ul><li><a href="http://notes.iissnan.com/" target="_blank" rel="noopener">IIssNan</a><br>-</li></ul><h2 id="hexo-next"><a href="#hexo-next" class="headerlink" title="hexo+next"></a>hexo+next</h2><ul><li><a href="https://notes.wanghao.work/" target="_blank" rel="noopener">Doublemine</a></li></ul>]]></content>
+    <content type="html"><![CDATA[<h2 id="java"><a href="#java" class="headerlink" title="java"></a>java</h2><ul><li><a href="http://www.hollischuang.com/" target="_blank" rel="noopener">Hollis</a></li></ul><h2 id="机器学习"><a href="#机器学习" class="headerlink" title="机器学习"></a>机器学习</h2><ul><li><a href="http://www.hankcs.com/" target="_blank" rel="noopener">码农场</a></li><li></li></ul><h2 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h2><ul><li><a href="http://notes.iissnan.com/" target="_blank" rel="noopener">IIssNan</a></li><li></li></ul><h2 id="hexo-next"><a href="#hexo-next" class="headerlink" title="hexo+next"></a>hexo+next</h2><ul><li><a href="https://notes.wanghao.work/" target="_blank" rel="noopener">Doublemine</a></li></ul>]]></content>
     
     <summary type="html">
     
