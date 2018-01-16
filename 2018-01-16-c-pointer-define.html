@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="面试," />
+  <meta name="keywords" content="C语言,指针," />
 
 
 
@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="面试知识点分类 算法 数据结构 设计模式 Linux网络编程 语言基础 软件应用和优化   编程思想 什么是OO语言  Gearman Gearman分布式任务处理系统（一）简介和工作原理 Gearman系列文章  PHP PHP面试总结全 面试题汇总1 面试题汇总2  PHP框架 yaf官方文档 laravel 学习笔记 —— 神奇的服务容器 laravel教程 swoole官方文档 swool">
-<meta name="keywords" content="面试">
+<meta name="description" content="1. 指针的定义方式：示例一：123int a  = 5;int *p;p = &amp;amp;a; 说明：p为指针变量，int p 中的为类型说明符，声明p的类型为指针变量类型。指针变量必须是指向内存地址（内存指针），&amp;amp;符为取地址运算符。示例二： 12int a = 5;int *p = &amp;amp;a; 说明：先声明一个指针变量，然后对这个指针变量进行赋值。 2. 指针变量的使用123int">
+<meta name="keywords" content="C语言,指针">
 <meta property="og:type" content="article">
-<meta property="og:title" content="面试知识点总结(持续更新~~)">
-<meta property="og:url" content="https://gaoshangs.github.io/2018-01-15-knowledge-point.html">
+<meta property="og:title" content="C语言指针">
+<meta property="og:url" content="https://gaoshangs.github.io/2018-01-16-c-pointer-define.html">
 <meta property="og:site_name" content="高尚的网络日志">
-<meta property="og:description" content="面试知识点分类 算法 数据结构 设计模式 Linux网络编程 语言基础 软件应用和优化   编程思想 什么是OO语言  Gearman Gearman分布式任务处理系统（一）简介和工作原理 Gearman系列文章  PHP PHP面试总结全 面试题汇总1 面试题汇总2  PHP框架 yaf官方文档 laravel 学习笔记 —— 神奇的服务容器 laravel教程 swoole官方文档 swool">
+<meta property="og:description" content="1. 指针的定义方式：示例一：123int a  = 5;int *p;p = &amp;amp;a; 说明：p为指针变量，int p 中的为类型说明符，声明p的类型为指针变量类型。指针变量必须是指向内存地址（内存指针），&amp;amp;符为取地址运算符。示例二： 12int a = 5;int *p = &amp;amp;a; 说明：先声明一个指针变量，然后对这个指针变量进行赋值。 2. 指针变量的使用123int">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-16T12:42:51.886Z">
+<meta property="og:updated_time" content="2018-01-16T13:30:42.458Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="面试知识点总结(持续更新~~)">
-<meta name="twitter:description" content="面试知识点分类 算法 数据结构 设计模式 Linux网络编程 语言基础 软件应用和优化   编程思想 什么是OO语言  Gearman Gearman分布式任务处理系统（一）简介和工作原理 Gearman系列文章  PHP PHP面试总结全 面试题汇总1 面试题汇总2  PHP框架 yaf官方文档 laravel 学习笔记 —— 神奇的服务容器 laravel教程 swoole官方文档 swool">
+<meta name="twitter:title" content="C语言指针">
+<meta name="twitter:description" content="1. 指针的定义方式：示例一：123int a  = 5;int *p;p = &amp;amp;a; 说明：p为指针变量，int p 中的为类型说明符，声明p的类型为指针变量类型。指针变量必须是指向内存地址（内存指针），&amp;amp;符为取地址运算符。示例二： 12int a = 5;int *p = &amp;amp;a; 说明：先声明一个指针变量，然后对这个指针变量进行赋值。 2. 指针变量的使用123int">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://gaoshangs.github.io/2018-01-15-knowledge-point.html"/>
+  <link rel="canonical" href="https://gaoshangs.github.io/2018-01-16-c-pointer-define.html"/>
 
 
 
 
 
-  <title>面试知识点总结(持续更新~~) | 高尚的网络日志</title>
+  <title>C语言指针 | 高尚的网络日志</title>
   
 
 
@@ -299,7 +299,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gaoshangs.github.io/2018-01-15-knowledge-point.html">
+    <link itemprop="mainEntityOfPage" href="https://gaoshangs.github.io/2018-01-16-c-pointer-define.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Gason Wong">
@@ -316,7 +316,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">面试知识点总结(持续更新~~)</h1>
+          <h1 class="post-title" itemprop="name headline">C语言指针</h1>
         
 
         <div class="post-meta">
@@ -328,8 +328,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-15T11:04:00+08:00">
-                2018-01-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-16T21:24:00+08:00">
+                2018-01-16
               </time>
             
 
@@ -351,8 +351,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/软技能/" itemprop="url" rel="index">
-                    <span itemprop="name">软技能</span>
+                  <a href="/categories/编程语言/" itemprop="url" rel="index">
+                    <span itemprop="name">编程语言</span>
                   </a>
                 </span>
 
@@ -362,8 +362,19 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/软技能/面试/" itemprop="url" rel="index">
-                    <span itemprop="name">面试</span>
+                  <a href="/categories/编程语言/C/" itemprop="url" rel="index">
+                    <span itemprop="name">C</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程语言/C/指针/" itemprop="url" rel="index">
+                    <span itemprop="name">指针</span>
                   </a>
                 </span>
 
@@ -379,7 +390,7 @@
 
           
           
-             <span id="/2018-01-15-knowledge-point.html" class="leancloud_visitors" data-flag-title="面试知识点总结(持续更新~~)">
+             <span id="/2018-01-16-c-pointer-define.html" class="leancloud_visitors" data-flag-title="C语言指针">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -410,163 +421,20 @@
       
 
       
-        <h2 id="面试知识点分类"><a href="#面试知识点分类" class="headerlink" title="面试知识点分类"></a>面试知识点分类</h2><ul>
-<li>算法</li>
-<li>数据结构</li>
-<li>设计模式</li>
-<li>Linux网络编程</li>
-<li>语言基础</li>
-<li>软件应用和优化</li>
-<li></li>
-</ul>
-<h2 id="编程思想"><a href="#编程思想" class="headerlink" title="编程思想"></a>编程思想</h2><ul>
-<li><a href="https://zhidao.baidu.com/question/108496197.html" target="_blank" rel="noopener">什么是OO语言</a></li>
-</ul>
-<h2 id="Gearman"><a href="#Gearman" class="headerlink" title="Gearman"></a>Gearman</h2><ul>
-<li><a href="http://wangying.sinaapp.com/archives/2157" target="_blank" rel="noopener">Gearman分布式任务处理系统（一）简介和工作原理</a></li>
-<li><a href="http://wangying.sinaapp.com/archives/category/centos-3/gearman" target="_blank" rel="noopener">Gearman系列文章</a></li>
-</ul>
-<h2 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h2><ul>
-<li><a href="http://www.cnblogs.com/zyf-zhaoyafei/p/4828358.html" target="_blank" rel="noopener">PHP面试总结全</a></li>
-<li><a href="https://github.com/ycrao/mynotes/issues/1" target="_blank" rel="noopener">面试题汇总1</a></li>
-<li><a href="https://github.com/ycrao/mynotes/issues/4" target="_blank" rel="noopener">面试题汇总2</a></li>
-</ul>
-<h2 id="PHP框架"><a href="#PHP框架" class="headerlink" title="PHP框架"></a>PHP框架</h2><ul>
-<li><a href="http://php.net/manual/zh/book.yaf.php" target="_blank" rel="noopener">yaf官方文档</a></li>
-<li><a href="https://www.insp.top/learn-laravel-container" target="_blank" rel="noopener">laravel 学习笔记 —— 神奇的服务容器</a></li>
-<li><a href="https://github.com/johnlui/Learn-Laravel-5" target="_blank" rel="noopener">laravel教程</a></li>
-<li><a href="https://wiki.swoole.com/wiki/page/p-server.html" target="_blank" rel="noopener">swoole官方文档</a></li>
-<li><a href="https://www.swoole.com/" target="_blank" rel="noopener">swoole官方首页</a> </li>
-</ul>
-<h2 id="golang"><a href="#golang" class="headerlink" title="golang"></a>golang</h2><ul>
-<li><a href="https://juejin.im/entry/5833f389570c35006c23992c" target="_blank" rel="noopener">京东三级列表页持续架构优化 — Golang + Lua (OpenResty) 最佳实践</a></li>
-<li><a href="http://colobu.com/2017/04/07/go-webframework-benchmark-2017-Spring/" target="_blank" rel="noopener">Go Web 框架性能比拼 2017 春季版</a></li>
-<li><a href="https://github.com/gin-gonic/gin" target="_blank" rel="noopener">GIN框架</a></li>
-<li><a href="https://github.com/ningskyer/gin-doc-cn#router-group" target="_blank" rel="noopener">go 语言框架 gin 的中文文档</a></li>
-<li><a href="https://www.jianshu.com/p/f690203ff168" target="_blank" rel="noopener">Golang精编100题</a></li>
-<li><a href="https://mp.weixin.qq.com/s/rimq1Uar6O8MaxXeYYEhog" target="_blank" rel="noopener">2017年超有价值的Golang文章</a></li>
-</ul>
-<h2 id="lua和openresty和nginx"><a href="#lua和openresty和nginx" class="headerlink" title="lua和openresty和nginx"></a>lua和openresty和nginx</h2><ul>
-<li><a href="https://openresty.org/cn/" target="_blank" rel="noopener">openresty官方文档</a></li>
-<li><a href="https://segmentfault.com/a/1190000010677483" target="_blank" rel="noopener">Nginx面试中最常见的18道题 抱佛脚必备</a></li>
-<li><a href="http://blog.csdn.net/watson2016/article/details/77938678" target="_blank" rel="noopener">nginx面试要点–持续更新中</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/21362834" target="_blank" rel="noopener">浅谈nginx + lua在安全中的一些应用</a></li>
-<li><a href="https://www.jianshu.com/p/87e1c7414c1e" target="_blank" rel="noopener">shell 分析nginx日志</a></li>
-<li><a href="http://shellbaike.com/shell/200" target="_blank" rel="noopener">教你玩转 Nginx 日志</a></li>
-<li><a href="https://www.centos.bz/2017/08/nginx-log-cut-shell-script/" target="_blank" rel="noopener">nginx日志切割shell脚本</a></li>
-</ul>
-<h2 id="redis"><a href="#redis" class="headerlink" title="redis"></a>redis</h2><ul>
-<li><a href="https://www.jianshu.com/p/ae2e43f7be19" target="_blank" rel="noopener">redis-热点</a></li>
-<li><a href="http://www.voidcn.com/article/p-orxzpoiz-ct.html" target="_blank" rel="noopener">面试常见问题</a></li>
-<li><a href="http://www.cnblogs.com/zzt-lovelinlin/p/7248447.html" target="_blank" rel="noopener">redis面试总结</a></li>
-<li><a href="http://blog.csdn.net/luckykapok918/article/details/8502928" target="_blank" rel="noopener">memcached面试题集锦</a></li>
-<li><a href="http://blog.jobbole.com/101496/" target="_blank" rel="noopener">也谈谈 Redis 和 Memcached 的区别</a></li>
-<li><a href="https://www.lanhusoft.com/Article/87.html" target="_blank" rel="noopener">你应该知道的Memcached与Redis的区别与如何抉择</a></li>
-<li><a href="https://github.com/gaoshangs/hit-interview/blob/master/redis.md" target="_blank" rel="noopener">redis面试总结</a></li>
-<li></li>
-</ul>
-<h2 id="API和传输格式"><a href="#API和传输格式" class="headerlink" title="API和传输格式"></a>API和传输格式</h2><ul>
-<li><a href="https://yami.io/protobuf/" target="_blank" rel="noopener">比起JSON 更方便、更快速、更简短的Protobuf 格式</a></li>
-<li><a href="http://www.ruanyifeng.com/blog/2014/05/restful_api.html" target="_blank" rel="noopener">RESTful API 设计指南</a></li>
-<li><a href="https://www.ibm.com/developerworks/cn/linux/l-cn-gpb/index.html" target="_blank" rel="noopener">Google Protocol Buffer 的使用和原理</a></li>
-<li></li>
-</ul>
-<h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><ul>
-<li><a href="https://www.cnblogs.com/kubixuesheng/p/4353616.html" target="_blank" rel="noopener">冒泡和快速排序思想和实现</a></li>
-<li><a href="https://www.jikexueyuan.com/course/2542.html" target="_blank" rel="noopener">极客学院基础算法一</a></li>
-<li><a href="https://www.jikexueyuan.com/course/count/" target="_blank" rel="noopener">算法基础(极客学院)</a></li>
-<li><a href="http://blog.csdn.net/booirror/article/details/7707551" target="_blank" rel="noopener">时间复杂度和空间复杂度详解</a></li>
-</ul>
-<h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><ul>
-<li><a href="https://www.jikexueyuan.com/course/2509.html" target="_blank" rel="noopener">数据结构之字符串、散列和布隆过滤器</a></li>
-<li><a href="https://www.jikexueyuan.com/course/figure/?pageNum=1" target="_blank" rel="noopener">数据结构(极客学院)</a></li>
-<li><a href="https://my.jikexueyuan.com/yutianzuijin/record/" target="_blank" rel="noopener">数据结构之数组、链表、字符串、散列、布隆过滤器</a></li>
-<li><a href="https://my.jikexueyuan.com/subvoid/record/" target="_blank" rel="noopener">名企数据结构面试题(极客学院)</a></li>
-</ul>
-<h2 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h2><ul>
-<li><a href="https://www.ibm.com/developerworks/cn/opensource/os-php-designptrns/index.html" target="_blank" rel="noopener">五种常见的 PHP 设计模式</a></li>
-<li><a href="http://www.cnblogs.com/siqi/archive/2012/09/09/2667562.html" target="_blank" rel="noopener">PHP 设计模式</a></li>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzI3NzE0NjcwMg==&amp;mid=402566219&amp;idx=1&amp;sn=506c71aab4406782fdcc4484cd19070c&amp;scene=1&amp;srcid=0405cZTo6OqggUlX090C4MMR%23rd" target="_blank" rel="noopener">设计模式（一）——设计模式概述</a></li>
-<li><a href="https://www.jikexueyuan.com/course/model/" target="_blank" rel="noopener">设计模式(极客学院)</a></li>
-</ul>
-<h2 id="MapReduce"><a href="#MapReduce" class="headerlink" title="MapReduce"></a>MapReduce</h2><ul>
-<li><a href="http://www.techug.com/post/mapreduce.html" target="_blank" rel="noopener">如何简单解释 MapReduce 算法</a></li>
-<li></li>
-</ul>
-<h2 id="ElasticStack系列"><a href="#ElasticStack系列" class="headerlink" title="ElasticStack系列"></a>ElasticStack系列</h2><ul>
-<li><a href="http://www.cnblogs.com/xing901022/p/5284902.html" target="_blank" rel="noopener">分页查询From&amp;Size VS scroll</a></li>
-<li><a href="http://lxwei.github.io/posts/使用scroll实现Elasticsearch数据遍历和深度分页.html" target="_blank" rel="noopener">使用scroll实现Elasticsearch数据遍历和深度分页</a></li>
-<li><a href="http://ginobefunny.com/post/elasticsearch_interview_questions/" target="_blank" rel="noopener">面试小结之Elasticsearch篇</a></li>
-<li><a href="http://www.cnblogs.com/liang1101/tag/ElasticStack/" target="_blank" rel="noopener">ElasticStack</a></li>
-<li></li>
-</ul>
-<h2 id="HTTP-TCP-IP"><a href="#HTTP-TCP-IP" class="headerlink" title="HTTP/TCP/IP"></a>HTTP/TCP/IP</h2><ul>
-<li><a href="http://www.alloyteam.com/2016/07/httphttp2-0spdyhttps-reading-this-is-enough/" target="_blank" rel="noopener">TAT.tennylvHTTP,HTTP2.0,SPDY,HTTPS你应该知道的一些事</a></li>
-<li><a href="https://imququ.com/post/http2-resource.html" target="_blank" rel="noopener">HTTP/2资料总结</a></li>
-<li><a href="http://blog.csdn.net/i10630226/article/details/54880363" target="_blank" rel="noopener">HTTP/TCP常见面试问题总结</a></li>
-<li><a href="https://hit-alibaba.github.io/interview/basic/network/HTTP.html" target="_blank" rel="noopener">hit-alibaba</a></li>
-<li><a href="https://segmentfault.com/a/1190000006879700" target="_blank" rel="noopener">从输入URL到页面加载发生了什么？</a></li>
-</ul>
-<h2 id="mysql"><a href="#mysql" class="headerlink" title="mysql"></a>mysql</h2><ul>
-<li><a href="https://zhuanlan.zhihu.com/p/23713529" target="_blank" rel="noopener">常见面试题整理–数据库篇（每位开发者必备）</a></li>
-<li><a href="http://blog.51cto.com/apprentice/1394494" target="_blank" rel="noopener">阿里巴巴MySQL DBA面试题答案(欢迎进来讨论)</a></li>
-<li><a href="https://www.jianshu.com/p/3a1377883742" target="_blank" rel="noopener">MySQL索引原理及实现</a></li>
-<li><a href="https://www.cnblogs.com/frankielf0921/p/5930743.html" target="_blank" rel="noopener">MySQL常见面试题</a></li>
-</ul>
-<h2 id="python"><a href="#python" class="headerlink" title="python"></a>python</h2><ul>
-<li><a href="https://github.com/taizilongxu/interview_python" target="_blank" rel="noopener">Python完整</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/23582996" target="_blank" rel="noopener">常见面试题整理–Python代码篇</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/23526961" target="_blank" rel="noopener">常见面试题整理–Python概念篇</a></li>
-<li><a href="http://codingpy.com/article/essential-python-interview-questions/" target="_blank" rel="noopener">Python面试必须要看的15个问题</a></li>
-</ul>
-<h2 id="javaweb"><a href="#javaweb" class="headerlink" title="javaweb"></a>javaweb</h2><ul>
-<li><a href="https://www.jianshu.com/p/a8938811f0bc" target="_blank" rel="noopener">spring面试题总结</a></li>
-<li><a href="https://www.jianshu.com/p/005f0252189a" target="_blank" rel="noopener">JAVA面试题 java web部分</a></li>
-</ul>
-<h2 id="linux系统和网络编程"><a href="#linux系统和网络编程" class="headerlink" title="linux系统和网络编程"></a>linux系统和网络编程</h2><ul>
-<li><a href="http://my.jikexueyuan.com/0mjjUjVag/record/" target="_blank" rel="noopener">Linux网络编程(极客学院)</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/24001696" target="_blank" rel="noopener">计算机网络篇</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/23755202" target="_blank" rel="noopener">操作系统篇</a></li>
-<li><a href="http://blog.csdn.net/youngchang06hpu/article/details/8009947" target="_blank" rel="noopener">操作系统常见面试题总结</a></li>
-<li><a href="http://www.yunweipai.com/archives/24703.html" target="_blank" rel="noopener">176条DevOps人员常用的linux命令速查表</a></li>
-<li><a href="https://segmentfault.com/a/1190000003063859" target="_blank" rel="noopener">Linux IO模式及 select、poll、epoll详解</a></li>
-<li><a href="http://blog.csdn.net/yusiguyuan/article/details/17591613" target="_blank" rel="noopener">常见多线程并发服务器编程模型</a></li>
-<li><a href="http://blog.csdn.net/wan_hust/article/details/38441455?utm_source=tuicool&amp;utm_medium=referral" target="_blank" rel="noopener">IO复用、多进程和多线程三种并发编程模型</a></li>
-<li><a href="http://www.cnblogs.com/LUO77/p/5816326.html" target="_blank" rel="noopener">进程间通信的方式——信号、管道、消息队列、共享内存
-</a></li>
-<li><a href="http://blog.csdn.net/zhangjs712/article/details/52092989" target="_blank" rel="noopener">linux性能分析常用命令详解</a></li>
-<li><a href="http://blog.csdn.net/xiangliangyu/article/details/7056937" target="_blank" rel="noopener">Linux Web服务器网站故障分析常用的命令</a></li>
-<li><a href="http://blog.csdn.net/xiangliangyu/article/details/7056937" target="_blank" rel="noopener">LINUX常用的日志分析命令</a></li>
-<li><a href="http://docs.linuxtone.org/ebooks/Webapp/webscan.txt" target="_blank" rel="noopener">网站排障分析常用的命令</a></li>
-<li><a href="https://hit-alibaba.github.io/interview/basic/network/Socket-Programming-Basic.html" target="_blank" rel="noopener">Socket 基本概念</a></li>
-<li><a href="https://github.com/hellorocky/LearnByCoding/tree/master/python/network/socket" target="_blank" rel="noopener">socket编程(python)</a></li>
-<li><a href="http://www.cnblogs.com/skynet/archive/2010/12/12/1903949.html" target="_blank" rel="noopener">Linux Socket编程（不限Linux）</a></li>
-<li><a href="http://goodcandle.cnblogs.com/archive/2005/12/10/294652.aspx" target="_blank" rel="noopener">揭开Socket编程的面纱</a></li>
-<li><a href="https://my.oschina.net/u/2548201/blog/1607603" target="_blank" rel="noopener">Socket基础原理</a></li>
-</ul>
-<h2 id="运维"><a href="#运维" class="headerlink" title="运维"></a>运维</h2><ul>
-<li><a href="https://mp.weixin.qq.com/s/VmnwoES_BNW2BWFH7K4Wow" target="_blank" rel="noopener">搜狐Linux运维工程师面试</a></li>
-<li><a href="http://www.yunweipai.com/archives/11331.html" target="_blank" rel="noopener">运维必须掌握的27道Linux面试题</a></li>
-<li><a href="http://www.178linux.com/18051" target="_blank" rel="noopener">运维面试题和答案</a></li>
-<li><a href="http://www.yunweipai.com/archives/18798.html" target="_blank" rel="noopener">2017年企业运维岗经典面试题</a></li>
-<li><a href="http://www.yunweipai.com/archives/12037.html" target="_blank" rel="noopener">Linux系统运维常见面试简答题系列（二）</a></li>
-<li><a href="http://www.yunweipai.com/archives/18798.html" target="_blank" rel="noopener">2017年企业运维岗经典面试题（28题）</a></li>
-<li></li>
-</ul>
-<h2 id="安全"><a href="#安全" class="headerlink" title="安全"></a>安全</h2><ul>
-<li><a href="https://segmentfault.com/a/1190000010913697" target="_blank" rel="noopener">前端需要知道的web安全知识</a></li>
-</ul>
-<h2 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h2><ul>
-<li><a href="https://segmentfault.com/a/1190000010913697" target="_blank" rel="noopener">Web缓存详解</a></li>
-<li><a href="http://www.yunweipai.com/archives/8240.html" target="_blank" rel="noopener">你有自己的Web缓存知识体系吗</a></li>
-<li><a href="http://coolshell.cn/articles/17416.html" target="_blank" rel="noopener">缓存更新的套路</a></li>
-<li></li>
-</ul>
-<h2 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h2><ul>
-<li><a href="https://www.zhihu.com/question/37808426" target="_blank" rel="noopener">SOA和微服务架构的区别</a><blockquote>
-<p>SOA描述了一种架构模型，微服务是具体的实现?</p>
+        <h2 id="1-指针的定义方式："><a href="#1-指针的定义方式：" class="headerlink" title="1. 指针的定义方式："></a>1. 指针的定义方式：</h2><p>示例一：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a  = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> *p;</span><br><span class="line">p = &amp;a;</span><br></pre></td></tr></table></figure></p>
+<p>说明：p为指针变量，int <em>p 中的</em>为类型说明符，声明p的类型为指针变量类型。指针变量必须是指向内存地址（内存指针），&amp;符为取地址运算符。<br>示例二：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> *p = &amp;a;</span><br></pre></td></tr></table></figure>
+<p>说明：先声明一个指针变量，然后对这个指针变量进行赋值。</p>
+<h2 id="2-指针变量的使用"><a href="#2-指针变量的使用" class="headerlink" title="2. 指针变量的使用"></a>2. 指针变量的使用</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a  = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> *p = &amp;a;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"*p = %d"</span>, *p);</span><br></pre></td></tr></table></figure>
+<p>说明：这里的printf(“ <em>p = %d“, </em>p);中的<em>与上边声明指针变量的int </em>p的含义是不同的，这里的*为指针运算符，不是类型说明符。</p>
+<pre><code class="C"><span class="built_in">printf</span>(<span class="string">"*&amp;a  = %d"</span>, *&amp;a); <span class="comment">//运行结果为a本身</span>
+</code></pre>
+<blockquote>
+<p>由于*和&amp;的优先级相同，所以会先进行&amp;a进行取a的内存地址，然后在通过*指针运算符，指向a的内存地址并返回这块内存单元存放的数据。</p>
 </blockquote>
-</li>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>int *p 声明指针变量的* 为类型说明符，他的性质和int long的作用相似，都是说明变量的类型。</li>
+<li>*p 获取指针变量的<em>为指针运算符，和&amp;的类型都是一样的就是参与运算的，只是&amp;获取的是内存的地址，</em>获取的是内存地址为该指针变量上存储的数据</li>
 </ul>
 
       
@@ -588,7 +456,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://gaoshangs.github.io/2018-01-15-knowledge-point.html" title="面试知识点总结(持续更新~~)">https://gaoshangs.github.io/2018-01-15-knowledge-point.html</a>
+    <a href="https://gaoshangs.github.io/2018-01-16-c-pointer-define.html" title="C语言指针">https://gaoshangs.github.io/2018-01-16-c-pointer-define.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -603,7 +471,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/面试/" rel="tag"># 面试</a>
+            <a href="/tags/C语言/" rel="tag"># C语言</a>
+          
+            <a href="/tags/指针/" rel="tag"># 指针</a>
           
         </div>
       
@@ -616,8 +486,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018-01-14-knowledge-system-catgory.html" rel="next" title="知识体系分类">
-                <i class="fa fa-chevron-left"></i> 知识体系分类
+              <a href="/2018-01-15-logarithmic-curve.html" rel="next" title="对数曲线">
+                <i class="fa fa-chevron-left"></i> 对数曲线
               </a>
             
           </div>
@@ -625,10 +495,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018-01-15-logarithmic-curve.html" rel="prev" title="对数曲线">
-                对数曲线 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -792,7 +658,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#面试知识点分类"><span class="nav-number">1.</span> <span class="nav-text">面试知识点分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编程思想"><span class="nav-number">2.</span> <span class="nav-text">编程思想</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gearman"><span class="nav-number">3.</span> <span class="nav-text">Gearman</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PHP"><span class="nav-number">4.</span> <span class="nav-text">PHP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PHP框架"><span class="nav-number">5.</span> <span class="nav-text">PHP框架</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#golang"><span class="nav-number">6.</span> <span class="nav-text">golang</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lua和openresty和nginx"><span class="nav-number">7.</span> <span class="nav-text">lua和openresty和nginx</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#redis"><span class="nav-number">8.</span> <span class="nav-text">redis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#API和传输格式"><span class="nav-number">9.</span> <span class="nav-text">API和传输格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法"><span class="nav-number">10.</span> <span class="nav-text">算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据结构"><span class="nav-number">11.</span> <span class="nav-text">数据结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设计模式"><span class="nav-number">12.</span> <span class="nav-text">设计模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MapReduce"><span class="nav-number">13.</span> <span class="nav-text">MapReduce</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ElasticStack系列"><span class="nav-number">14.</span> <span class="nav-text">ElasticStack系列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP-TCP-IP"><span class="nav-number">15.</span> <span class="nav-text">HTTP/TCP/IP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mysql"><span class="nav-number">16.</span> <span class="nav-text">mysql</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#python"><span class="nav-number">17.</span> <span class="nav-text">python</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#javaweb"><span class="nav-number">18.</span> <span class="nav-text">javaweb</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#linux系统和网络编程"><span class="nav-number">19.</span> <span class="nav-text">linux系统和网络编程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运维"><span class="nav-number">20.</span> <span class="nav-text">运维</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安全"><span class="nav-number">21.</span> <span class="nav-text">安全</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#缓存"><span class="nav-number">22.</span> <span class="nav-text">缓存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#架构"><span class="nav-number">23.</span> <span class="nav-text">架构</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-指针的定义方式："><span class="nav-number">1.</span> <span class="nav-text">1. 指针的定义方式：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-指针变量的使用"><span class="nav-number">2.</span> <span class="nav-text">2. 指针变量的使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
