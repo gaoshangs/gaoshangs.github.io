@@ -48,35 +48,6 @@
   </entry>
   
   <entry>
-    <title>对数曲线</title>
-    <link href="https://gaoshangs.github.io/2018-01-15-logarithmic-curve.html"/>
-    <id>https://gaoshangs.github.io/2018-01-15-logarithmic-curve.html</id>
-    <published>2018-01-15T09:18:00.000Z</published>
-    <updated>2018-01-15T10:40:15.259Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>$$f(x)=x^2$$<br>$f(x)=x^2$<br>$$f’(x_0)=\lim_{\Delta x\to 0} \frac{f(x_0+\Delta x) - f(x_0)}{\Delta x}$$</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h2&gt;&lt;p&gt;$$f(x)=x^2$$&lt;br&gt;$f(x)=x^2$&lt;br&gt;$$f’(x_0)=\lim_{\Delta x\to 0} \frac{f(x
-      
-    
-    </summary>
-    
-      <category term="技术支撑" scheme="https://gaoshangs.github.io/categories/%E6%8A%80%E6%9C%AF%E6%94%AF%E6%92%91/"/>
-    
-      <category term="数学" scheme="https://gaoshangs.github.io/categories/%E6%8A%80%E6%9C%AF%E6%94%AF%E6%92%91/%E6%95%B0%E5%AD%A6/"/>
-    
-    
-      <category term="数学" scheme="https://gaoshangs.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
-    
-      <category term="对数" scheme="https://gaoshangs.github.io/tags/%E5%AF%B9%E6%95%B0/"/>
-    
-  </entry>
-  
-  <entry>
     <title>面试知识点总结(持续更新~~)</title>
     <link href="https://gaoshangs.github.io/2018-01-15-knowledge-point.html"/>
     <id>https://gaoshangs.github.io/2018-01-15-knowledge-point.html</id>
