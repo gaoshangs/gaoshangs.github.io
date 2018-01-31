@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="高尚的网络日志">
 <meta property="og:description" content="TCP/IP常见知识点汇总">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-31T03:16:50.770Z">
+<meta property="og:updated_time" content="2018-01-31T03:23:52.453Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TCP&#x2F;IP知识点">
 <meta name="twitter:description" content="TCP/IP常见知识点汇总">
@@ -435,53 +435,31 @@
 <p>第三次挥手：被动关闭方发送一个FIN，用来关闭被动关闭方到主动关闭方的数据传送，也就是告诉主动关闭方，我的数据也发送完了，不会再给你发数据了。</p>
 <p>第四次挥手：主动关闭方收到FIN后，发送一个ACK给被动关闭方，确认序号为收到序号+1，这时候主动关闭方会进入TIME_WAIT状态，等2MSL后即可回到CLOSED可用状态了。至此，完成四次挥手。</p>
 <h2 id="常见状态码"><a href="#常见状态码" class="headerlink" title="常见状态码"></a>常见状态码</h2><ul>
-<li><p>CLOSED: 这个没什么好说的了，表示初始状态。</p>
-</li>
-<li><p>LISTEN: 这个也是非常容易理解的一个状态，表示服务器端的某个SOCKET处于监听状态，可以接受连接了。</p>
-</li>
-<li><p>SYN_SENT: 这个状态与SYN_RCVD遥想呼应，当客户端SOCKET执行CONNECT连接时，它首先发送SYN报文，因此也随即它会进入到了SYN_SENT状态，并等待服务端的发送三次握手中的第2个报文。SYN_SENT状态表示客户端已发送SYN报文。</p>
-</li>
-<li><p>SYN_RCVD: 这个状态表示接受到了SYN报文，在正常情况下，这个状态是服务器端的SOCKET在建立TCP连接时的三次握手会话过程中的一个中间状态，很短暂，基本上用netstat你是很难看到这种状态的，除非你特意写了一个客户端测试程序，故意将三次TCP握手过程中最后一个ACK报文不予发送。因此这种状态时，当收到客户端的ACK报文后，它会进入到ESTABLISHED状态。</p>
-</li>
-<li><p>ESTABLISHED：这个容易理解了，表示连接已经建立了。</p>
-</li>
-<li><p>FIN_WAIT_1: 这个状态要好好解释一下，其实FIN_WAIT_1和FIN_WAIT_2状态的真正含义都是表示等待对方的FIN报文。而这两种状态的区别是：FIN_WAIT_1状态实际上是当SOCKET在ESTABLISHED状态时，它想主动关闭连接，向对方发送了FIN报文，此时该SOCKET即进入到FIN_WAIT_1状态。而当对方回应ACK报文后，则进入到FIN_WAIT_2状态，当然在实际的正常情况下，无论对方何种情况下，都应该马上回应ACK报文，所以FIN_WAIT_1状态一般是比较难见到的，而FIN_WAIT_2状态还有时常常可以用netstat看到。</p>
-</li>
-<li><p>FIN_WAIT_2：上面已经详细解释了这种状态，实际上FIN_WAIT_2状态下的SOCKET，表示半连接，也即有一方要求close连接，但另外还告诉对方，我暂时还有点数据需要传送给你，稍后再关闭连接。</p>
-</li>
-<li><p>TIME_WAIT: 表示收到了对方的FIN报文，并发送出了ACK报文，就等2MSL后即可回到CLOSED可用状态了。如果FIN_WAIT_1状态下，收到了对方同时带FIN标志和ACK标志的报文时，可以直接进入到TIME_WAIT状态，而无须经过FIN_WAIT_2状态。</p>
-</li>
-<li><p>CLOSING: 这种状态比较特殊，实际情况中应该是很少见，属于一种比较罕见的例外状态。正常情况下，当你发送FIN报文后，按理来说是应该先收到（或同时收到）对方的ACK报文，再收到对方的FIN报文。但是CLOSING状态表示你发送FIN报文后，并没有收到对方的ACK报文，反而却也收到了对方的FIN报文。什么情况下会出现此种情况呢？其实细想一下，也不难得出结论：那就是如果双方几乎在同时close一个SOCKET的话，那么就出现了双方同时发送FIN报文的情况，也即会出现CLOSING状态，表示双方都正在关闭SOCKET连接。</p>
-</li>
-<li><p>CLOSE_WAIT: 这种状态的含义其实是表示在等待关闭。怎么理解呢？当对方close一个SOCKET后发送FIN报文给自己，你系统毫无疑问地会回应一个ACK报文给对方，此时则进入到CLOSE_WAIT状态。接下来呢，实际上你真正需要考虑的事情是察看你是否还有数据发送给对方，如果没有的话，那么你也就可以close这个SOCKET，发送FIN报文给对方，也即关闭连接。所以你在CLOSE_WAIT状态下，需要完成的事情是等待你去关闭连接。</p>
-</li>
-<li><p>LAST_ACK: 这个状态还是比较容易好理解的，它是被动关闭一方在发送FIN报文后，最后等待对方的ACK报文。当收到ACK报文后，也即可以进入到CLOSED可用状态了。</p>
-</li>
+<li>CLOSED: 这个没什么好说的了，表示初始状态。</li>
+<li>LISTEN: 这个也是非常容易理解的一个状态，表示服务器端的某个SOCKET处于监听状态，可以接受连接了。</li>
+<li>SYN_SENT: 这个状态与SYN_RCVD遥想呼应，当客户端SOCKET执行CONNECT连接时，它首先发送SYN报文，因此也随即它会进入到了SYN_SENT状态，并等待服务端的发送三次握手中的第2个报文。SYN_SENT状态表示客户端已发送SYN报文。</li>
+<li>SYN_RCVD: 这个状态表示接受到了SYN报文，在正常情况下，这个状态是服务器端的SOCKET在建立TCP连接时的三次握手会话过程中的一个中间状态，很短暂，基本上用netstat你是很难看到这种状态的，除非你特意写了一个客户端测试程序，故意将三次TCP握手过程中最后一个ACK报文不予发送。因此这种状态时，当收到客户端的ACK报文后，它会进入到ESTABLISHED状态。</li>
+<li>ESTABLISHED：这个容易理解了，表示连接已经建立了。</li>
+<li>FIN_WAIT_1: 这个状态要好好解释一下，其实FIN_WAIT_1和FIN_WAIT_2状态的真正含义都是表示等待对方的FIN报文。而这两种状态的区别是：FIN_WAIT_1状态实际上是当SOCKET在ESTABLISHED状态时，它想主动关闭连接，向对方发送了FIN报文，此时该SOCKET即进入到FIN_WAIT_1状态。而当对方回应ACK报文后，则进入到FIN_WAIT_2状态，当然在实际的正常情况下，无论对方何种情况下，都应该马上回应ACK报文，所以FIN_WAIT_1状态一般是比较难见到的，而FIN_WAIT_2状态还有时常常可以用netstat看到。</li>
+<li>FIN_WAIT_2：上面已经详细解释了这种状态，实际上FIN_WAIT_2状态下的SOCKET，表示半连接，也即有一方要求close连接，但另外还告诉对方，我暂时还有点数据需要传送给你，稍后再关闭连接。</li>
+<li>TIME_WAIT: 表示收到了对方的FIN报文，并发送出了ACK报文，就等2MSL后即可回到CLOSED可用状态了。如果FIN_WAIT_1状态下，收到了对方同时带FIN标志和ACK标志的报文时，可以直接进入到TIME_WAIT状态，而无须经过FIN_WAIT_2状态。</li>
+<li>CLOSING: 这种状态比较特殊，实际情况中应该是很少见，属于一种比较罕见的例外状态。正常情况下，当你发送FIN报文后，按理来说是应该先收到（或同时收到）对方的ACK报文，再收到对方的FIN报文。但是CLOSING状态表示你发送FIN报文后，并没有收到对方的ACK报文，反而却也收到了对方的FIN报文。什么情况下会出现此种情况呢？其实细想一下，也不难得出结论：那就是如果双方几乎在同时close一个SOCKET的话，那么就出现了双方同时发送FIN报文的情况，也即会出现CLOSING状态，表示双方都正在关闭SOCKET连接。</li>
+<li>CLOSE_WAIT: 这种状态的含义其实是表示在等待关闭。怎么理解呢？当对方close一个SOCKET后发送FIN报文给自己，你系统毫无疑问地会回应一个ACK报文给对方，此时则进入到CLOSE_WAIT状态。接下来呢，实际上你真正需要考虑的事情是察看你是否还有数据发送给对方，如果没有的话，那么你也就可以close这个SOCKET，发送FIN报文给对方，也即关闭连接。所以你在CLOSE_WAIT状态下，需要完成的事情是等待你去关闭连接。</li>
+<li>LAST_ACK: 这个状态还是比较容易好理解的，它是被动关闭一方在发送FIN报文后，最后等待对方的ACK报文。当收到ACK报文后，也即可以进入到CLOSED可用状态了。</li>
 </ul>
-<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><ol>
-<li>TCP的三次握手过程？为什么会采用三次握手，若采用二次握手可以吗？</li>
-</ol>
-<p>答:建立连接的过程是利用客户服务器模式，假设主机A为客户端，主机B为服务器端。</p>
-<p>（1）TCP的三次握手过程：主机A向B发送连接请求；主机B对收到的主机A的报文段进行确认；主机A再次对主机B的确认进行确认。</p>
-<p>（2）采用三次握手是为了防止失效的连接请求报文段突然又传送到主机B，因而产生错误。<br>失效的连接请求报文段是指：主机A发出的连接请求没有收到主机B的确认，于是经过一段时间后，主机A又重新向主机B发送连接请求，且建立成功，顺序完成数据传输。<br>考虑这样一种特殊情况，主机A第一次发送的连接请求并没有丢失，而是因为网络节点导致延迟达到主机B，主机B以为是主机A又发起的新连接，于是主机B同意连接，并向主机A发回确认，但是此时主机A根本不会理会，主机B就一直在等待主机A发送数据，导致主机B的资源浪费。</p>
-<p>（3）采用两次握手不行，原因就是上面说的实效的连接请求的特殊情况。</p>
-<ol>
-<li>为什么建立连接协议是三次握手，而关闭连接却是四次握手呢？</li>
-</ol>
-<p>这是因为服务端的LISTEN状态下的SOCKET当收到SYN报文的建连请求后，它可以把ACK和SYN（ACK起应答作用，而SYN起同步作用）放在一个报文里来发送。</p>
-<p>但关闭连接时，当收到对方的FIN报文通知时，它仅仅表示对方没有数据发送给你了；<br>但未必你所有的数据都全部发送给对方了，所以你可以未必会马上会关闭SOCKET,也即你可能还需要发送一些数据给对方之后，再发送FIN报文给对方来表示你同意现在可以关闭连接了，</p>
-<p>所以关闭连接时的ACK报文和FIN报文多数情况下都是分开发送的。 </p>
-<ol>
-<li>什么是2MSL？</li>
-</ol>
-<p>2MSL(maximum segment lifetime)</p>
-<p>(1).等待一段时间，防止最后的FIN的ACK包丢失，对方未收到ACK会重发FIN</p>
-<p>(2).TCP连接在2MSL时间内 ip,port不能重新被bind</p>
-<ol>
-<li>为什么TIME_WAIT状态还需要等2MSL后才能返回到CLOSED状态？</li>
-</ol>
-<p>虽然双方都同意关闭连接了，而且握手的4个报文也都协调和发送完毕，按理可以直接回到CLOSED状态（就好比从SYN_SEND状态到ESTABLISH状态那样）。</p>
-<p>但是因为我们必须要假想网络是不可靠的，你无法保证你最后发送的ACK报文会一定被对方收到，因此对方处于LAST_ACK状态下的SOCKET可能会因为超时未收到ACK报文，而重发FIN报文，所以这个TIME_WAIT状态的作用就是用来重发可能丢失的ACK报文。</p>
+<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h3 id="1-TCP的三次握手过程？为什么会采用三次握手，若采用二次握手可以吗？"><a href="#1-TCP的三次握手过程？为什么会采用三次握手，若采用二次握手可以吗？" class="headerlink" title="1. TCP的三次握手过程？为什么会采用三次握手，若采用二次握手可以吗？"></a>1. TCP的三次握手过程？为什么会采用三次握手，若采用二次握手可以吗？</h3><p>答:建立连接的过程是利用客户服务器模式，假设主机A为客户端，主机B为服务器端。</p>
+<ul>
+<li>TCP的三次握手过程：主机A向B发送连接请求；主机B对收到的主机A的报文段进行确认；主机A再次对主机B的确认进行确认。</li>
+<li>采用三次握手是为了防止失效的连接请求报文段突然又传送到主机B，因而产生错误。<br>失效的连接请求报文段是指：主机A发出的连接请求没有收到主机B的确认，于是经过一段时间后，主机A又重新向主机B发送连接请求，且建立成功，顺序完成数据传输。<br>考虑这样一种特殊情况，主机A第一次发送的连接请求并没有丢失，而是因为网络节点导致延迟达到主机B，主机B以为是主机A又发起的新连接，于是主机B同意连接，并向主机A发回确认，但是此时主机A根本不会理会，主机B就一直在等待主机A发送数据，导致主机B的资源浪费。 </li>
+<li>采用两次握手不行，原因就是上面说的实效的连接请求的特殊情况。</li>
+</ul>
+<h3 id="2-为什么建立连接协议是三次握手，而关闭连接却是四次握手呢？"><a href="#2-为什么建立连接协议是三次握手，而关闭连接却是四次握手呢？" class="headerlink" title="2. 为什么建立连接协议是三次握手，而关闭连接却是四次握手呢？"></a>2. 为什么建立连接协议是三次握手，而关闭连接却是四次握手呢？</h3><p>这是因为服务端的LISTEN状态下的SOCKET当收到SYN报文的建连请求后，它可以把ACK和SYN（ACK起应答作用，而SYN起同步作用）放在一个报文里来发送。<br>但关闭连接时，当收到对方的FIN报文通知时，它仅仅表示对方没有数据发送给你了；<br>但未必你所有的数据都全部发送给对方了，所以你可以未必会马上会关闭SOCKET,也即你可能还需要发送一些数据给对方之后，再发送FIN报文给对方来表示你同意现在可以关闭连接了，<br>所以关闭连接时的ACK报文和FIN报文多数情况下都是分开发送的。 </p>
+<h3 id="3-什么是2MSL？"><a href="#3-什么是2MSL？" class="headerlink" title="3. 什么是2MSL？"></a>3. 什么是2MSL？</h3><p>2MSL(maximum segment lifetime)</p>
+<ul>
+<li>等待一段时间，防止最后的FIN的ACK包丢失，对方未收到ACK会重发FIN</li>
+<li>TCP连接在2MSL时间内 ip,port不能重新被bind</li>
+</ul>
+<h3 id="4-为什么TIME-WAIT状态还需要等2MSL后才能返回到CLOSED状态？"><a href="#4-为什么TIME-WAIT状态还需要等2MSL后才能返回到CLOSED状态？" class="headerlink" title="4. 为什么TIME_WAIT状态还需要等2MSL后才能返回到CLOSED状态？"></a>4. 为什么TIME_WAIT状态还需要等2MSL后才能返回到CLOSED状态？</h3><p>虽然双方都同意关闭连接了，而且握手的4个报文也都协调和发送完毕，按理可以直接回到CLOSED状态（就好比从SYN_SEND状态到ESTABLISH状态那样）。<br>但是因为我们必须要假想网络是不可靠的，你无法保证你最后发送的ACK报文会一定被对方收到，因此对方处于LAST_ACK状态下的SOCKET可能会因为超时未收到ACK报文，而重发FIN报文，所以这个TIME_WAIT状态的作用就是用来重发可能丢失的ACK报文。</p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="http://blog.csdn.net/hyqwmxsh/article/details/52437499" target="_blank" rel="noopener">面试笔试–TCP/IP知识点</a><br><a href="http://blog.csdn.net/i10630226/article/details/54880363" target="_blank" rel="noopener">HTTP/TCP常见面试问题总结</a></p>
 
       
@@ -703,7 +681,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#三次握手"><span class="nav-number">1.</span> <span class="nav-text">三次握手</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四次挥手"><span class="nav-number">2.</span> <span class="nav-text">四次挥手</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见状态码"><span class="nav-number">3.</span> <span class="nav-text">常见状态码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见问题"><span class="nav-number">4.</span> <span class="nav-text">常见问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#三次握手"><span class="nav-number">1.</span> <span class="nav-text">三次握手</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四次挥手"><span class="nav-number">2.</span> <span class="nav-text">四次挥手</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见状态码"><span class="nav-number">3.</span> <span class="nav-text">常见状态码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见问题"><span class="nav-number">4.</span> <span class="nav-text">常见问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-TCP的三次握手过程？为什么会采用三次握手，若采用二次握手可以吗？"><span class="nav-number">4.1.</span> <span class="nav-text">1. TCP的三次握手过程？为什么会采用三次握手，若采用二次握手可以吗？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-为什么建立连接协议是三次握手，而关闭连接却是四次握手呢？"><span class="nav-number">4.2.</span> <span class="nav-text">2. 为什么建立连接协议是三次握手，而关闭连接却是四次握手呢？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-什么是2MSL？"><span class="nav-number">4.3.</span> <span class="nav-text">3. 什么是2MSL？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-为什么TIME-WAIT状态还需要等2MSL后才能返回到CLOSED状态？"><span class="nav-number">4.4.</span> <span class="nav-text">4. 为什么TIME_WAIT状态还需要等2MSL后才能返回到CLOSED状态？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
