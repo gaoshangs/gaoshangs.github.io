@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="高尚的网络日志">
 <meta property="og:description" content="TCP/IP常见知识点汇总">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-31T03:23:52.453Z">
+<meta property="og:updated_time" content="2018-02-06T00:54:41.804Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TCP&#x2F;IP知识点">
 <meta name="twitter:description" content="TCP/IP常见知识点汇总">
@@ -453,7 +453,7 @@
 <li>采用三次握手是为了防止失效的连接请求报文段突然又传送到主机B，因而产生错误。<br>失效的连接请求报文段是指：主机A发出的连接请求没有收到主机B的确认，于是经过一段时间后，主机A又重新向主机B发送连接请求，且建立成功，顺序完成数据传输。<br>考虑这样一种特殊情况，主机A第一次发送的连接请求并没有丢失，而是因为网络节点导致延迟达到主机B，主机B以为是主机A又发起的新连接，于是主机B同意连接，并向主机A发回确认，但是此时主机A根本不会理会，主机B就一直在等待主机A发送数据，导致主机B的资源浪费。 </li>
 <li>采用两次握手不行，原因就是上面说的实效的连接请求的特殊情况。</li>
 </ul>
-<h3 id="2-为什么建立连接协议是三次握手，而关闭连接却是四次握手呢？"><a href="#2-为什么建立连接协议是三次握手，而关闭连接却是四次握手呢？" class="headerlink" title="2. 为什么建立连接协议是三次握手，而关闭连接却是四次握手呢？"></a>2. 为什么建立连接协议是三次握手，而关闭连接却是四次握手呢？</h3><p>这是因为服务端的LISTEN状态下的SOCKET当收到SYN报文的建连请求后，它可以把ACK和SYN（ACK起应答作用，而SYN起同步作用）放在一个报文里来发送。<br>但关闭连接时，当收到对方的FIN报文通知时，它仅仅表示对方没有数据发送给你了；<br>但未必你所有的数据都全部发送给对方了，所以你可以未必会马上会关闭SOCKET,也即你可能还需要发送一些数据给对方之后，再发送FIN报文给对方来表示你同意现在可以关闭连接了，<br>所以关闭连接时的ACK报文和FIN报文多数情况下都是分开发送的。 </p>
+<h3 id="2-为什么建立连接协议是三次握手，而关闭连接却是四次挥手呢？"><a href="#2-为什么建立连接协议是三次握手，而关闭连接却是四次挥手呢？" class="headerlink" title="2. 为什么建立连接协议是三次握手，而关闭连接却是四次挥手呢？"></a>2. 为什么建立连接协议是三次握手，而关闭连接却是四次挥手呢？</h3><p>这是因为服务端的LISTEN状态下的SOCKET当收到SYN报文的建连请求后，它可以把ACK和SYN（ACK起应答作用，而SYN起同步作用）放在一个报文里来发送。<br>但关闭连接时，当收到对方的FIN报文通知时，它仅仅表示对方没有数据发送给你了；<br>但未必你所有的数据都全部发送给对方了，所以你可以未必会马上会关闭SOCKET,也即你可能还需要发送一些数据给对方之后，再发送FIN报文给对方来表示你同意现在可以关闭连接了，<br>所以关闭连接时的ACK报文和FIN报文多数情况下都是分开发送的。 </p>
 <h3 id="3-什么是2MSL？"><a href="#3-什么是2MSL？" class="headerlink" title="3. 什么是2MSL？"></a>3. 什么是2MSL？</h3><p>2MSL(maximum segment lifetime)</p>
 <ul>
 <li>等待一段时间，防止最后的FIN的ACK包丢失，对方未收到ACK会重发FIN</li>
@@ -519,8 +519,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018-02-05-algorithm-php.html" rel="prev" title="常见算法">
-                常见算法 <i class="fa fa-chevron-right"></i>
+              <a href="/2018-02-04-php-Interview-question-1.html" rel="prev" title="PHP面试题汇总一">
+                PHP面试题汇总一 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -607,7 +607,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -629,7 +629,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -685,7 +685,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#三次握手"><span class="nav-number">1.</span> <span class="nav-text">三次握手</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四次挥手"><span class="nav-number">2.</span> <span class="nav-text">四次挥手</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见状态码"><span class="nav-number">3.</span> <span class="nav-text">常见状态码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见问题"><span class="nav-number">4.</span> <span class="nav-text">常见问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-TCP的三次握手过程？为什么会采用三次握手，若采用二次握手可以吗？"><span class="nav-number">4.1.</span> <span class="nav-text">1. TCP的三次握手过程？为什么会采用三次握手，若采用二次握手可以吗？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-为什么建立连接协议是三次握手，而关闭连接却是四次握手呢？"><span class="nav-number">4.2.</span> <span class="nav-text">2. 为什么建立连接协议是三次握手，而关闭连接却是四次握手呢？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-什么是2MSL？"><span class="nav-number">4.3.</span> <span class="nav-text">3. 什么是2MSL？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-为什么TIME-WAIT状态还需要等2MSL后才能返回到CLOSED状态？"><span class="nav-number">4.4.</span> <span class="nav-text">4. 为什么TIME_WAIT状态还需要等2MSL后才能返回到CLOSED状态？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#三次握手"><span class="nav-number">1.</span> <span class="nav-text">三次握手</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四次挥手"><span class="nav-number">2.</span> <span class="nav-text">四次挥手</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见状态码"><span class="nav-number">3.</span> <span class="nav-text">常见状态码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见问题"><span class="nav-number">4.</span> <span class="nav-text">常见问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-TCP的三次握手过程？为什么会采用三次握手，若采用二次握手可以吗？"><span class="nav-number">4.1.</span> <span class="nav-text">1. TCP的三次握手过程？为什么会采用三次握手，若采用二次握手可以吗？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-为什么建立连接协议是三次握手，而关闭连接却是四次挥手呢？"><span class="nav-number">4.2.</span> <span class="nav-text">2. 为什么建立连接协议是三次握手，而关闭连接却是四次挥手呢？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-什么是2MSL？"><span class="nav-number">4.3.</span> <span class="nav-text">3. 什么是2MSL？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-为什么TIME-WAIT状态还需要等2MSL后才能返回到CLOSED状态？"><span class="nav-number">4.4.</span> <span class="nav-text">4. 为什么TIME_WAIT状态还需要等2MSL后才能返回到CLOSED状态？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
