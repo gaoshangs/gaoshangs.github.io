@@ -81,16 +81,17 @@
 
 
 
-<meta name="description" content="当你的才华还撑不起你的野心时，就应该静下心来学习">
-<meta property="og:type" content="website">
-<meta property="og:title" content="高尚的网络日志">
-<meta property="og:url" content="https://gaoshangs.github.io/categories/技术支撑/网络工程/index.html">
+<meta name="description" content="常用命令简单说明grep 命令 grep命令是一种强大的文本搜索工具，它能使用正则表达式搜索文本，并把匹 配的行打印出来  格式grep [option] pattern file 选项-v   –revert-match   #显示不包含匹配文本的所有行-w   –word-regexp   #只显示全字符合的列-h   –no-filename   #在显示符合样式的那一行之前，不标示该行所属">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux服务器网站故障分析常用的命令">
+<meta property="og:url" content="https://gaoshangs.github.io/2018-02-07-linux-failure-analysis-command.html">
 <meta property="og:site_name" content="高尚的网络日志">
-<meta property="og:description" content="当你的才华还撑不起你的野心时，就应该静下心来学习">
+<meta property="og:description" content="常用命令简单说明grep 命令 grep命令是一种强大的文本搜索工具，它能使用正则表达式搜索文本，并把匹 配的行打印出来  格式grep [option] pattern file 选项-v   –revert-match   #显示不包含匹配文本的所有行-w   –word-regexp   #只显示全字符合的列-h   –no-filename   #在显示符合样式的那一行之前，不标示该行所属">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-02-07T06:05:01.562Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="高尚的网络日志">
-<meta name="twitter:description" content="当你的才华还撑不起你的野心时，就应该静下心来学习">
+<meta name="twitter:title" content="Linux服务器网站故障分析常用的命令">
+<meta name="twitter:description" content="常用命令简单说明grep 命令 grep命令是一种强大的文本搜索工具，它能使用正则表达式搜索文本，并把匹 配的行打印出来  格式grep [option] pattern file 选项-v   –revert-match   #显示不包含匹配文本的所有行-w   –word-regexp   #只显示全字符合的列-h   –no-filename   #在显示符合样式的那一行之前，不标示该行所属">
 
 
 
@@ -120,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="https://gaoshangs.github.io/categories/技术支撑/网络工程/"/>
+  <link rel="canonical" href="https://gaoshangs.github.io/2018-02-07-linux-failure-analysis-command.html"/>
 
 
 
 
 
-  <title>分类: 网络工程 | 高尚的网络日志</title>
+  <title>Linux服务器网站故障分析常用的命令 | 高尚的网络日志</title>
   
 
 
@@ -155,7 +156,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-right ">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -283,55 +284,276 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>网络工程<small>分类</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://gaoshangs.github.io/2018-02-07-linux-failure-analysis-command.html">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Gason Wong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="高尚的网络日志">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018-01-31-tcp_ip_point.html" itemprop="url">
-              
-                <span itemprop="name">TCP/IP知识点</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">Linux服务器网站故障分析常用的命令</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-31T10:42:00+08:00"
-              content="2018-01-31" >
-          01-31
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-07T01:06:00+08:00">
+                2018-02-07
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018-02-07-linux-failure-analysis-command.html" class="leancloud_visitors" data-flag-title="Linux服务器网站故障分析常用的命令">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="常用命令简单说明"><a href="#常用命令简单说明" class="headerlink" title="常用命令简单说明"></a>常用命令简单说明</h2><h3 id="grep-命令"><a href="#grep-命令" class="headerlink" title="grep 命令"></a>grep 命令</h3><blockquote>
+<p>grep命令是一种强大的文本搜索工具，它能使用正则表达式搜索文本，并把匹 配的行打印出来</p>
+<ol>
+<li>格式<br>grep [option] pattern file</li>
+<li>选项<br>-v   –revert-match   #显示不包含匹配文本的所有行<br>-w   –word-regexp   #只显示全字符合的列<br>-h   –no-filename   #在显示符合样式的那一行之前，不标示该行所属的文件名称</li>
+</ol>
+</blockquote>
+<h3 id="awk命令"><a href="#awk命令" class="headerlink" title="awk命令"></a>awk命令</h3><blockquote>
+<p>是一种处理文本文件的语言，是一个强大的文本分析工具</p>
+<ol>
+<li><strong>规则</strong>：awk [选项参数] ‘条件1{动作1} 条件2{动作2} …’ 文件名<br>（ 如果条件1，执行动作1；如果条件2，执行动作2 ）</li>
+<li><strong>变量</strong> ：$1：提取第一列 ,$2提取第二列,</li>
+<li>选项<br>-F :指定输入文件折分隔符</li>
+<li>输出<br>print：会在每个输出之后自动加入一个换行符<br>printf：标准格式输出命令，需要换行需手动加入</li>
+</ol>
+</blockquote>
+<ol>
+<li>应用<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">awk <span class="string">'&#123;printf $2 "\t" $3"\n"&#125;'</span> user.txt</span><br><span class="line">awk -F, <span class="string">'&#123;print $1,$2&#125;'</span>   log.txt</span><br><span class="line">awk -F <span class="string">'[ ,]'</span>  <span class="string">'&#123;print $1,$2,$5&#125;'</span>   log.txt <span class="comment"># 使用多个分隔符.先使用空格分割，然后对分割结果再使用","分割</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="cut命令"><a href="#cut命令" class="headerlink" title="cut命令"></a>cut命令</h3><blockquote>
+<p>提取列: cut [选项] 文件</p>
+<ol>
+<li>选项:<br>-f 列号        （ –field 提取第几列 ）<br>-d 分隔符    （ –delimiter 按照指定分隔符分割列 ）</li>
+<li>应用：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cut -d <span class="string">":"</span> -f 1,3 /etc/passwd <span class="comment"># :分隔，输出1，3行</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</blockquote>
+<h3 id="sed命令"><a href="#sed命令" class="headerlink" title="sed命令"></a>sed命令</h3><blockquote>
+<p>数据进行选取、替换、删除、新增的命令</p>
+<ol>
+<li>使用方法：sed [选项] ‘[动作]’ 文件名</li>
+<li>选项<br>-n    :    一般sed命令会把所有数据都输出到屏幕；如果加入此选项，则只会把经过sed命令处理的行输出到屏幕。(如：sed -n ‘2p’ user.txt    # 输出第二行)</li>
+<li>动作<br>d : 删除，删除指定的行。<br>p : 打印，输出指定的行。<br>s  : 字串替换，用一个字符串替换另外一个字符串。格式为“行范围s/旧字串/新字串/g”（和vim中的替换格式类似）如：sed “s/r//g” user.txt 替换r为空</li>
+<li>实例：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sed -n <span class="string">'2p'</span> user.txt <span class="comment"># 输出第二行, p一般都要和-n使用，不加-n会显示出所有的行</span></span><br><span class="line">sed <span class="string">"s/r//g"</span> user.txt <span class="comment"># 替换r为空</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</blockquote>
+<h3 id="sort命令"><a href="#sort命令" class="headerlink" title="sort命令"></a>sort命令</h3><blockquote>
+<p>排序</p>
+<ol>
+<li>选项<br>-n：按数值排序，默认按ASCII码值排序<br>\u：在输出行中去除重复行<br>-r：降序(默认是降序)<br>-o：输出结果重定向到文件<br>\t：指定间隔符(配合-k指定列数排序)<br>-k: 指定列排序</li>
+</ol>
+</blockquote>
+<h3 id="netstat-命令"><a href="#netstat-命令" class="headerlink" title="netstat 命令"></a>netstat 命令</h3><blockquote>
+<p>用于显示各种网络相关信息，如网络连接，路由表，接口状态</p>
+<ol>
+<li>选项<br>-a (all)显示所有选项，默认不显示LISTEN相关(<strong>如果需要显示LISTEN相关需增加-l选项</strong>)<br>-t (tcp)仅显示tcp相关选项<br>-u (udp)仅显示udp相关选项<br>-n 拒绝显示别名，能显示数字的全部转化成数字。<br>-l 仅列出有在 Listen (监听) 的服務状态<br>-p 显示建立相关链接的程序名</li>
+</ol>
+</blockquote>
+<h2 id="系统连接状态"><a href="#系统连接状态" class="headerlink" title="系统连接状态"></a>系统连接状态</h2><ol>
+<li>查看TCP连接状态<br>常用：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -ant |awk <span class="string">'&#123;print $6&#125;'</span>|sort|uniq -c|sort -rn</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>可用：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">netstat -n | awk <span class="string">'/^tcp/ &#123;++S[$NF]&#125;;END &#123;for(a in S) print a, S[a]&#125;'</span> </span><br><span class="line">netstat -n | awk <span class="string">'/^tcp/ &#123;++state[$NF]&#125;; END &#123;for(key in state) print key,"t",state[key]&#125;'</span></span><br><span class="line">netstat -n | awk <span class="string">'/^tcp/ &#123;++arr[$NF]&#125;;END &#123;for(k in arr) print k,"t",arr[k]&#125;'</span></span><br><span class="line">netstat -n |awk <span class="string">'/^tcp/ &#123;print $NF&#125;'</span>|sort|uniq -c|sort -rn</span><br></pre></td></tr></table></figure></p>
+<ol>
+<li>查找请求数20个IP<br><code>netstat -anlp|grep 80|grep tcp|awk &#39;{print $5}&#39;|awk -F: &#39;{print $1}&#39;|sort|uniq -c|sort -nr|head -n20</code></li>
+</ol>
+<p><code>netstat -ant |awk &#39;/:80/{split($5,ip,&quot;:&quot;);++A[ip[1]]}END{for(i in A) print A[i],i}&#39; |sort -rn|head -n20</code></p>
+<ol>
+<li><p>用tcpdump嗅探80端口的访问看看谁最高<br><code>tcpdump -i eth0 -tnn dst port 80 -c 1000 | awk -F&quot;.&quot; &#39;{print $1&quot;.&quot;$2&quot;.&quot;$3&quot;.&quot;$4}&#39; | sort | uniq -c | sort -nr |head -20</code></p>
+</li>
+<li><p>查找较多time_wait连接<br><code>netstat -n|grep TIME_WAIT|awk &#39;{print $5}&#39;| cut -d &#39;:&#39; -f 1 | sort|uniq -c|sort -rn|head -n2</code></p>
+</li>
+<li>找查较多的SYN连接<br><code>netstat -an | grep SYN | awk &#39;{print $5}&#39; | awk -F: &#39;{print $1}&#39; | sort | uniq -c | sort -nr | more</code></li>
+<li>根据端口列进程<br><code>netstat -ntlp | grep 80 | awk &#39;{print $NF}&#39; | cut -d &#39;/&#39; -f1</code></li>
+</ol>
+<h2 id="nginx日志知识"><a href="#nginx日志知识" class="headerlink" title="nginx日志知识"></a>nginx日志知识</h2><blockquote>
+<p>nginx有一个非常灵活的日志记录模式。每个级别的配置可以有各自独立的访问日志。日志格式通过log_format命令来定义。</p>
+</blockquote>
+<h3 id="access-log指令"><a href="#access-log指令" class="headerlink" title="access_log指令"></a>access_log指令</h3><p>语法: <code>access_log path [format [buffer=size [flush=time]]];</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">access_log path format gzip [=level] [buffer=size] [flush=time];</span><br><span class="line">access_log syslog:server=address\[,parameter=value] [format];</span><br><span class="line">access_log off;</span><br></pre></td></tr></table></figure></p>
+<p>默认值: <code>access_log logs/access.log combined;</code><br>配置段: <code>http, server, location, if in location, limit_except</code><br><code>gzip</code>：压缩等级。<br><code>buffer</code>：设置内存缓存区大小。<br><code>flush</code>：保存在缓存区中的最长时间。<br>不记录日志：<code>access_log off;</code><br>使用默认<code>combined</code>格式记录日志：<br><code>access_log logs/access.log 或 access_log logs/access.log combined;</code></p>
+<h3 id="log-format指令"><a href="#log-format指令" class="headerlink" title="log_format指令"></a>log_format指令</h3><ol>
+<li>语法: <code>log_format name string …;</code></li>
+<li>默认值: <code>log_format combined “…”;</code></li>
+<li><p>配置段: <code>http</code><br><strong>name表示格式名称，string表示等义的格式。</strong></p>
+</li>
+<li><p>默认配置：log_format有一个默认的无需设置的combined日志格式</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">log_format combined <span class="string">'$remote_addr - $remote_user [$time_local] "$request" $status $body_bytes_sent "$http_referer" "$http_user_agent" "$http_x_forwarded_for"'</span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>对应的日志记录:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1 - - [21/Sep/2016:10:57:04 +0800] <span class="string">"GET / HTTP/1.1"</span> 302 5 <span class="string">"-"</span> <span class="string">"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36"</span> <span class="string">"-"</span> </span><br><span class="line">127.0.0.1 - - [21/Sep/2016:10:57:04 +0800] <span class="string">"GET /dashboard.php HTTP/1.1"</span> 200 26652 <span class="string">"-"</span> <span class="string">"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36"</span> <span class="string">"-"</span></span><br></pre></td></tr></table></figure></p>
+<ol>
+<li><p>日志格式变量含义</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$remote_addr</span>, <span class="variable">$http_x_forwarded_for</span> 记录客户端IP地址</span><br><span class="line"><span class="variable">$remote_user</span> 记录客户端用户名称</span><br><span class="line"><span class="variable">$request</span> 记录请求的URL和HTTP协议</span><br><span class="line"><span class="variable">$status</span> 记录请求状态</span><br><span class="line"><span class="variable">$body_bytes_sent</span> 发送给客户端的字节数，不包括响应头的大小； 该变量与Apache模块mod_log_config里的“%B”参数兼容。</span><br><span class="line"><span class="variable">$bytes_sent</span> 发送给客户端的总字节数。</span><br><span class="line"><span class="variable">$connection</span> 连接的序列号。</span><br><span class="line"><span class="variable">$connection_requests</span> 当前通过一个连接获得的请求数量。</span><br><span class="line"><span class="variable">$msec</span> 日志写入时间。单位为秒，精度是毫秒。</span><br><span class="line"><span class="variable">$pipe</span> 如果请求是通过HTTP流水线(pipelined)发送，pipe值为“p”，否则为“.”。</span><br><span class="line"><span class="variable">$http_referer</span> 记录从哪个页面链接访问过来的</span><br><span class="line"><span class="variable">$http_user_agent</span> 记录客户端浏览器相关信息</span><br><span class="line"><span class="variable">$request_length</span> 请求的长度（包括请求行，请求头和请求正文）。</span><br><span class="line"><span class="variable">$request_time</span> 请求处理时间，单位为秒，精度毫秒； 从读入客户端的第一个字节开始，直到把最后一个字符发送给客户端后进行日志写入为止。</span><br><span class="line"><span class="variable">$time_iso8601</span> ISO8601标准格式下的本地时间。</span><br><span class="line"><span class="variable">$time_local</span> 通用日志格式下的本地时间。</span><br><span class="line">[warning]发送给客户端的响应头拥有“sent_http_”前缀。 比如<span class="variable">$sent_http_content_range</span>。[/warning]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>常见问题</p>
+</li>
+</ol>
+<ul>
+<li>获取真实客户IP：如果nginx位于负载均衡器，squid，nginx反向代理之后，web服务器无法直接获取到客户端真实的IP地址了。 $remote_addr获取反向代理的IP地址。反向代理服务器在转发请求的http头信息中，可以增加X-Forwarded-For信息，用来记录 客户端IP地址和客户端请求的服务器地址。PS: 获取用户真实IP 参见<a href="http://www.ttlsa.com/html/2235.html" target="_blank" rel="noopener">http://www.ttlsa.com/html/2235.html</a></li>
+</ul>
+<h2 id="网站日志分析篇-nginx"><a href="#网站日志分析篇-nginx" class="headerlink" title="网站日志分析篇(nginx)"></a>网站日志分析篇(nginx)</h2><ol>
+<li><p>获得访问前10位的ip地址</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cat nginx.log | awk <span class="string">'&#123;print $1&#125;'</span> | sort | uniq -c | sort -nr | head -n 10 </span><br><span class="line"></span><br><span class="line">cat nginx.log|awk <span class="string">'&#123;counts[$(1)]+=1&#125;; END &#123;for(url in counts) print counts[url], url&#125;'</span> | sort -nr</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>访问次数最多的文件或页面,取前20<br><code>cat nginx.log | awk &#39;{print $7}&#39; | grep -E &quot;^/.*&quot; | sort | uniq -c | sort -nr | head -n 20</code></p>
+</li>
+<li><p>统计404的连接<br><code>cat nginx.log | awk &#39;/ 404 /{print $7}&#39; | sort | uniq -c | sort -nr | more</code></p>
+</li>
+</ol>
+<h2 id="系统Debug分析篇"><a href="#系统Debug分析篇" class="headerlink" title="系统Debug分析篇"></a>系统Debug分析篇</h2><p>1.调试命令<br><code>strace -p pid</code><br>2.跟踪指定进程的PID<br><code>gdb -p pid</code></p>
+<p>参考：<br><a href="http://blog.csdn.net/xiangliangyu/article/details/7056937" target="_blank" rel="noopener">Linux Web服务器网站故障分析常用的命令</a><br><a href="http://www.ttlsa.com/linux/the-nginx-log-configuration/" target="_blank" rel="noopener">nginx日志配置</a></p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Gason Wong
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://gaoshangs.github.io/2018-02-07-linux-failure-analysis-command.html" title="Linux服务器网站故障分析常用的命令">https://gaoshangs.github.io/2018-02-07-linux-failure-analysis-command.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018-02-06-design-pattern-interview-question.html" rel="next" title="设计模式面试题">
+                <i class="fa fa-chevron-left"></i> 设计模式面试题
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018-02-07-interview-knowledge-point.html" rel="prev" title="面试知识点汇总">
+                面试知识点汇总 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -339,6 +561,15 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMzA4OS85NjUw"></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -359,8 +590,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -447,6 +687,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#常用命令简单说明"><span class="nav-number">1.</span> <span class="nav-text">常用命令简单说明</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#grep-命令"><span class="nav-number">1.1.</span> <span class="nav-text">grep 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#awk命令"><span class="nav-number">1.2.</span> <span class="nav-text">awk命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cut命令"><span class="nav-number">1.3.</span> <span class="nav-text">cut命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sed命令"><span class="nav-number">1.4.</span> <span class="nav-text">sed命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sort命令"><span class="nav-number">1.5.</span> <span class="nav-text">sort命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#netstat-命令"><span class="nav-number">1.6.</span> <span class="nav-text">netstat 命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统连接状态"><span class="nav-number">2.</span> <span class="nav-text">系统连接状态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nginx日志知识"><span class="nav-number">3.</span> <span class="nav-text">nginx日志知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#access-log指令"><span class="nav-number">3.1.</span> <span class="nav-text">access_log指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#log-format指令"><span class="nav-number">3.2.</span> <span class="nav-text">log_format指令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网站日志分析篇-nginx"><span class="nav-number">4.</span> <span class="nav-text">网站日志分析篇(nginx)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统Debug分析篇"><span class="nav-number">5.</span> <span class="nav-text">系统Debug分析篇</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -600,6 +856,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -628,6 +888,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 

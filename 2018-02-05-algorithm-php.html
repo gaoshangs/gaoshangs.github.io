@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="文章参考：todayqq/PHPerInterviewGuide 冒泡排序 原理:比较相邻两个元素,如果前一个元素大于后一个元素则向后移,然后跟后边元素依次比较直到最大值冒泡到最后一个元素 结论:假设数组长度为n,则共经过N=n-1轮排序,每轮进行N-i次比较,我们可以使用双层循环语句,外层循环控制轮次,内层循环控制比较次数  1234567891011121314function bubble_">
+<meta name="description" content="文章参考：todayqq/PHPerInterviewGuide 冒泡排序 插入排序和冒泡排序在平均和最坏情况下的时间复杂度都是O(n^2)，最好情况下都是O(n)，空间复杂度是O(1)  原理:比较相邻两个元素,如果前一个元素大于后一个元素则向后移,然后跟后边元素依次比较直到最大值冒泡到最后一个元素 结论:假设数组长度为n,则共经过N=n-1轮排序,每轮进行N-i次比较,我们可以使用双层循环语句">
 <meta name="keywords" content="算法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="常见算法">
 <meta property="og:url" content="https://gaoshangs.github.io/2018-02-05-algorithm-php.html">
 <meta property="og:site_name" content="高尚的网络日志">
-<meta property="og:description" content="文章参考：todayqq/PHPerInterviewGuide 冒泡排序 原理:比较相邻两个元素,如果前一个元素大于后一个元素则向后移,然后跟后边元素依次比较直到最大值冒泡到最后一个元素 结论:假设数组长度为n,则共经过N=n-1轮排序,每轮进行N-i次比较,我们可以使用双层循环语句,外层循环控制轮次,内层循环控制比较次数  1234567891011121314function bubble_">
+<meta property="og:description" content="文章参考：todayqq/PHPerInterviewGuide 冒泡排序 插入排序和冒泡排序在平均和最坏情况下的时间复杂度都是O(n^2)，最好情况下都是O(n)，空间复杂度是O(1)  原理:比较相邻两个元素,如果前一个元素大于后一个元素则向后移,然后跟后边元素依次比较直到最大值冒泡到最后一个元素 结论:假设数组长度为n,则共经过N=n-1轮排序,每轮进行N-i次比较,我们可以使用双层循环语句">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-06T00:54:41.799Z">
+<meta property="og:updated_time" content="2018-02-07T06:57:18.862Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="常见算法">
-<meta name="twitter:description" content="文章参考：todayqq/PHPerInterviewGuide 冒泡排序 原理:比较相邻两个元素,如果前一个元素大于后一个元素则向后移,然后跟后边元素依次比较直到最大值冒泡到最后一个元素 结论:假设数组长度为n,则共经过N=n-1轮排序,每轮进行N-i次比较,我们可以使用双层循环语句,外层循环控制轮次,内层循环控制比较次数  1234567891011121314function bubble_">
+<meta name="twitter:description" content="文章参考：todayqq/PHPerInterviewGuide 冒泡排序 插入排序和冒泡排序在平均和最坏情况下的时间复杂度都是O(n^2)，最好情况下都是O(n)，空间复杂度是O(1)  原理:比较相邻两个元素,如果前一个元素大于后一个元素则向后移,然后跟后边元素依次比较直到最大值冒泡到最后一个元素 结论:假设数组长度为n,则共经过N=n-1轮排序,每轮进行N-i次比较,我们可以使用双层循环语句">
 
 
 
@@ -422,14 +422,19 @@
 
       
         <p>文章参考：<a href="https://github.com/todayqq/PHPerInterviewGuide/blob/master/algorithm.md" target="_blank" rel="noopener">todayqq/PHPerInterviewGuide</a></p>
-<h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><ul>
+<h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><blockquote>
+<p>插入排序和冒泡排序在平均和最坏情况下的时间复杂度都是O(n^2)，最好情况下都是O(n)，空间复杂度是O(1)</p>
+<ul>
 <li>原理:比较相邻两个元素,如果前一个元素大于后一个元素则向后移,然后跟后边元素依次比较直到最大值冒泡到最后一个元素</li>
 <li>结论:假设数组长度为n,则共经过N=n-1轮排序,每轮进行N-i次比较,我们可以使用双层循环语句,外层循环控制轮次,内层循环控制比较次数</li>
 </ul>
+</blockquote>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bubble_sort</span><span class="params">($arr)</span> </span>&#123;</span><br><span class="line">    $count = count($arr);</span><br><span class="line">    <span class="keyword">for</span>($i=<span class="number">0</span>; $i &lt; $count<span class="number">-1</span>; $i++) &#123;</span><br><span class="line">        <span class="keyword">for</span>($j=<span class="number">0</span>; $j &lt; $count<span class="number">-1</span>-$i; $j++) &#123;</span><br><span class="line">            <span class="keyword">if</span>($arr[$j] &gt; $arr[$j+<span class="number">1</span>]) &#123;<span class="comment">//倒序排只需把大于号换成小于号即可</span></span><br><span class="line">                $temp = $arr[$j];</span><br><span class="line">                $arr[$j] = $arr[$j+<span class="number">1</span>];</span><br><span class="line">                $arr[$j+<span class="number">1</span>] = $temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> $arr;</span><br><span class="line">&#125;</span><br><span class="line">print_r(bubble_sort([<span class="number">6</span>, <span class="number">3</span>, <span class="number">8</span>, <span class="number">2</span>, <span class="number">9</span>, <span class="number">1</span>, <span class="number">2</span>]));</span><br></pre></td></tr></table></figure>
 <p>运行结果:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Array</span><br><span class="line">(</span><br><span class="line">    [0] =&gt; 1</span><br><span class="line">    [1] =&gt; 2</span><br><span class="line">    [2] =&gt; 2</span><br><span class="line">    [3] =&gt; 3</span><br><span class="line">    [4] =&gt; 6</span><br><span class="line">    [5] =&gt; 8</span><br><span class="line">    [6] =&gt; 9</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p>
 <p>参考:  <a href="https://www.cnblogs.com/wgq123/p/6529450.html" target="_blank" rel="noopener">PHP 冒泡排序</a></p>
-<h2 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h2><p>快速排序是对冒泡排序的一种改进。</p>
+<h2 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h2><blockquote>
+<p>快速排序是对冒泡排序的一种改进，时间复杂度：O(nlogn)</p>
+</blockquote>
 <ul>
 <li>原理: 选择一个基准数(一般为第一个元素),新建两个空数组,遍历整个数组元素,如果数组元素比基准数小,则放到left数组,如果大于基准数则放到right数组,然后在对新数组递归进行相同的操作</li>
 <li>基准数: 第一个元素</li>
@@ -439,7 +444,9 @@
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">quick_sort</span><span class="params">($arr)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!is_array($arr)) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    $count = count($arr);</span><br><span class="line">    <span class="keyword">if</span>($count &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> $arr;</span><br><span class="line">    &#125;</span><br><span class="line">    $base = $arr[<span class="number">0</span>];</span><br><span class="line">    $left = $right = <span class="keyword">array</span>();</span><br><span class="line">    <span class="keyword">for</span>($i=<span class="number">1</span>; $i &lt; $count; $i++) &#123;</span><br><span class="line">        <span class="keyword">if</span>($arr[$i] &lt; $base) &#123; <span class="comment">//倒序排只需把符号换成大于号即可</span></span><br><span class="line">            $left[] = $arr[$i];</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            $right[] = $arr[$i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    $left = quick_sort($left);</span><br><span class="line">    $right = quick_sort($right);</span><br><span class="line">    <span class="keyword">return</span> array_merge($left, <span class="keyword">array</span>($base), $right);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$arr = [<span class="number">6</span>,<span class="number">3</span>,<span class="number">8</span>,<span class="number">6</span>,<span class="number">4</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">9</span>,<span class="number">5</span>,<span class="number">1</span>];</span><br><span class="line">print_r(quick_sort($arr));</span><br></pre></td></tr></table></figure>
 <p>运行结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Array</span><br><span class="line">(</span><br><span class="line">    [0] =&gt; 1</span><br><span class="line">    [1] =&gt; 2</span><br><span class="line">    [2] =&gt; 3</span><br><span class="line">    [3] =&gt; 4</span><br><span class="line">    [4] =&gt; 4</span><br><span class="line">    [5] =&gt; 5</span><br><span class="line">    [6] =&gt; 6</span><br><span class="line">    [7] =&gt; 6</span><br><span class="line">    [8] =&gt; 8</span><br><span class="line">    [9] =&gt; 9</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p>
 <p>参考： <a href="https://www.cnblogs.com/wangjingwangjing/p/5241486.html" target="_blank" rel="noopener">php实现快速排序</a></p>
-<h2 id="二分查找（折半查找）"><a href="#二分查找（折半查找）" class="headerlink" title="二分查找（折半查找）"></a>二分查找（折半查找）</h2><ul>
+<h2 id="二分查找（折半查找）"><a href="#二分查找（折半查找）" class="headerlink" title="二分查找（折半查找）"></a>二分查找（折半查找）</h2><blockquote>
+<p>时间复杂度：O(logn)</p>
+<ul>
 <li>需求: 提供一个有序数组和一个目标数字,找出该数字在有序数组中的位置</li>
 <li>原理：</li>
 </ul>
@@ -449,13 +456,24 @@
 <li>如果中间值小于目标值,则目标值在中间位置之后,此时再次二分，起始位置为中间位置+1,结束位置不变.</li>
 <li>如果中间值等于目标值则返回中间位置</li>
 </ol>
+</blockquote>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">binary_search</span><span class="params">($target, $arr)</span> </span>&#123;</span><br><span class="line">    $low = <span class="number">0</span>;</span><br><span class="line">    $high = count($arr) <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">while</span>($low &lt;= $high) &#123; <span class="comment">//&lt;=兼容target = 1情况</span></span><br><span class="line">        $mid = floor(($low+$high) / <span class="number">2</span>);</span><br><span class="line">        <span class="comment">//var_dump($low.'_'.$high.'_'.$mid);//打印比较过程</span></span><br><span class="line">        <span class="keyword">if</span>($target &lt; $arr[$mid]) &#123;</span><br><span class="line">            $high = $mid <span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>($target &gt; $arr[$mid]) &#123;</span><br><span class="line">            $low = $mid +<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>($target == $arr[$mid]) &#123;</span><br><span class="line">            <span class="keyword">return</span> $mid;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//var_dump($low.'_'.$high.'_'.$mid);//打印比较过程</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br><span class="line">$target = <span class="number">7</span>;<span class="comment">//分别测试target=1,2,7</span></span><br><span class="line">$arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">13</span>, <span class="number">14</span>];<span class="comment">//共9个数字</span></span><br><span class="line">var_dump($target);</span><br><span class="line">print_r($arr);</span><br><span class="line">$ret = binary_search($target, $arr);</span><br><span class="line">var_dump($ret);</span><br></pre></td></tr></table></figure>
 <p>运行结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">int(7)</span><br><span class="line">Array</span><br><span class="line">(</span><br><span class="line">    [0] =&gt; 1</span><br><span class="line">    [1] =&gt; 2</span><br><span class="line">    [2] =&gt; 3</span><br><span class="line">    [3] =&gt; 6</span><br><span class="line">    [4] =&gt; 8</span><br><span class="line">    [5] =&gt; 9</span><br><span class="line">    [6] =&gt; 10</span><br><span class="line">    [7] =&gt; 13</span><br><span class="line">    [8] =&gt; 14</span><br><span class="line">)</span><br><span class="line">bool(false)</span><br></pre></td></tr></table></figure></p>
 <p>参考：<a href="https://www.cnblogs.com/wangjingwangjing/p/5206711.html" target="_blank" rel="noopener">php实现二分查找法</a><br>算法就简单罗列这几种，了解更多就看看扩展阅读吧。</p>
+<h2 id="Twitter-Snowflake"><a href="#Twitter-Snowflake" class="headerlink" title="Twitter Snowflake"></a>Twitter Snowflake</h2><p><strong>核心思想</strong><br>snowflake是twitter开源的分布式ID生成算法，其核心思想是：<br>产生一个long型(64bit)的ID，使用其中41bit作为毫秒数，10bit作为机器编号，12bit作为毫秒内序列号。<br>这个算法单机每秒内理论上最多可以生成1000*(2^12)个，也就是大约400W的ID，完全能满足业务的需求。</p>
+<p><strong>实现</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">| 41 bits: Timestamp | 3 bits: 区域 | 10 bits: 机器编号 | 10 bits: 序列号 |</span><br><span class="line"><span class="built_in">return</span> ((timestamp - twepoch) &lt;&lt; timestampLeftShift) | (paddingnum &lt;&lt; regionIdShift) | (workerId &lt;&lt; workerIdShift) | sequence;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>毫秒数计算：需要选择某一天的毫秒级时间戳为基准时间戳，然后用当前时间戳与基准时间戳相减</li>
+<li>序列号计算：同一毫秒内序列号自增，超过最大值则溢出等待下一毫秒</li>
+<li>最后分别对Timestamp、区域、机器编号、序列号分别向左做相对应的位运算，然后进行与操作得到最终的唯一id<br><strong>注意</strong></li>
+<li>需要控制好所有服务器的时间，使用统一的ntp时间服务器，否则生成的id无法保持增长趋势</li>
+</ul>
 <h2 id="扩展阅读"><a href="#扩展阅读" class="headerlink" title="扩展阅读"></a>扩展阅读</h2><ul>
 <li><a href="https://www.cnblogs.com/hellohell/p/5718175.html" target="_blank" rel="noopener">PHP实现各种经典算法</a></li>
 <li><a href="http://www.cnblogs.com/zswordsman/p/5824599.html" target="_blank" rel="noopener">PHP常见算法-面试篇</a></li>
 <li><a href="https://segmentfault.com/a/1190000009067353" target="_blank" rel="noopener">常用算法PHP版</a></li>
+<li><a href="https://www.jianshu.com/p/61817cf48cc3" target="_blank" rel="noopener">全局唯一ID设计</a></li>
 </ul>
 
       
@@ -603,7 +621,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -681,7 +699,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#冒泡排序"><span class="nav-number">1.</span> <span class="nav-text">冒泡排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#快速排序"><span class="nav-number">2.</span> <span class="nav-text">快速排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二分查找（折半查找）"><span class="nav-number">3.</span> <span class="nav-text">二分查找（折半查找）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#扩展阅读"><span class="nav-number">4.</span> <span class="nav-text">扩展阅读</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#冒泡排序"><span class="nav-number">1.</span> <span class="nav-text">冒泡排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#快速排序"><span class="nav-number">2.</span> <span class="nav-text">快速排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二分查找（折半查找）"><span class="nav-number">3.</span> <span class="nav-text">二分查找（折半查找）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Twitter-Snowflake"><span class="nav-number">4.</span> <span class="nav-text">Twitter Snowflake</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#扩展阅读"><span class="nav-number">5.</span> <span class="nav-text">扩展阅读</span></a></li></ol></div>
             
 
           </div>
