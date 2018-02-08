@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="高尚的网络日志">
 <meta property="og:description" content="PHP面试题汇总(基础)文章内容主要参考：https://github.com/ycrao/mynotes 1. echo(),print(),print_r()的区别？三者均可以输出信息，但是各有自己的特点：     类型 输出变量个数 输出变量类型 返回值 速度     echo 语言结构 一个或多个 简单类型变量，如int、string 无 最快   print 语言结构 一个 简单类型变量">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-06T00:54:41.802Z">
+<meta property="og:updated_time" content="2018-02-08T01:02:32.857Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PHP面试题汇总一">
 <meta name="twitter:description" content="PHP面试题汇总(基础)文章内容主要参考：https://github.com/ycrao/mynotes 1. echo(),print(),print_r()的区别？三者均可以输出信息，但是各有自己的特点：     类型 输出变量个数 输出变量类型 返回值 速度     echo 语言结构 一个或多个 简单类型变量，如int、string 无 最快   print 语言结构 一个 简单类型变量">
@@ -459,7 +459,8 @@
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$num = <span class="number">10</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">multiply</span><span class="params">(&amp;$num)</span></span>&#123;</span><br><span class="line">    $num = $num * <span class="number">10</span>;</span><br><span class="line">&#125;</span><br><span class="line">multiply($num);</span><br><span class="line"><span class="keyword">echo</span> $num;</span><br></pre></td></tr></table></figure>
 <h2 id="4-下面哪项没有将john添加到users数组中？"><a href="#4-下面哪项没有将john添加到users数组中？" class="headerlink" title="4. 下面哪项没有将john添加到users数组中？"></a>4. 下面哪项没有将john添加到users数组中？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(a) $users[] = &apos;john&apos;;</span><br><span class="line">(b) array_add($users,&apos;john&apos;);</span><br><span class="line">(c) array_push($users,&apos;john&apos;);</span><br><span class="line">(d) $users ||= &apos;john&apos;;</span><br></pre></td></tr></table></figure>
 <p>答案为bd，php 里面无 <code>array_add</code> 函数，d项为语法错误的表达。</p>
-<h2 id="5-HTTP协议中几个状态码的含义。"><a href="#5-HTTP协议中几个状态码的含义。" class="headerlink" title="5. HTTP协议中几个状态码的含义。"></a>5. HTTP协议中几个状态码的含义。</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">200 : 请求成功，请求的数据随之返回。</span><br><span class="line">301 : 永久性重定向。</span><br><span class="line">302 : 暂时行重定向。</span><br><span class="line">401 : 当前请求需要用户验证。</span><br><span class="line">403 : 服务器拒绝执行请求，即没有权限。</span><br><span class="line">404 : 请求失败，请求的数据在服务器上未发现。</span><br><span class="line">500 : 服务器错误。一般服务器端程序执行错误。</span><br><span class="line">502 : 错误的网关，上游服务器错误(如php-fpm挂掉了)</span><br><span class="line">503 : 服务器临时维护或过载。这个状态时临时性的。</span><br><span class="line">504 : 网关超时（上游服务器超时）</span><br></pre></td></tr></table></figure>
+<h2 id="5-HTTP协议中几个状态码的含义。"><a href="#5-HTTP协议中几个状态码的含义。" class="headerlink" title="5. HTTP协议中几个状态码的含义。"></a>5. HTTP协议中几个状态码的含义。</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">200 OK 客户端请求成功</span><br><span class="line">301 Moved Permanently 请求永久重定向</span><br><span class="line">302 Moved Temporarily 请求临时重定向</span><br><span class="line">304 Not Modified 文件未修改，可以直接使用缓存的文件。</span><br><span class="line">400 Bad Request 由于客户端请求有语法错误，不能被服务器所理解。</span><br><span class="line">401 Unauthorized 请求未经授权。这个状态代码必须和WWW-Authenticate报头域一起使用</span><br><span class="line">403 Forbidden 服务器拒绝执行请求，即没有权限</span><br><span class="line">404 Not Found 请求的资源不存在，例如，输入了错误的URL</span><br><span class="line">500 Internal Server Error 服务器发生不可预期的错误，导致无法完成客户端的请求。</span><br><span class="line">502 Bad Gateway 错误的网关，上游服务器错误(如php-fpm挂掉了)</span><br><span class="line">503 Service Unavailable 服务器当前不能够处理客户端的请求，在一段时间之后，服务器可能会恢复正常。</span><br><span class="line">504 Gateway Timeout 网关超时（上游服务器超时）</span><br></pre></td></tr></table></figure>
+<p>参考：<br><a href="http://tool.oschina.net/commons?type=5" target="_blank" rel="noopener">HTTP状态码详解</a><br><a href="https://github.com/zhangyachen/zhangyachen.github.io/issues/89" target="_blank" rel="noopener">502 VS 504</a></p>
 <h2 id="6-写出一些php魔术方法。"><a href="#6-写出一些php魔术方法。" class="headerlink" title="6. 写出一些php魔术方法。"></a>6. 写出一些php魔术方法。</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">__construct() 实例化类时自动调用。</span><br><span class="line">__destruct() 类对象使用结束时自动调用。</span><br><span class="line">__set() 在给未定义的属性赋值的时候调用。</span><br><span class="line">__get() 调用未定义的属性时候调用。</span><br><span class="line">__isset() 使用isset()或empty()函数时候会调用。</span><br><span class="line">__unset() 使用unset()时候会调用。</span><br><span class="line">__sleep() 使用serialize序列化时候调用。</span><br><span class="line">__wakeup() 使用unserialize反序列化的时候调用。</span><br><span class="line">__call() 调用一个不存在的方法的时候调用。</span><br><span class="line">__callStatic()调用一个不存在的静态方法是调用。</span><br><span class="line">__toString() 把对象转换成字符串的时候会调用。比如 echo。</span><br><span class="line">__invoke() 当尝试把对象当方法调用时调用。</span><br><span class="line">__set_state() 当使用var_export()函数时候调用。接受一个数组参数。</span><br><span class="line">__clone() 当使用clone复制一个对象时候调用。</span><br></pre></td></tr></table></figure>
 <h2 id="7-MySQL存储引擎-MyISAM-和-InnoDB-的区别"><a href="#7-MySQL存储引擎-MyISAM-和-InnoDB-的区别" class="headerlink" title="7. MySQL存储引擎 MyISAM 和 InnoDB 的区别"></a>7. MySQL存储引擎 MyISAM 和 InnoDB 的区别</h2><table>
 <thead>
@@ -837,7 +838,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -848,7 +849,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -859,7 +860,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="高尚的网络日志">
 <meta property="og:description" content="PHP面试题汇总 (二)文章内容主要参考：https://github.com/ycrao/mynotes 问题来源：http://tieba.baidu.com/p/3612369052http://blog.csdn.net/hyr352114576/article/details/49638345https://my.oschina.net/u/574366/blog/64814 for与f">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-06T00:54:41.802Z">
+<meta property="og:updated_time" content="2018-02-08T01:02:32.861Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="php面试题汇总二">
 <meta name="twitter:description" content="PHP面试题汇总 (二)文章内容主要参考：https://github.com/ycrao/mynotes 问题来源：http://tieba.baidu.com/p/3612369052http://blog.csdn.net/hyr352114576/article/details/49638345https://my.oschina.net/u/574366/blog/64814 for与f">
@@ -519,6 +519,41 @@
 </ul>
 <h4 id="2-为什么建立连接协议是三次握手，而关闭连接却是四次挥手呢？"><a href="#2-为什么建立连接协议是三次握手，而关闭连接却是四次挥手呢？" class="headerlink" title="2. 为什么建立连接协议是三次握手，而关闭连接却是四次挥手呢？"></a>2. 为什么建立连接协议是三次握手，而关闭连接却是四次挥手呢？</h4><p>建立连接时候ACK和SYN可以放到一个报文发送，而关闭连接时被动方可能未全部完成数据的发送，所以ACK和SYN回分两次发送。</p>
 <h4 id="3-为什么TIME-WAIT状态还需要等2MSL后才能返回到CLOSED状态？"><a href="#3-为什么TIME-WAIT状态还需要等2MSL后才能返回到CLOSED状态？" class="headerlink" title="3. 为什么TIME_WAIT状态还需要等2MSL后才能返回到CLOSED状态？"></a>3. 为什么TIME_WAIT状态还需要等2MSL后才能返回到CLOSED状态？</h4><p>必须要假想网络是不可靠的，你无法保证你最后发送的ACK报文会一定被对方收到，所以这个TIME_WAIT状态的作用就是用来重发可能丢失的ACK报文。</p>
+<h2 id="CGI-FastCGI-php-fpm和nginx通信原理"><a href="#CGI-FastCGI-php-fpm和nginx通信原理" class="headerlink" title="CGI/FastCGI/php-fpm和nginx通信原理"></a>CGI/FastCGI/php-fpm和nginx通信原理</h2><h3 id="cgi、fast-cgi协议"><a href="#cgi、fast-cgi协议" class="headerlink" title="cgi、fast-cgi协议"></a>cgi、fast-cgi协议</h3><ol>
+<li>cgi的历史</li>
+</ol>
+<p>早期的webserver只处理html等静态文件，但是随着技术的发展，出现了像PHP等动态语言。<br>webserver处理不了了，怎么办呢？那就交给php解释器来处理吧！<br>交给php解释器处理很好，但是，php解释器如何与webserver进行通信呢？</p>
+<p>为了解决不同的语言解释器(如php、Python解释器)与webserver的通信，于是出现了cgi协议。只要你按照cgi协议去编写程序，就能实现语言解释器与webwerver的通信。如php-cgi程序。</p>
+<p>fast-cgi的改进</p>
+<p>有了cgi协议，解决了php解释器与webserver通信的问题，webserver终于可以处理动态语言了。但是，webserver每收到一个请求，都会去fork一个cgi进程，请求结束再kill掉这个进程。这样有10000个请求，就需要fork、kill php-cgi进程10000次。</p>
+<p>有没有发现很浪费资源？</p>
+<p>于是，出现了cgi的改良版本，fast-cgi。fast-cgi每次处理完请求后，不会kill掉这个进程，而是保留这个进程，使这个进程可以一次处理多个请求。这样每次就不用重新fork一个进程了，大大提高了效率。</p>
+<ol>
+<li>php-fpm是什么</li>
+</ol>
+<p>php-fpm即php-Fastcgi Process Manager.<br>php-fpm是 FastCGI 的实现，并提供了进程管理的功能。<br>进程包含 master 进程和 worker 进程两种进程。<br>master 进程只有一个，负责监听端口，接收来自 Web Server 的请求，而 worker 进程则一般有多个(具体数量根据实际需要配置)，每个进程内部都嵌入了一个 PHP 解释器，是 PHP 代码真正执行的地方。</p>
+<ol>
+<li>nginx和php-fpm运行原理和流程<br>Nginx不只有处理http请求的功能，还能做反向代理。Nginx通过反向代理功能将动态请求转向后端Php-fpm<br>www.example.com<pre><code>|
+|
+</code></pre>   Nginx<pre><code>|
+|
+</code></pre>路由到www.example.com/index.php<pre><code>|
+|
+</code></pre>加载nginx的fast-cgi模块<pre><code>|
+|
+</code></pre>fast-cgi监听127.0.0.1:9000地址<pre><code>|
+|
+</code></pre>www.example.com/index.php请求到达127.0.0.1:9000<pre><code>|
+|
+</code></pre>php-fpm 监听127.0.0.1:9000<pre><code>|
+|
+</code></pre>php-fpm 接收到请求，启用worker进程处理请求<pre><code>|
+|
+</code></pre>php-fpm 处理完请求，返回给nginx<pre><code>|
+|
+</code></pre>nginx将结果通过http返回给浏览器</li>
+</ol>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="http://www.cnblogs.com/datang6777/p/6893363.html" target="_blank" rel="noopener">Nginx+PHP-fpm运行原理详解</a></p>
 
       
     </div>
@@ -665,7 +700,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -676,7 +711,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -687,7 +722,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -743,7 +778,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#PHP面试题汇总-二"><span class="nav-number">1.</span> <span class="nav-text">PHP面试题汇总 (二)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#for与foreach哪个更快"><span class="nav-number">1.1.</span> <span class="nav-text">for与foreach哪个更快?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PECL-和-PEAR-有什么区别？"><span class="nav-number">1.2.</span> <span class="nav-text">PECL 和 PEAR 有什么区别？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何处理多服务器共享-Session"><span class="nav-number">1.3.</span> <span class="nav-text">如何处理多服务器共享 Session ?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是跨站脚本？SQL注入？"><span class="nav-number">1.4.</span> <span class="nav-text">什么是跨站脚本？SQL注入？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-跨站脚本攻击的原理和防范"><span class="nav-number">1.4.1.</span> <span class="nav-text">1. 跨站脚本攻击的原理和防范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-SQL注入"><span class="nav-number">1.4.2.</span> <span class="nav-text">2. SQL注入</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#描述一下大流量高并发量网站的解决方案"><span class="nav-number">1.5.</span> <span class="nav-text">描述一下大流量高并发量网站的解决方案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何防盗链"><span class="nav-number">1.6.</span> <span class="nav-text">如何防盗链</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PHP内存管理机制与垃圾回收机制"><span class="nav-number">1.7.</span> <span class="nav-text">PHP内存管理机制与垃圾回收机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么要对数据库进行主从分离"><span class="nav-number">1.8.</span> <span class="nav-text">为什么要对数据库进行主从分离?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多线程和多进程的区别为？"><span class="nav-number">1.9.</span> <span class="nav-text">多线程和多进程的区别为？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP-IP-网络协议，OSI-7-层指是什么？"><span class="nav-number">1.10.</span> <span class="nav-text">TCP/IP 网络协议，OSI 7 层指是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP-IP知识点"><span class="nav-number">1.11.</span> <span class="nav-text">TCP/IP知识点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#三次握手"><span class="nav-number">1.11.1.</span> <span class="nav-text">三次握手</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四次挥手"><span class="nav-number">1.11.2.</span> <span class="nav-text">四次挥手</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常见问题"><span class="nav-number">1.11.3.</span> <span class="nav-text">常见问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-TCP的三次握手过程？为什么会采用三次握手，若采用二次握手可以吗？"><span class="nav-number">1.11.3.1.</span> <span class="nav-text">1. TCP的三次握手过程？为什么会采用三次握手，若采用二次握手可以吗？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-为什么建立连接协议是三次握手，而关闭连接却是四次挥手呢？"><span class="nav-number">1.11.3.2.</span> <span class="nav-text">2. 为什么建立连接协议是三次握手，而关闭连接却是四次挥手呢？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-为什么TIME-WAIT状态还需要等2MSL后才能返回到CLOSED状态？"><span class="nav-number">1.11.3.3.</span> <span class="nav-text">3. 为什么TIME_WAIT状态还需要等2MSL后才能返回到CLOSED状态？</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#PHP面试题汇总-二"><span class="nav-number">1.</span> <span class="nav-text">PHP面试题汇总 (二)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#for与foreach哪个更快"><span class="nav-number">1.1.</span> <span class="nav-text">for与foreach哪个更快?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PECL-和-PEAR-有什么区别？"><span class="nav-number">1.2.</span> <span class="nav-text">PECL 和 PEAR 有什么区别？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何处理多服务器共享-Session"><span class="nav-number">1.3.</span> <span class="nav-text">如何处理多服务器共享 Session ?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是跨站脚本？SQL注入？"><span class="nav-number">1.4.</span> <span class="nav-text">什么是跨站脚本？SQL注入？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-跨站脚本攻击的原理和防范"><span class="nav-number">1.4.1.</span> <span class="nav-text">1. 跨站脚本攻击的原理和防范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-SQL注入"><span class="nav-number">1.4.2.</span> <span class="nav-text">2. SQL注入</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#描述一下大流量高并发量网站的解决方案"><span class="nav-number">1.5.</span> <span class="nav-text">描述一下大流量高并发量网站的解决方案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何防盗链"><span class="nav-number">1.6.</span> <span class="nav-text">如何防盗链</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PHP内存管理机制与垃圾回收机制"><span class="nav-number">1.7.</span> <span class="nav-text">PHP内存管理机制与垃圾回收机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么要对数据库进行主从分离"><span class="nav-number">1.8.</span> <span class="nav-text">为什么要对数据库进行主从分离?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多线程和多进程的区别为？"><span class="nav-number">1.9.</span> <span class="nav-text">多线程和多进程的区别为？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP-IP-网络协议，OSI-7-层指是什么？"><span class="nav-number">1.10.</span> <span class="nav-text">TCP/IP 网络协议，OSI 7 层指是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP-IP知识点"><span class="nav-number">1.11.</span> <span class="nav-text">TCP/IP知识点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#三次握手"><span class="nav-number">1.11.1.</span> <span class="nav-text">三次握手</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四次挥手"><span class="nav-number">1.11.2.</span> <span class="nav-text">四次挥手</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常见问题"><span class="nav-number">1.11.3.</span> <span class="nav-text">常见问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-TCP的三次握手过程？为什么会采用三次握手，若采用二次握手可以吗？"><span class="nav-number">1.11.3.1.</span> <span class="nav-text">1. TCP的三次握手过程？为什么会采用三次握手，若采用二次握手可以吗？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-为什么建立连接协议是三次握手，而关闭连接却是四次挥手呢？"><span class="nav-number">1.11.3.2.</span> <span class="nav-text">2. 为什么建立连接协议是三次握手，而关闭连接却是四次挥手呢？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-为什么TIME-WAIT状态还需要等2MSL后才能返回到CLOSED状态？"><span class="nav-number">1.11.3.3.</span> <span class="nav-text">3. 为什么TIME_WAIT状态还需要等2MSL后才能返回到CLOSED状态？</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CGI-FastCGI-php-fpm和nginx通信原理"><span class="nav-number">1.12.</span> <span class="nav-text">CGI/FastCGI/php-fpm和nginx通信原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cgi、fast-cgi协议"><span class="nav-number">1.12.1.</span> <span class="nav-text">cgi、fast-cgi协议</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">1.12.2.</span> <span class="nav-text">参考</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

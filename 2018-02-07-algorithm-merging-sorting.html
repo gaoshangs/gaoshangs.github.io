@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="算法,归并排序," />
 
 
 
@@ -81,17 +81,18 @@
 
 
 
-<meta name="description" content="原理归并（Merge）排序法是将两个（或两个以上）有序表合并成一个新的有序表，其中的分治法是常用的一种解决问题的方法，现在流行的云计算其实就是一种分治法的应用。 分治法  字面解释就是“分而治之”，就是把一个复杂的问题分成两个或更多的相同或相似的子问题，直到最后子问题可以简单的直接求解，原问题的解即子问题的解的合并。这个思想在实际工作中的作用非常大，特别是处理大数据和做复杂运算的时候。  归并法缺">
+<meta name="description" content="算法思路 把 n 个记录看成 n 个长度为 l 的有序子表 进行两两归并使记录关键字有序，得到 n/2 个长度为 2 的有序子表 重复第 2 步直到所有记录归并成一个长度为 n 的有序表为止。  原理归并（Merge）排序法是将两个（或两个以上）有序表合并成一个新的有序表，其中的分治法是常用的一种解决问题的方法，现在流行的云计算其实就是一种分治法的应用。 归并算法详解 归并排序的中心思想：申请一个">
+<meta name="keywords" content="算法,归并排序">
 <meta property="og:type" content="article">
 <meta property="og:title" content="归并排序算法">
 <meta property="og:url" content="https://gaoshangs.github.io/2018-02-07-algorithm-merging-sorting.html">
 <meta property="og:site_name" content="高尚的网络日志">
-<meta property="og:description" content="原理归并（Merge）排序法是将两个（或两个以上）有序表合并成一个新的有序表，其中的分治法是常用的一种解决问题的方法，现在流行的云计算其实就是一种分治法的应用。 分治法  字面解释就是“分而治之”，就是把一个复杂的问题分成两个或更多的相同或相似的子问题，直到最后子问题可以简单的直接求解，原问题的解即子问题的解的合并。这个思想在实际工作中的作用非常大，特别是处理大数据和做复杂运算的时候。  归并法缺">
+<meta property="og:description" content="算法思路 把 n 个记录看成 n 个长度为 l 的有序子表 进行两两归并使记录关键字有序，得到 n/2 个长度为 2 的有序子表 重复第 2 步直到所有记录归并成一个长度为 n 的有序表为止。  原理归并（Merge）排序法是将两个（或两个以上）有序表合并成一个新的有序表，其中的分治法是常用的一种解决问题的方法，现在流行的云计算其实就是一种分治法的应用。 归并算法详解 归并排序的中心思想：申请一个">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-07T10:46:23.655Z">
+<meta property="og:updated_time" content="2018-02-08T12:59:46.707Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="归并排序算法">
-<meta name="twitter:description" content="原理归并（Merge）排序法是将两个（或两个以上）有序表合并成一个新的有序表，其中的分治法是常用的一种解决问题的方法，现在流行的云计算其实就是一种分治法的应用。 分治法  字面解释就是“分而治之”，就是把一个复杂的问题分成两个或更多的相同或相似的子问题，直到最后子问题可以简单的直接求解，原问题的解即子问题的解的合并。这个思想在实际工作中的作用非常大，特别是处理大数据和做复杂运算的时候。  归并法缺">
+<meta name="twitter:description" content="算法思路 把 n 个记录看成 n 个长度为 l 的有序子表 进行两两归并使记录关键字有序，得到 n/2 个长度为 2 的有序子表 重复第 2 步直到所有记录归并成一个长度为 n 的有序表为止。  原理归并（Merge）排序法是将两个（或两个以上）有序表合并成一个新的有序表，其中的分治法是常用的一种解决问题的方法，现在流行的云计算其实就是一种分治法的应用。 归并算法详解 归并排序的中心思想：申请一个">
 
 
 
@@ -376,12 +377,22 @@
       
 
       
-        <h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>归并（Merge）排序法是将两个（或两个以上）有序表合并成一个新的有序表，其中的分治法是常用的一种解决问题的方法，现在流行的云计算其实就是一种分治法的应用。</p>
+        <h2 id="算法思路"><a href="#算法思路" class="headerlink" title="算法思路"></a>算法思路</h2><ol>
+<li>把 n 个记录看成 n 个长度为 l 的有序子表</li>
+<li>进行两两归并使记录关键字有序，得到 n/2 个长度为 2 的有序子表</li>
+<li>重复第 2 步直到所有记录归并成一个长度为 n 的有序表为止。</li>
+</ol>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>归并（Merge）排序法是将两个（或两个以上）有序表合并成一个新的有序表，其中的分治法是常用的一种解决问题的方法，现在流行的云计算其实就是一种分治法的应用。</p>
+<h3 id="归并算法详解"><a href="#归并算法详解" class="headerlink" title="归并算法详解"></a>归并算法详解</h3><blockquote>
+<p>归并排序的中心思想：申请一个空序列，将两个已经排序好的序列，合并成一个排序的序列</p>
+</blockquote>
+<p>假设：<br>序列A：3 4 7 9<br>序列B：2  6  8<br>序列C：空<br>合并思路是：先申请一个序列，将指针分别指向3和2，这时候进行比较，3大于2，所以把2放到序列C，序列B指针后移到6，这时候序列A的3小于6，把3放到序列C，A序列指针后移<br>4小于序列B的6，把4放到序列C，依次类推。。。直到最后只剩下序列A中的9，把9合并到序列C，完成归并排序</p>
 <h3 id="分治法"><a href="#分治法" class="headerlink" title="分治法"></a>分治法</h3><blockquote>
 <p> 字面解释就是“分而治之”，就是把一个复杂的问题分成两个或更多的相同或相似的子问题，直到最后子问题可以简单的直接求解，原问题的解即子问题的解的合并。这个思想在实际工作中的作用非常大，特别是处理大数据和做复杂运算的时候。</p>
 </blockquote>
-<h3 id="归并法"><a href="#归并法" class="headerlink" title="归并法"></a>归并法</h3><h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><p>归并排序的一个缺点是它需要存储器有另一个大小等于数据项数目的数组。如果初始数组几乎占满整个存储器，那么归并排序将不能工作，但是如果有足够的空间，归并排序会是一个很好的选择。</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="http://bubkoo.com/2014/01/15/sort-algorithm/merge-sort/" target="_blank" rel="noopener">常见排序算法 - 归并排序 (Merge Sort)_有图</a><br><a href="http://www.cnblogs.com/kkun/archive/2011/11/23/merge_sort.html" target="_blank" rel="noopener">经典排序算法 - 归并排序Merge sort</a><br><a href="http://www.jb51.net/article/95016.htm" target="_blank" rel="noopener">详解PHP归并排序的实现</a></p>
+<p>假设：无序序列：4 3 7 9 2 8 6<br>将数组分成长度为2，并使每个子数组有序：<br><code>[3, 4] [7, 9] [2, 8] [6]</code><br>然后分别两个一对进行归并，然后就可以得到最终的有序序列：2 3 4 6 7 8</p>
+<h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><p>归并排序的一个缺点是它需要存储器有另一个大小等于数据项数目的数组。如果初始数组几乎占满整个存储器，那么归并排序将不能工作，但是如果有足够的空间，归并排序会是一个很好的选择。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="http://bubkoo.com/2014/01/15/sort-algorithm/merge-sort/" target="_blank" rel="noopener">常见排序算法 - 归并排序 (Merge Sort)_有图</a><br><a href="http://www.cnblogs.com/kkun/archive/2011/11/23/merge_sort.html" target="_blank" rel="noopener">经典排序算法 - 归并排序Merge sort</a><br><a href="http://www.jb51.net/article/95016.htm" target="_blank" rel="noopener">详解PHP归并排序的实现</a><br><a href="http://blog.csdn.net/lemon_tree12138/article/details/48783535" target="_blank" rel="noopener">大数据算法：对5亿数据进行排序</a></p>
 
       
     </div>
@@ -414,6 +425,14 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/算法/" rel="tag"># 算法</a>
+          
+            <a href="/tags/归并排序/" rel="tag"># 归并排序</a>
+          
+        </div>
       
 
       
@@ -522,7 +541,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -533,7 +552,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -544,7 +563,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -600,7 +619,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#原理"><span class="nav-number">1.</span> <span class="nav-text">原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#分治法"><span class="nav-number">1.1.</span> <span class="nav-text">分治法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#归并法"><span class="nav-number">1.2.</span> <span class="nav-text">归并法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#缺点"><span class="nav-number">2.</span> <span class="nav-text">缺点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#算法思路"><span class="nav-number">1.</span> <span class="nav-text">算法思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原理"><span class="nav-number">2.</span> <span class="nav-text">原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#归并算法详解"><span class="nav-number">2.1.</span> <span class="nav-text">归并算法详解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分治法"><span class="nav-number">2.2.</span> <span class="nav-text">分治法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#缺点"><span class="nav-number">3.</span> <span class="nav-text">缺点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
