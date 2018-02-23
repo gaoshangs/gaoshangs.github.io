@@ -2,10 +2,8 @@
 
 
 
-  
 
-
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next pisces" lang="zh-Hans">
 <head>
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -84,7 +82,7 @@
 <meta name="description" content="MySQL的索引类型从数据结构角度 B+树索引(O(nlogn)) hash索引：   仅仅能够满足”=”,”IN”和”&amp;lt;=&amp;gt;”查询，不能使用范围查询, 无法通过操作索引来排序 检索效率最高，索引的检索可以一次定位，不像B-Tree 索引需要从根节点到枝节点，最后才能访问到页节点这样多次的IO访问，所以 Hash 索引的查询效率要远高于 B-Tree 索引 不能避免全表扫描,当存在大量">
 <meta name="keywords" content="mysql,索引原理">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mysqlinnodb索引底层原理详解">
+<meta property="og:title" content="MySQL InnoDB索引底层原理详解">
 <meta property="og:url" content="https://gaoshangs.github.io/2018-02-07-mysql-innodb-index.html">
 <meta property="og:site_name" content="高尚的网络日志">
 <meta property="og:description" content="MySQL的索引类型从数据结构角度 B+树索引(O(nlogn)) hash索引：   仅仅能够满足”=”,”IN”和”&amp;lt;=&amp;gt;”查询，不能使用范围查询, 无法通过操作索引来排序 检索效率最高，索引的检索可以一次定位，不像B-Tree 索引需要从根节点到枝节点，最后才能访问到页节点这样多次的IO访问，所以 Hash 索引的查询效率要远高于 B-Tree 索引 不能避免全表扫描,当存在大量">
@@ -97,9 +95,9 @@
 <meta property="og:image" content="http://img2.tuicool.com/EfIBbi2.jpg!web">
 <meta property="og:image" content="http://img1.tuicool.com/zAb22qm.jpg!web">
 <meta property="og:image" content="http://img2.tuicool.com/nu2YNbz.jpg!web">
-<meta property="og:updated_time" content="2018-02-08T10:39:32.128Z">
+<meta property="og:updated_time" content="2018-02-23T03:26:14.804Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mysqlinnodb索引底层原理详解">
+<meta name="twitter:title" content="MySQL InnoDB索引底层原理详解">
 <meta name="twitter:description" content="MySQL的索引类型从数据结构角度 B+树索引(O(nlogn)) hash索引：   仅仅能够满足”=”,”IN”和”&amp;lt;=&amp;gt;”查询，不能使用范围查询, 无法通过操作索引来排序 检索效率最高，索引的检索可以一次定位，不像B-Tree 索引需要从根节点到枝节点，最后才能访问到页节点这样多次的IO访问，所以 Hash 索引的查询效率要远高于 B-Tree 索引 不能避免全表扫描,当存在大量">
 <meta name="twitter:image" content="http://img.blog.csdn.net/20160902212733344?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
 
@@ -114,7 +112,7 @@
     sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
       userId: '0',
       author: '博主'
@@ -137,7 +135,7 @@
 
 
 
-  <title>Mysqlinnodb索引底层原理详解 | 高尚的网络日志</title>
+  <title>MySQL InnoDB索引底层原理详解 | 高尚的网络日志</title>
   
 
 
@@ -325,7 +323,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Mysqlinnodb索引底层原理详解</h1>
+          <h1 class="post-title" itemprop="name headline">MySQL InnoDB索引底层原理详解</h1>
         
 
         <div class="post-meta">
@@ -355,7 +353,7 @@
 
           
           
-             <span id="/2018-02-07-mysql-innodb-index.html" class="leancloud_visitors" data-flag-title="Mysqlinnodb索引底层原理详解">
+             <span id="/2018-02-07-mysql-innodb-index.html" class="leancloud_visitors" data-flag-title="MySQL InnoDB索引底层原理详解">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -421,7 +419,7 @@
 <li>非叶子结点的左指针指向小于其关键字的子树，右指针指向大于其关键字的子树；</li>
 </ol>
 <h3 id="B-树"><a href="#B-树" class="headerlink" title="B+树"></a>B+树</h3><ol>
-<li>所有关键字都出现在叶子结点的链表中（稠密索引），且链表中的关键字恰好是有序的；</li>
+<li>所有关键字都出现在叶子结点的链表中（稠密索引），且链表中的关键字自小而大顺序链接</li>
 <li>不可能在非叶子结点命中；</li>
 <li>非叶子结点相当于是叶子结点的索引（稀疏索引），叶子结点相当于是存储（关键字）数据的数据层；</li>
 <li>更适合文件索引系统；</li>
@@ -446,7 +444,7 @@
 <li><p><strong>每个数据页中有两个虚拟的行记录，用来限定记录的边界</strong>。(行记录是记录在页中的，同时是在页内行记录之间也是双向链表链接的)</p>
 <p><img src="http://img.blog.csdn.net/20160902212836951?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="虚拟行记录演示"></p>
 </li>
-<li><p><strong>页目录(Page Directory)通过顺序排放的记录指针(也叫槽)存放了记录的相对位置，这些通过这些槽找到具体的数据位置</strong></p>
+<li><p><strong>页目录(Page Directory)通过顺序排放的记录指针(也叫槽)存放了记录的相对位置，通过这些槽找到具体的数据位置</strong></p>
 <blockquote>
 <p>页目录中存放了记录的相对位置，有些时候这些记录指针称为Slots（槽）或者目录槽，与其他数据库不同的是，<strong>InnoDB并不是每个记录拥有一个槽</strong>，InnoDB中的槽是一个稀疏目录，即一个槽中可能属于多个记录，最少属于4个目录，最多属于8个目录。槽中记录按照键顺序存放，这样可以利用二叉查找迅速找到记录的指针。<strong>但是由于InnoDB中的Slots是稀疏目录，二叉查找的结果只是一个粗略的结果</strong>，所以InnoDB必须通过recorder header中的next_record来继续查找相关记录。同时slots很好的解释了recorder header中的n_owned值的含义，即还有多少记录需要查找，因为这些记录并不包括在slots中</p>
 </blockquote>
@@ -512,7 +510,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://gaoshangs.github.io/2018-02-07-mysql-innodb-index.html" title="Mysqlinnodb索引底层原理详解">https://gaoshangs.github.io/2018-02-07-mysql-innodb-index.html</a>
+    <a href="https://gaoshangs.github.io/2018-02-07-mysql-innodb-index.html" title="MySQL InnoDB索引底层原理详解">https://gaoshangs.github.io/2018-02-07-mysql-innodb-index.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -542,8 +540,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018-02-07-php-Interview-question-3.html" rel="next" title="PHP面试题汇总 (三)">
-                <i class="fa fa-chevron-left"></i> PHP面试题汇总 (三)
+              <a href="/2018-02-07-algorithm-merging-sorting.html" rel="next" title="归并排序算法">
+                <i class="fa fa-chevron-left"></i> 归并排序算法
               </a>
             
           </div>
@@ -582,11 +580,6 @@
 
 
           
-
-  
-    <div class="comments" id="comments">
-      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMzA4OS85NjUw"></div>
-    </div>
 
   
 
@@ -640,7 +633,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -662,7 +655,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -809,8 +802,6 @@
   
 
 
-  
-
 
 
 
@@ -849,11 +840,6 @@
   
   
     <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
   
 
 
@@ -909,17 +895,6 @@
 
 
 
-  
-    <script type="text/javascript">
-      (function(d, s) {
-        var j, e = d.getElementsByTagName(s)[0];
-        if (typeof LivereTower === 'function') { return; }
-        j = d.createElement(s);
-        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-        j.async = true;
-        e.parentNode.insertBefore(j, e);
-      })(document, 'script');
-    </script>
   
 
 

@@ -66,7 +66,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="算法," />
 
 
 
@@ -79,16 +79,21 @@
 
 
 
-<meta name="description" content="当你的才华还撑不起你的野心时，就应该静下心来学习">
-<meta property="og:type" content="website">
-<meta property="og:title" content="高尚的网络日志">
-<meta property="og:url" content="https://gaoshangs.github.io/categories/技术支撑/网络工程/TCP-IP/index.html">
+<meta name="description" content="跳跃表(skip-list)算法  它允许快速查询一个有序连续元素的数据链表，它的效率可以做到和二分相同，都是O(logn)的平均时间复杂度，其空间复杂度为O(n)  跳跃表的性质 由很多层结构组成； 每一层都是一个有序的链表，排列顺序为由高层到底层，都至少包含两个链表节点，分别是前面的head节点和后面的nil节点； 最底层的链表包含了所有的元素 如果一个元素出现在某一层的链表中，那么在该层之下">
+<meta name="keywords" content="算法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="跳跃表算法">
+<meta property="og:url" content="https://gaoshangs.github.io/2018-02-09-algorithm-skip-list.html">
 <meta property="og:site_name" content="高尚的网络日志">
-<meta property="og:description" content="当你的才华还撑不起你的野心时，就应该静下心来学习">
+<meta property="og:description" content="跳跃表(skip-list)算法  它允许快速查询一个有序连续元素的数据链表，它的效率可以做到和二分相同，都是O(logn)的平均时间复杂度，其空间复杂度为O(n)  跳跃表的性质 由很多层结构组成； 每一层都是一个有序的链表，排列顺序为由高层到底层，都至少包含两个链表节点，分别是前面的head节点和后面的nil节点； 最底层的链表包含了所有的元素 如果一个元素出现在某一层的链表中，那么在该层之下">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://odwv9d2u8.bkt.clouddn.com/17-10-3/32571293.jpg">
+<meta property="og:image" content="http://odwv9d2u8.bkt.clouddn.com/17-10-3/6620991.jpg">
+<meta property="og:updated_time" content="2018-02-23T03:26:14.803Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="高尚的网络日志">
-<meta name="twitter:description" content="当你的才华还撑不起你的野心时，就应该静下心来学习">
+<meta name="twitter:title" content="跳跃表算法">
+<meta name="twitter:description" content="跳跃表(skip-list)算法  它允许快速查询一个有序连续元素的数据链表，它的效率可以做到和二分相同，都是O(logn)的平均时间复杂度，其空间复杂度为O(n)  跳跃表的性质 由很多层结构组成； 每一层都是一个有序的链表，排列顺序为由高层到底层，都至少包含两个链表节点，分别是前面的head节点和后面的nil节点； 最底层的链表包含了所有的元素 如果一个元素出现在某一层的链表中，那么在该层之下">
+<meta name="twitter:image" content="http://odwv9d2u8.bkt.clouddn.com/17-10-3/32571293.jpg">
 
 
 
@@ -118,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="https://gaoshangs.github.io/categories/技术支撑/网络工程/TCP-IP/"/>
+  <link rel="canonical" href="https://gaoshangs.github.io/2018-02-09-algorithm-skip-list.html"/>
 
 
 
 
 
-  <title>分类: TCP/IP | 高尚的网络日志</title>
+  <title>跳跃表算法 | 高尚的网络日志</title>
   
 
 
@@ -153,7 +158,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-right ">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -281,55 +286,197 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>TCP/IP<small>分类</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://gaoshangs.github.io/2018-02-09-algorithm-skip-list.html">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Gason Wong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="高尚的网络日志">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018-01-31-tcp_ip_point.html" itemprop="url">
-              
-                <span itemprop="name">TCP/IP知识点</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">跳跃表算法</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-31T10:42:00+08:00"
-              content="2018-01-31" >
-          01-31
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-09T01:25:00+08:00">
+                2018-02-09
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018-02-09-algorithm-skip-list.html" class="leancloud_visitors" data-flag-title="跳跃表算法">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="跳跃表-skip-list-算法"><a href="#跳跃表-skip-list-算法" class="headerlink" title="跳跃表(skip-list)算法"></a>跳跃表(skip-list)算法</h2><blockquote>
+<p> 它允许快速查询一个有序连续元素的数据链表，它的效率可以做到和二分相同，都是O(logn)的平均时间复杂度，其空间复杂度为O(n)</p>
+</blockquote>
+<h3 id="跳跃表的性质"><a href="#跳跃表的性质" class="headerlink" title="跳跃表的性质"></a>跳跃表的性质</h3><ol>
+<li>由很多层结构组成；</li>
+<li>每一层都是一个有序的链表，排列顺序为由高层到底层，都至少包含两个链表节点，分别是前面的head节点和后面的nil节点；</li>
+<li>最底层的链表包含了所有的元素</li>
+<li>如果一个元素出现在某一层的链表中，那么在该层之下的链表也全都会出现（上一层的元素是当前层的元素的子集）</li>
+<li>链表中的每个节点都包含两个指针，一个指向同一层的下一个链表节点，另一个指向下一层的同一个链表节点</li>
+</ol>
+<p><img src="http://odwv9d2u8.bkt.clouddn.com/17-10-3/32571293.jpg" alt=""></p>
+<h3 id="层数如何确定"><a href="#层数如何确定" class="headerlink" title="层数如何确定"></a>层数如何确定</h3><p>跳跃表的层数跟结构中最高节点的高度相同。理想情况下，跳跃表结构中第一层中存在所有的节点，第二层只有一半的节点，而且是均匀间隔，第三层则存在1/4的节点，并且是均匀间隔的，以此类推，这样理想的层数就是logN。</p>
+<h3 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h3><p>其基本原理就是从<strong>最高层的链表节点</strong>开始，如果比当前节点要大和比当前层的下一个节点要小，那么则往下找，也就是和当前层的下一层的节点的下一个节点进行比较，以此类推，一直找到最底层的最后一个节点，如果找到则返回，反之则返回空。</p>
+<p><img src="http://odwv9d2u8.bkt.clouddn.com/17-10-3/6620991.jpg" alt=""></p>
+<p>ps:遇到37后同一层的下一个节点为边界节点，所以只能往下一层比较继续查找了</p>
+<h3 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h3><p>首先需要<strong>确定插入的层数</strong>（使用掷硬币的方法，正面累加，反面停止）,当确定好要插入的层数以后，则需要将元素都插入到从最底层到第k层</p>
+<h3 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h3><p>在各个层中找到包含指定值的节点，然后将节点从链表中删除即可，如果删除以后只剩下头尾两个节点，则删除这一层。</p>
+<p>参考：<a href="https://www.cnblogs.com/George1994/p/7635731.html" target="_blank" rel="noopener">跳跃表原理和实现</a></p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Gason Wong
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://gaoshangs.github.io/2018-02-09-algorithm-skip-list.html" title="跳跃表算法">https://gaoshangs.github.io/2018-02-09-algorithm-skip-list.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/算法/" rel="tag"># 算法</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018-02-09-redis-memecached-diff.html" rel="next" title="redis和memcached的区别">
+                <i class="fa fa-chevron-left"></i> redis和memcached的区别
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018-02-09-http.html" rel="prev" title="http协议详解">
+                http协议详解 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -337,6 +484,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -357,8 +508,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -445,6 +605,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#跳跃表-skip-list-算法"><span class="nav-number">1.</span> <span class="nav-text">跳跃表(skip-list)算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#跳跃表的性质"><span class="nav-number">1.1.</span> <span class="nav-text">跳跃表的性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#层数如何确定"><span class="nav-number">1.2.</span> <span class="nav-text">层数如何确定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#搜索"><span class="nav-number">1.3.</span> <span class="nav-text">搜索</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插入"><span class="nav-number">1.4.</span> <span class="nav-text">插入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除"><span class="nav-number">1.5.</span> <span class="nav-text">删除</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -591,6 +767,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

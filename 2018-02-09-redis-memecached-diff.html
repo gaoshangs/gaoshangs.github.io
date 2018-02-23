@@ -66,7 +66,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="redis,memcached," />
 
 
 
@@ -79,16 +79,26 @@
 
 
 
-<meta name="description" content="当你的才华还撑不起你的野心时，就应该静下心来学习">
-<meta property="og:type" content="website">
-<meta property="og:title" content="高尚的网络日志">
-<meta property="og:url" content="https://gaoshangs.github.io/categories/技术支撑/网络工程/TCP-IP/index.html">
+<meta name="description" content="Redis和Memcached的区别 redis作者对这两种基于内存数据存储系统进行的比较：  Redis支持除key-value之外更多的数据类型 内存使用效率对比：使用简单的key-value存储的话，Memcached的内存利用率更高，而如果Redis采用hash结构来做key-value存储，由于其组合式的压缩，其内存利用率会高于Memcached 性能对比:由于Redis只使用单核，而M">
+<meta name="keywords" content="redis,memcached">
+<meta property="og:type" content="article">
+<meta property="og:title" content="redis和memcached的区别">
+<meta property="og:url" content="https://gaoshangs.github.io/2018-02-09-redis-memecached-diff.html">
 <meta property="og:site_name" content="高尚的网络日志">
-<meta property="og:description" content="当你的才华还撑不起你的野心时，就应该静下心来学习">
+<meta property="og:description" content="Redis和Memcached的区别 redis作者对这两种基于内存数据存储系统进行的比较：  Redis支持除key-value之外更多的数据类型 内存使用效率对比：使用简单的key-value存储的话，Memcached的内存利用率更高，而如果Redis采用hash结构来做key-value存储，由于其组合式的压缩，其内存利用率会高于Memcached 性能对比:由于Redis只使用单核，而M">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://www.biaodianfu.com/wp-content/uploads/2014/01/redisObject.jpg">
+<meta property="og:image" content="https://www.biaodianfu.com/wp-content/uploads/2014/01/hash.jpg">
+<meta property="og:image" content="http://odwv9d2u8.bkt.clouddn.com/17-10-3/32571293.jpg">
+<meta property="og:image" content="http://odwv9d2u8.bkt.clouddn.com/17-10-3/6620991.jpg">
+<meta property="og:image" content="https://www.biaodianfu.com/wp-content/uploads/2014/01/Memcached-node.jpg">
+<meta property="og:image" content="https://www.biaodianfu.com/wp-content/uploads/2014/01/Redis-Cluster.jpg">
+<meta property="og:image" content="https://www.biaodianfu.com/wp-content/uploads/2014/01/Redis-Cluster-2.jpg">
+<meta property="og:updated_time" content="2018-02-23T16:16:03.163Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="高尚的网络日志">
-<meta name="twitter:description" content="当你的才华还撑不起你的野心时，就应该静下心来学习">
+<meta name="twitter:title" content="redis和memcached的区别">
+<meta name="twitter:description" content="Redis和Memcached的区别 redis作者对这两种基于内存数据存储系统进行的比较：  Redis支持除key-value之外更多的数据类型 内存使用效率对比：使用简单的key-value存储的话，Memcached的内存利用率更高，而如果Redis采用hash结构来做key-value存储，由于其组合式的压缩，其内存利用率会高于Memcached 性能对比:由于Redis只使用单核，而M">
+<meta name="twitter:image" content="https://www.biaodianfu.com/wp-content/uploads/2014/01/redisObject.jpg">
 
 
 
@@ -118,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="https://gaoshangs.github.io/categories/技术支撑/网络工程/TCP-IP/"/>
+  <link rel="canonical" href="https://gaoshangs.github.io/2018-02-09-redis-memecached-diff.html"/>
 
 
 
 
 
-  <title>分类: TCP/IP | 高尚的网络日志</title>
+  <title>redis和memcached的区别 | 高尚的网络日志</title>
   
 
 
@@ -153,7 +163,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-right ">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -281,55 +291,283 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>TCP/IP<small>分类</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://gaoshangs.github.io/2018-02-09-redis-memecached-diff.html">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Gason Wong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="高尚的网络日志">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018-01-31-tcp_ip_point.html" itemprop="url">
-              
-                <span itemprop="name">TCP/IP知识点</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">redis和memcached的区别</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-31T10:42:00+08:00"
-              content="2018-01-31" >
-          01-31
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-09T00:32:00+08:00">
+                2018-02-09
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018-02-09-redis-memecached-diff.html" class="leancloud_visitors" data-flag-title="redis和memcached的区别">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Redis和Memcached的区别"><a href="#Redis和Memcached的区别" class="headerlink" title="Redis和Memcached的区别"></a>Redis和Memcached的区别</h2><blockquote>
+<p>redis作者对这两种基于内存数据存储系统进行的比较：</p>
+<ol>
+<li><strong>Redis支持除key-value之外更多的数据类型</strong></li>
+<li><strong>内存使用效率对比</strong>：使用简单的key-value存储的话，Memcached的内存利用率更高，而如果Redis采用hash结构来做key-value存储，由于其组合式的压缩，其内存利用率会高于Memcached</li>
+<li><strong>性能对比</strong>:由于Redis只使用单核，而Memcached可以使用多核，所以平均每一个核上Redis在存储小数据时比Memcached性能更高。而在100k以上的数据中，Memcached性能要高于Redis。结论是，无论你使用哪一个，每秒处理请求的次数都不会成为瓶颈。（比如瓶颈可能会在网卡）</li>
+<li><strong>数据持久化和同步</strong>:memcache不支持，redis支持</li>
+<li><strong>网络IO模型方面：</strong>Memcached是多线程，分为监听线程、worker线程，引入锁，带来了性能损耗。Redis使用单线程的IO复用模型，将速度优势发挥到最大，也提供了较简单的计算功能 </li>
+</ol>
+</blockquote>
+<h3 id="1-数据类型支持不同"><a href="#1-数据类型支持不同" class="headerlink" title="1. 数据类型支持不同"></a>1. 数据类型支持不同</h3><p>与Memcached仅支持简单的key-value结构的数据记录不同，Redis支持的数据类型要丰富得多。<br>最为常用的数据类型主要由五种：<strong>String、Hash、List、Set和Sorted Set</strong>。<br>Redis内部使用一个redisObject对象来表示所有的key和value，主要信息如图：<br><img src="https://www.biaodianfu.com/wp-content/uploads/2014/01/redisObject.jpg" alt="redisObject"></p>
+<h4 id="RedisObject属性"><a href="#RedisObject属性" class="headerlink" title="RedisObject属性"></a>RedisObject属性</h4><ul>
+<li><strong>类型(type)</strong>：代表一个value对象具体是何种数据类型:string, hash, list, set, sorted set</li>
+<li><strong>编码(encoding)</strong>：是不同数据类型在redis内部的存储方式,<br>  比如：type=string代表value存储的是一个普通字符串，那么对应的encoding可以是raw或者是int，<br>  如果是int则代表实际redis内部是按数值型类存储和表示这个字符串的，<br>  当然前提是这个字符串本身可以用数值表示，比如:”123″ “456”这样的字符串。</li>
+<li>数据指针(ptr)：</li>
+<li>虚拟内存(vm)：只有打开了Redis的虚拟内存功能，vm字段字段才会真正的分配内存，该功能默认是关闭状态的</li>
+<li>其他(other)</li>
+</ul>
+<h4 id="常用数据类型"><a href="#常用数据类型" class="headerlink" title="常用数据类型"></a>常用数据类型</h4><h5 id="1-String"><a href="#1-String" class="headerlink" title="1. String"></a>1. String</h5><ul>
+<li>常用命令：set/get/decr/incr/mget等；</li>
+<li>应用场景：String是最常用的一种数据类型，普通的key/value存储都可以归为此类；</li>
+<li>实现方式：<strong>String在redis内部存储默认就是一个字符串</strong>，被redisObject所引用<strong>，当遇到incr、decr等操作时会转成数值型进行计算，此时redisObject的encoding字段为int</strong>。</li>
+</ul>
+<h5 id="2-Hash"><a href="#2-Hash" class="headerlink" title="2. Hash"></a>2. Hash</h5><ul>
+<li><p>常用命令：hget/hset/hgetall等</p>
+</li>
+<li><p>应用场景：我们要存储一个用户信息对象数据，其中包括用户ID、用户姓名、年龄和生日，通过用户ID我们希望获取该用户的姓名或者年龄或者生日；</p>
+</li>
+<li><p>实现方式：Redis的Hash实际是内部存储的Value为一个<strong>HashMap</strong>，<strong>并提供了直接存取这个Map成员的接口</strong>。如图所示，Key是用户ID, value是一个Map。这个Map的key是成员的属性名，value是属性值。这样对数据的修改和存取都可以直接通过其内部Map的Key(Redis里称内部Map的key为field), 也就是通过 key(用户ID) + field(属性标签) 就可以操作对应属性数据。</p>
+</li>
+<li><p>当前HashMap的实现有两种方式：<strong>当HashMap的成员比较少时Redis为了节省内存会采用类似一维数组的方式来紧凑存储，而不会采用真正的HashMap结构</strong>，<strong>这时对应的value的redisObject的encoding为zipmap</strong>，<strong>当成员数量增大时会自动转成真正的HashMap,此时encoding为ht</strong>。</p>
+<p><img src="https://www.biaodianfu.com/wp-content/uploads/2014/01/hash.jpg" alt=""></p>
+</li>
+</ul>
+<h5 id="3-List"><a href="#3-List" class="headerlink" title="3. List"></a>3. List</h5><ul>
+<li>常用命令：lpush/rpush/lpop/rpop/lrange等；</li>
+<li>应用场景：Redis list的应用场景非常多，也是Redis最重要的数据结构之一，比如twitter的关注列表，粉丝列表等都可以用Redis的list结构来实现；</li>
+<li>实现方式：<strong>Redis list的实现为一个双向链表，即可以支持反向查找和遍历，更方便操作</strong>，不过带来了部分额外的内存开销，Redis内部的很多实现，包括发送缓冲队列等也都是用的这个数据结构。</li>
+</ul>
+<h5 id="4-Set"><a href="#4-Set" class="headerlink" title="4. Set"></a>4. Set</h5><ul>
+<li>常用命令：sadd/spop/smembers/sunion等；</li>
+<li>应用场景：Redis set对外提供的功能与list类似是一个列表的功能，<strong>特殊之处在于set是可以自动排重的</strong>，当你需要存储一个列表数据，又不希望出现重复数据时，set是一个很好的选择，并且<strong>set提供了判断某个成员是否在一个set集合内的重要接口</strong>，这个也是list所不能提供的；</li>
+<li>实现方式：<strong>set 的内部实现是一个 value永远为null的HashMap</strong>，实际就是<strong>通过计算hash的方式来快速排重的</strong>，这也是<strong>set能提供判断一个成员是否在集合内的原因</strong>。</li>
+</ul>
+<h5 id="5-Sorted-Set"><a href="#5-Sorted-Set" class="headerlink" title="5. Sorted Set"></a>5. Sorted Set</h5><ul>
+<li>常用命令：zadd/zrange/zrem/zcard等；</li>
+<li>应用场景：Redis sorted set的使用场景与set类似，区别是set不是自动有序的，<strong>而sorted set可以通过用户额外提供一个优先级(score)的参数来为成员排序，并且是插入有序的，即自动排序</strong>。当你需要一个有序的并且不重复的集合列表，那么可以选择sorted set数据结构，比如twitter 的public timeline可以以发表时间作为score来存储，这样获取时就是自动按时间排好序的。</li>
+<li>实现方式：<strong>Redis sorted set的内部使用HashMap和跳跃表(SkipList)来保证数据的存储和有序</strong>，<strong>HashMap里放的是成员到score的映射</strong>，而<strong>跳跃表里存放的是所有的成员，排序依据是HashMap里存的score,使用跳跃表的结构可以获得比较高的查找效率，并且在实现上比较简单</strong>。</li>
+</ul>
+<h5 id="扩展知识：跳跃表"><a href="#扩展知识：跳跃表" class="headerlink" title="扩展知识：跳跃表"></a>扩展知识：跳跃表</h5><p><strong>跳跃表的性质</strong></p>
+<ol>
+<li>由很多层结构组成；</li>
+<li>每一层都是一个有序的链表，排列顺序为由高层到底层，都至少包含两个链表节点，分别是前面的head节点和后面的nil节点；</li>
+<li>最底层的链表包含了所有的元素</li>
+</ol>
+<p><img src="http://odwv9d2u8.bkt.clouddn.com/17-10-3/32571293.jpg" alt=""></p>
+<p><strong>搜索</strong></p>
+<p>其基本原理就是从<strong>最高层的链表节点</strong>开始，如果比当前节点要大和比当前层的下一个节点要小，那么则往下找，也就是和当前层的下一层的节点的下一个节点进行比较，以此类推，一直找到最底层的最后一个节点，如果找到则返回，反之则返回空。</p>
+<p><img src="http://odwv9d2u8.bkt.clouddn.com/17-10-3/6620991.jpg" alt=""></p>
+<p>ps:遇到37后同一层的下一个节点为边界节点，所以只能往下一层比较继续查找了</p>
+<p>参考：<a href="https://www.cnblogs.com/George1994/p/7635731.html" target="_blank" rel="noopener">跳跃表原理和实现</a></p>
+<h3 id="2-内存管理机制不同"><a href="#2-内存管理机制不同" class="headerlink" title="2. 内存管理机制不同"></a>2. 内存管理机制不同</h3><h3 id="3-数据持久化支持"><a href="#3-数据持久化支持" class="headerlink" title="3. 数据持久化支持"></a>3. 数据持久化支持</h3><p>Redis虽然是基于内存的存储系统，但是它本身是支持内存数据的持久化的，而且提供两种主要的持久化策略：RDB快照和AOF日志。而memcached是不支持数据持久化操作的</p>
+<h3 id="4-集群管理的不同"><a href="#4-集群管理的不同" class="headerlink" title="4. 集群管理的不同"></a>4. 集群管理的不同</h3><p>Memcached是全内存的数据缓冲系统，Redis虽然支持数据的持久化，但是全内存毕竟才是其高性能的本质</p>
+<ul>
+<li><p>Memcached本身并不支持分布式，因此只能在客户端通过像一致性哈希这样的分布式算法来实现Memcached的分布式存储。</p>
+<blockquote>
+<p> 当客户端向Memcached集群发送数据之前，首先会通过内置的分布式算法计算出该条数据的目标节点，然后数据会直接发送到该节点上存储。但客户端查询数据时，同样要计算出查询数据所在的节点，然后直接向该节点发送查询请求以获取数据。</p>
+</blockquote>
+</li>
+</ul>
+<p><img src="https://www.biaodianfu.com/wp-content/uploads/2014/01/Memcached-node.jpg" alt=""></p>
+<ul>
+<li><p>Redis Cluster是一个实现了分布式且允许单点故障的Redis高级版本，它没有中心节点，具有线性可伸缩的功能。</p>
+<blockquote>
+<p>相较于Memcached只能采用客户端实现分布式存储，Redis更偏向于在服务器端构建分布式存储。<br>最新版本的Redis已经支持了分布式存储功能。</p>
+</blockquote>
+<p><img src="https://www.biaodianfu.com/wp-content/uploads/2014/01/Redis-Cluster.jpg" alt=""></p>
+</li>
+</ul>
+<p>下图给出Redis Cluster的分布式存储架构，其中节点与节点之间通过二进制协议进行通信，节点与客户端之间通过ascii协议进行通信。在数据的放置策略上，Redis Cluster将整个key的数值域分成4096个哈希槽，每个节点上可以存储一个或多个哈希槽，也就是说当前Redis Cluster支持的最大节点数就是4096。Redis Cluster使用的分布式算法也很简单：crc16( key ) % HASH_SLOTS_NUMBER</p>
+<ul>
+<li><p>Redis Cluster引入了Master节点和Slave节点</p>
+<blockquote>
+<p>为了保证单点故障下的数据可用性，Redis Cluster引入了Master节点和Slave节点。在Redis Cluster中，每个Master节点都会有对应的两个用于冗余的Slave节点。这样在整个集群中，任意两个节点的宕机都不会导致数据的不可用。当Master节点退出后，集群会自动选择一个Slave节点成为新的Master节点</p>
+</blockquote>
+</li>
+</ul>
+<p><img src="https://www.biaodianfu.com/wp-content/uploads/2014/01/Redis-Cluster-2.jpg" alt=""></p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ul>
+<li><a href="http://blog.csdn.net/hguisu/article/details/8836819" target="_blank" rel="noopener">Redis原理和应用场景</a></li>
+<li><a href="https://www.biaodianfu.com/redis-vs-memcached.html" target="_blank" rel="noopener">Redis和Memcached的区别</a></li>
+</ul>
+<h2 id="Redis-Cluster"><a href="#Redis-Cluster" class="headerlink" title="Redis Cluster"></a>Redis Cluster</h2><p>redis集群的几种实现方式如下：</p>
+<ul>
+<li>客户端分片，如redis的Java客户端jedis也是支持的，使用一致性hash</li>
+<li>基于代理的分片，如codis和Twemproxy</li>
+<li>路由查询， redis-cluster</li>
+</ul>
+<p>参考：</p>
+<ul>
+<li><a href="http://blueskykong.com/2018/01/09/rediscluster2/" target="_blank" rel="noopener">Redis Cluster深入与实践</a></li>
+</ul>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Gason Wong
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://gaoshangs.github.io/2018-02-09-redis-memecached-diff.html" title="redis和memcached的区别">https://gaoshangs.github.io/2018-02-09-redis-memecached-diff.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/redis/" rel="tag"># redis</a>
+          
+            <a href="/tags/memcached/" rel="tag"># memcached</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018-02-08-algorithm-consistent-hashing.html" rel="next" title="一致性hash算法和应用">
+                <i class="fa fa-chevron-left"></i> 一致性hash算法和应用
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018-02-09-algorithm-skip-list.html" rel="prev" title="跳跃表算法">
+                跳跃表算法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -337,6 +575,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -357,8 +599,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -445,6 +696,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Redis和Memcached的区别"><span class="nav-number">1.</span> <span class="nav-text">Redis和Memcached的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-数据类型支持不同"><span class="nav-number">1.1.</span> <span class="nav-text">1. 数据类型支持不同</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#RedisObject属性"><span class="nav-number">1.1.1.</span> <span class="nav-text">RedisObject属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常用数据类型"><span class="nav-number">1.1.2.</span> <span class="nav-text">常用数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-String"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">1. String</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-Hash"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">2. Hash</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-List"><span class="nav-number">1.1.2.3.</span> <span class="nav-text">3. List</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-Set"><span class="nav-number">1.1.2.4.</span> <span class="nav-text">4. Set</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-Sorted-Set"><span class="nav-number">1.1.2.5.</span> <span class="nav-text">5. Sorted Set</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#扩展知识：跳跃表"><span class="nav-number">1.1.2.6.</span> <span class="nav-text">扩展知识：跳跃表</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-内存管理机制不同"><span class="nav-number">1.2.</span> <span class="nav-text">2. 内存管理机制不同</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-数据持久化支持"><span class="nav-number">1.3.</span> <span class="nav-text">3. 数据持久化支持</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-集群管理的不同"><span class="nav-number">1.4.</span> <span class="nav-text">4. 集群管理的不同</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">1.5.</span> <span class="nav-text">参考</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Redis-Cluster"><span class="nav-number">2.</span> <span class="nav-text">Redis Cluster</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -591,6 +858,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

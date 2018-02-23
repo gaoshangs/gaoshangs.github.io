@@ -2,10 +2,8 @@
 
 
 
-  
 
-
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next pisces" lang="zh-Hans">
 <head>
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -68,7 +66,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="面试,一致性哈希," />
 
 
 
@@ -81,17 +79,22 @@
 
 
 
-<meta name="description" content="当你的才华还撑不起你的野心时，就应该静下心来学习">
+<meta name="description" content="归并排序算法原理算法思路 时间复杂度：O(nlogn)    把 n 个记录看成 n 个长度为 l 的有序子表 进行两两归并使记录关键字有序，得到 n/2 个长度为 2 的有序子表 重复第 2 步直到所有记录归并成一个长度为 n 的有序表为止。  实例两个正序数组，如[3 4 7 9], [2  6  8] 如何合并成一个正序数组假设：序列A：3 4 7 9序列B：2  6  8序列C：空合并思路">
+<meta name="keywords" content="面试,一致性哈希">
 <meta property="og:type" content="article">
-<meta property="og:title" content="NoSQL数据库知识点">
-<meta property="og:url" content="https://gaoshangs.github.io/2018-02-05-nosql-db.html">
+<meta property="og:title" content="PHP面试题汇总(三)">
+<meta property="og:url" content="https://gaoshangs.github.io/2018-02-09-php-Interview-question-3.html">
 <meta property="og:site_name" content="高尚的网络日志">
-<meta property="og:description" content="当你的才华还撑不起你的野心时，就应该静下心来学习">
+<meta property="og:description" content="归并排序算法原理算法思路 时间复杂度：O(nlogn)    把 n 个记录看成 n 个长度为 l 的有序子表 进行两两归并使记录关键字有序，得到 n/2 个长度为 2 的有序子表 重复第 2 步直到所有记录归并成一个长度为 n 的有序表为止。  实例两个正序数组，如[3 4 7 9], [2  6  8] 如何合并成一个正序数组假设：序列A：3 4 7 9序列B：2  6  8序列C：空合并思路">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-05T11:52:59.337Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2836699-761c7ac38078a2e5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/425">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2836699-cdb684dc8afcafbe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/572">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2836699-99c54dadceb7f18b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/572">
+<meta property="og:updated_time" content="2018-02-23T16:10:00.585Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="NoSQL数据库知识点">
-<meta name="twitter:description" content="当你的才华还撑不起你的野心时，就应该静下心来学习">
+<meta name="twitter:title" content="PHP面试题汇总(三)">
+<meta name="twitter:description" content="归并排序算法原理算法思路 时间复杂度：O(nlogn)    把 n 个记录看成 n 个长度为 l 的有序子表 进行两两归并使记录关键字有序，得到 n/2 个长度为 2 的有序子表 重复第 2 步直到所有记录归并成一个长度为 n 的有序表为止。  实例两个正序数组，如[3 4 7 9], [2  6  8] 如何合并成一个正序数组假设：序列A：3 4 7 9序列B：2  6  8序列C：空合并思路">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/2836699-761c7ac38078a2e5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/425">
 
 
 
@@ -104,7 +107,7 @@
     sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
       userId: '0',
       author: '博主'
@@ -121,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="https://gaoshangs.github.io/2018-02-05-nosql-db.html"/>
+  <link rel="canonical" href="https://gaoshangs.github.io/2018-02-09-php-Interview-question-3.html"/>
 
 
 
 
 
-  <title>NoSQL数据库知识点 | 高尚的网络日志</title>
+  <title>PHP面试题汇总(三) | 高尚的网络日志</title>
   
 
 
@@ -298,7 +301,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gaoshangs.github.io/2018-02-05-nosql-db.html">
+    <link itemprop="mainEntityOfPage" href="https://gaoshangs.github.io/2018-02-09-php-Interview-question-3.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Gason Wong">
@@ -315,7 +318,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">NoSQL数据库知识点</h1>
+          <h1 class="post-title" itemprop="name headline">PHP面试题汇总(三)</h1>
         
 
         <div class="post-meta">
@@ -327,8 +330,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-05T19:51:00+08:00">
-                2018-02-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-09T10:40:00+08:00">
+                2018-02-09
               </time>
             
 
@@ -345,7 +348,7 @@
 
           
           
-             <span id="/2018-02-05-nosql-db.html" class="leancloud_visitors" data-flag-title="NoSQL数据库知识点">
+             <span id="/2018-02-09-php-Interview-question-3.html" class="leancloud_visitors" data-flag-title="PHP面试题汇总(三)">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -376,7 +379,142 @@
       
 
       
-        
+        <h2 id="归并排序算法原理"><a href="#归并排序算法原理" class="headerlink" title="归并排序算法原理"></a>归并排序算法原理</h2><h3 id="算法思路"><a href="#算法思路" class="headerlink" title="算法思路"></a>算法思路</h3><blockquote>
+<p>时间复杂度：O(nlogn) </p>
+</blockquote>
+<ol>
+<li>把 n 个记录看成 n 个长度为 l 的有序子表</li>
+<li>进行两两归并使记录关键字有序，得到 n/2 个长度为 2 的有序子表</li>
+<li>重复第 2 步直到所有记录归并成一个长度为 n 的有序表为止。</li>
+</ol>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>两个正序数组，如[3 4 7 9], [2  6  8] 如何合并成一个正序数组<br>假设：<br>序列A：3 4 7 9<br>序列B：2  6  8<br>序列C：空<br>合并思路是：先申请一个序列，将指针分别指向3和2，这时候进行比较，3大于2，所以把2放到序列C，序列B指针后移到6，这时候序列A的3小于6，把3放到序列C，A序列指针后移<br>4小于序列B的6，把4放到序列C，依次类推。。。直到最后只剩下序列A中的9，把9合并到序列C，完成归并排序</p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ul>
+<li><a href="https://gaoshangs.github.io/2018-02-07-algorithm-merging-sorting.html">归并排序算法</a></li>
+</ul>
+<h2 id="一致性HASH原理和应用"><a href="#一致性HASH原理和应用" class="headerlink" title="一致性HASH原理和应用"></a>一致性HASH原理和应用</h2><blockquote>
+<p>问题：单机redis20G如何承载500G的cache（考虑redis集群应用）</p>
+</blockquote>
+<h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><p>如何对<strong>请求与缓存服务器之间进行精准映射,以及优雅的扩展，剔除缓存服务器</strong>，提升缓存服务的容错性和扩展性</p>
+<h3 id="算法概述"><a href="#算法概述" class="headerlink" title="算法概述"></a>算法概述</h3><p>一致性哈希将整个哈希空间组织成一个虚拟的圆环，假如整个哈希函数的值空间为0 - 2^32 -1(一个32位的无符号整形)，如下图:整个空间按顺时针方向组织,0和232-1在零点中方向重合</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/2836699-761c7ac38078a2e5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/425" alt="一致性HASH闭环"></p>
+<p><strong>第一步：在哈希闭环中确定各台服务器位置</strong></p>
+<p>将各台服务器的ip或主机名为关键字通过H函数得到一个哈希值，然后在哈希闭环中标注位置。如下图3台redis服务：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/2836699-cdb684dc8afcafbe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/572" alt=""></p>
+<p><strong>第二步：定位数据访问的服务器</strong></p>
+<p>将数据key使用相同的函数H计算出哈希值h，通根据h确定此数据在环上的位置，<strong>从此位置沿环顺时针“行走”</strong>，第一台遇到的服务器就是其应该定位到的服务器</p>
+<p>例如我们缓存服务器中有A、B、C、D四个key对应的数据对象，经过哈希计算后，在环空间上的位置如下：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/2836699-99c54dadceb7f18b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/572" alt="一致性hash函数值空间"></p>
+<h3 id="参考-1"><a href="#参考-1" class="headerlink" title="参考"></a>参考</h3><ul>
+<li><a href="https://gaoshangs.github.io/2018-02-08-algorithm-consistent-hashing.html">一致性hash算法和应用</a></li>
+<li><a href="http://blueskykong.com/2018/01/09/rediscluster2/" target="_blank" rel="noopener">Redis Cluster深入与实践</a></li>
+</ul>
+<h2 id="MySQL索引知识点"><a href="#MySQL索引知识点" class="headerlink" title="MySQL索引知识点"></a>MySQL索引知识点</h2><h3 id="索引类型"><a href="#索引类型" class="headerlink" title="索引类型"></a>索引类型</h3><p><strong>1. 从数据结构角度</strong></p>
+<ul>
+<li>B+树索引(O(nlogn))</li>
+<li>hash索引：检索效率最高，仅能使用”=”,”IN”和”&lt;=&gt;”查询，不能使用范围查询和排序<br><strong>2. 从物理存储角度</strong></li>
+<li>聚簇索引</li>
+<li>非聚簇索引</li>
+</ul>
+<p><strong>3. 从逻辑角度</strong></p>
+<ul>
+<li>主键索引</li>
+<li>普通索引</li>
+<li>复合索引</li>
+<li>唯一索引</li>
+</ul>
+<h3 id="InnoDB-B-Tree索引原理"><a href="#InnoDB-B-Tree索引原理" class="headerlink" title="InnoDB B+Tree索引原理"></a>InnoDB B+Tree索引原理</h3><p><strong>1. B+Tree数据结构</strong></p>
+<ul>
+<li>所有非叶子结点至多拥有两个儿子, 非叶子结点的左指针指向小于其关键字，右指针指向大于其关键字 </li>
+<li>所有关键字都出现在叶子结点的链表中（稠密索引），且链表中的指针自小而大顺序连接</li>
+<li>非叶子结点相当于是叶子结点的索引（稀疏索引），叶子结点相当于是存储（关键字）数据的数据层；</li>
+</ul>
+<p><strong>2. InnoDB数据页结构</strong></p>
+<ul>
+<li>页是InnoDB存储引擎管理数据库的最小磁盘单位(16K)</li>
+<li>叶子节点(页与页之间)是双向链表串起来的,头连上一页的尾，尾连下一页的头</li>
+<li>每个数据页中有两个虚拟的行记录，用来限定记录的边界</li>
+<li>页目录(Page Directory)通过顺序排放的 <strong>记录指针(也叫槽)</strong> 存放了记录的相对位置，通过这些槽找到具体的数据位置</li>
+</ul>
+<p><strong>3. 查询B+树索引的流程</strong><br>首先通过B+树索引找到叶节点，再找到对应的数据页，然后将数据页加载到内存中，通过二分查找页目录中的指针，查找出一个链表,然后就可以遍历这个链表找到具体的数据。</p>
+<h3 id="聚簇索引和非聚簇索引实现原理和区别"><a href="#聚簇索引和非聚簇索引实现原理和区别" class="headerlink" title="聚簇索引和非聚簇索引实现原理和区别"></a>聚簇索引和非聚簇索引实现原理和区别</h3><p><strong>区别</strong></p>
+<ul>
+<li>聚簇索引一般是为主键索引，一张表只能有一个聚簇索引，B+树的叶子节点存储了行数据和主键。</li>
+<li>非聚簇索引可以有多个，叶节点除了包含关键字键值外还包含聚集索引的主键</li>
+</ul>
+<p><strong>非聚簇索引的查询流程</strong><br>先查到主键值，然后InnoDB再根据查到的主键值通过主键索引找到对应的数据块。</p>
+<h3 id="参考-2"><a href="#参考-2" class="headerlink" title="参考"></a>参考</h3><ul>
+<li><a href="https://gaoshangs.github.io/2018-02-07-mysql-innodb-index.html">MySQL InnoDB索引底层原理详解</a></li>
+</ul>
+<h2 id="Redis和Memcached的区别"><a href="#Redis和Memcached的区别" class="headerlink" title="Redis和Memcached的区别"></a>Redis和Memcached的区别</h2><ol>
+<li><strong>Redis支持除key-value之外更多的数据类型</strong></li>
+<li><strong>内存使用效率对比</strong>：使用简单的key-value存储的话，Memcached的内存利用率更高，而如果Redis采用hash结构来做key-value存储，由于其组合式的压缩，其内存利用率会高于Memcached</li>
+<li><strong>性能对比</strong>:由于Redis只使用单核，而Memcached可以使用多核，所以平均每一个核上Redis在存储小数据时比Memcached性能更高。而在100k以上的数据中，Memcached性能要高于Redis。结论是，无论你使用哪一个，每秒处理请求的次数都不会成为瓶颈。（比如瓶颈可能会在网卡）</li>
+<li><strong>数据持久化和同步</strong>:memcache不支持，redis支持</li>
+<li><strong>网络IO模型方面：</strong>Memcached是多线程，分为监听线程、worker线程，引入锁，带来了性能损耗。Redis使用单线程的IO复用模型，将速度优势发挥到最大，也提供了较简单的计算功能</li>
+<li>集群管理的不同:memcached只能通过分布式算法来实现Memcached的分布式存储，redis 高级版本redis Cluster在服务端做了支持，并且引入了Master节点和Slave节点，保证单点故障下的数据可用性</li>
+</ol>
+<h3 id="参考-3"><a href="#参考-3" class="headerlink" title="参考"></a>参考</h3><ul>
+<li><a href="https://gaoshangs.github.io/2018-02-09-redis-memecached-diff.html">redis和memcached的区别</a></li>
+</ul>
+<h2 id="进程、线程、协程-轻量级线程-和go中的Goroutine"><a href="#进程、线程、协程-轻量级线程-和go中的Goroutine" class="headerlink" title="进程、线程、协程(轻量级线程)和go中的Goroutine"></a>进程、线程、协程(轻量级线程)和go中的Goroutine</h2><h3 id="进程、线程-和-协程-之间概念的区别"><a href="#进程、线程-和-协程-之间概念的区别" class="headerlink" title="进程、线程 和 协程 之间概念的区别"></a>进程、线程 和 协程 之间概念的区别</h3><blockquote>
+<p>需要区分进程、线程(内核级线程)、协程(用户态的轻量级的线程)三个概念</p>
+</blockquote>
+<ul>
+<li>对于进程、线程，都是有内核进行调度，有CPU时间片的概念，进行抢占式调度（有多种调度算法）</li>
+<li>对于协程(用户态的轻量级的线程)，这是对内核透明的，也就是系统并不知道有协程的存在，是完全由用户自己的程序进行调度的。<br>因为是由用户程序自己控制，那么就很难像抢占式调度那样做到强制的CPU控制权切换到其他进程/线程。<br>通常只能进行协作式调度，需要协程自己主动把控制权转让出去之后，其他协程才能被执行到。<br>ps：所以说协程是不需要进行内核态的切换的。</li>
+</ul>
+<h3 id="goroutine-和协程区别"><a href="#goroutine-和协程区别" class="headerlink" title="goroutine 和协程区别"></a>goroutine 和协程区别</h3><p>本质上，goroutine 就是协程。不同的是，Golang 在 runtime、系统调用等多方面对 goroutine 调度进行了封装和处理，<br>当遇到长时间执行或者进行系统调用时，会主动把当前 goroutine 的CPU转让出去，让其他 goroutine 能被调度并执行，<br><strong>也就是 Golang 从语言层面支持了协程</strong> 。<br>Golang 的一大特色就是从语言层面原生支持协程，在函数或者方法前面加 go关键字就可创建一个协程。</p>
+<h3 id="线程和协程的区别"><a href="#线程和协程的区别" class="headerlink" title="线程和协程的区别?"></a>线程和协程的区别?</h3><p>一旦创建完线程，你就无法决定他什么时候获得时间片，什么时候让出时间片了，你把它交给了内核。<br>而协程编写者可以有：<strong> 一是可控的切换时机</strong> ，<strong> 二是很小的切换代价</strong><br>从操作系统有没有调度权上看，协程就是因为不需要进行内核态的切换，所以会使用它，会有这么个东西。<br>这个定义相对准确：<strong> 协程－用户态的轻量级的线程 </strong></p>
+<h3 id="进程、线程、协程的联系与区别"><a href="#进程、线程、协程的联系与区别" class="headerlink" title="进程、线程、协程的联系与区别"></a>进程、线程、协程的联系与区别</h3><ul>
+<li>进程是系统进行资源分配和调度的独立单位，也就是说不同进程拥有自己独立的堆和栈，既不共享堆也不共享栈</li>
+<li>线程是进程的一个实体，是CPU调度和分配的基本单位，它是比进程更小的能独立运行的基本单位，它拥有<strong>独立的栈</strong>和<strong>共享的堆</strong>。</li>
+<li>协程又称”微线程”，它和线程一样拥有独立的栈和共享的堆。是由<strong>程序员调度的执行单元</strong>，<br>它自带CPU上下文，当一个协程发现自己执行不下去了(比如异步等待网络的数据回来，但是当前还没有数据到),<br>这个时候就可以由这个协程通知调度器，这个时候执行到调度器的代码，调度器根据事先设计好的调度算法找到当前最需要CPU的协程</li>
+</ul>
+<h3 id="区别和优缺点"><a href="#区别和优缺点" class="headerlink" title="区别和优缺点"></a>区别和优缺点</h3><ol>
+<li>一个程序至少拥有一个进程，一个进程至少拥有一个线程（主线程）</li>
+<li>进程在执行过程中拥有独立的内存单元，而多个线程共享内存，从而极大地提高了程序的运行效率</li>
+<li>协程、线程不能够独立执行，必须依存在进程中，应当使用互斥锁机制来加以控制</li>
+<li>进程之间可以通过MQ来传递数据，而线程、协程之间的全局变量是共享的</li>
+<li>进程和线程都是由操作系统调度的，而协程的调度是用户(程序员)控制的</li>
+<li>在IO操作密集型的程序使用协程可以很好的避免CPU的浪费，将CPU的资源主动让出给其他协程使用。<br>操作系统为了程序运行的高效性每个线程都有自己缓存Cache等等数据，操作系统还会帮你做这些数据的恢复操作。<br>所以线程的切换非常耗性能。但是协程的切换只是单纯的操作CPU的上下文，所以一秒钟切换个上百万次系统都抗的住</li>
+</ol>
+<h3 id="内存分配中的堆与栈"><a href="#内存分配中的堆与栈" class="headerlink" title="内存分配中的堆与栈"></a>内存分配中的堆与栈</h3><p>程序中用来存放数据的内存分为四块:</p>
+<ol>
+<li>全局区(静态区)（static）:全局变量和静态变量会存放在这里,程序结束时系统会释放这块资源.</li>
+<li>文字常量区：我们定义的常量字符串就放在这块地方,也叫常量池，程序结束时系统会释放这块资源.</li>
+<li>栈区（stack）：<strong>存放函数的参数和局部变量的值</strong> .在进入作用域时分配内存空间，离开时就会释放这部分内存</li>
+<li>堆区（heap） ： <strong>一般由程序员分配释放</strong>，若程序员不释放，程序结束时可能由系统回收。<br>由于这个原因，在C和C++中就有能产生大量程序员分配但忘记释放的堆区内存，造成可使用内存越来越少，这个被称之为内存泄露.<br>我们使用new进行实例化后分配的内存就在这部分区域</li>
+</ol>
+<h3 id="并行和并发区别"><a href="#并行和并发区别" class="headerlink" title="并行和并发区别"></a>并行和并发区别</h3><ul>
+<li><strong>并行是指程序的运行状态</strong>，要有两个线程正在执行才能算是Parallelism；要在多核或者多处理器情况下才能做到。</li>
+<li><strong>并发指程序的逻辑结构</strong> ，Concurrency则只要有两个以上线程还在执行过程中即可，不一定是多核处理器</li>
+</ul>
+<h3 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h3><p><a href="http://blog.csdn.net/sinat_29297223/article/details/77943117" target="_blank" rel="noopener">进程、线程、协程的联系与区别</a><br><a href="http://www.cnblogs.com/shenguanpu/archive/2013/05/05/3060616.html" target="_blank" rel="noopener">进程、线程、轻量级进程、协程和go中的Goroutine 那些事儿</a><br><a href="https://www.centos.bz/2017/08/golang-goroutine-intro/" target="_blank" rel="noopener">Golang协程详解</a><br><a href="http://blog.csdn.net/u012331102/article/details/43838157" target="_blank" rel="noopener">内存分配中的堆与栈</a></p>
+<h2 id="TCP-IP协议"><a href="#TCP-IP协议" class="headerlink" title="TCP/IP协议"></a>TCP/IP协议</h2><p>考察：三次握手、四次挥手、为什么需要三次握手？为什么需要2MSL？</p>
+<h3 id="参考-4"><a href="#参考-4" class="headerlink" title="参考"></a>参考</h3><ul>
+<li><a href="https://gaoshangs.github.io/2018-01-31-tcp_ip_point.html">TCP/IP知识点</a></li>
+</ul>
+<h2 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a>HTTP协议</h2><h4 id="关于-Cache-Control-max-age-秒-和-Expires"><a href="#关于-Cache-Control-max-age-秒-和-Expires" class="headerlink" title="关于 Cache-Control: max-age=秒 和 Expires"></a>关于 Cache-Control: max-age=秒 和 Expires</h4><p>Expires = 时间，HTTP 1.0 版本，缓存的截止时间，<strong>允许客户端在这个时间之前不去检查（发请求）</strong><br>max-age = 秒，HTTP 1.1版本，资源在本地缓存多少秒。<br><strong>如果max-age和Expires同时存在，则被Cache-Control的max-age覆盖。</strong></p>
+<p>Expires 的一个缺点就是，返回的到期时间是服务器端的时间，这样存在一个问题，如果客户端的时间与服务器的时间相差很大，那么误差就很大，所以在HTTP 1.1版开始，使用Cache-Control: max-age=秒替代。</p>
+<p><strong>Expires =max-age +   “每次下载时的当前的request时间”</strong></p>
+<p>所以一旦重新下载的页面后，expires就重新计算一次，但last-modified不会变化 </p>
+<h4 id="http-code与缓存层"><a href="#http-code与缓存层" class="headerlink" title="http code与缓存层"></a>http code与缓存层</h4><ul>
+<li>200状态：当浏览器本地没有缓存或下一层失效时或用户点击CTRL+F5，直接去服务器下载最新数据</li>
+<li>304状态：这一层由last-modify/etag控制。当下一层失效或用户点击F5时，浏览器会发送请求给服务器，如果服务端没有变化，则返回304给浏览器<br>  ps:etag是对url进行标记，检测标记是否存在，但是由于分布式系统中各个机器生成的标记不同，所以一般会关闭掉</li>
+<li>200(from cache)：这一层由expires/cache-control控制。<br>  <strong>1. expires(http1.0版有效)是绝对时间。</strong><br>  <strong>2. cache-control(http1.1版本有效)，相对时间，两者都存在时，cache-control覆盖expires</strong>只要没有失效，浏览器只访问自己的缓存</li>
+</ul>
+<h4 id="Last-Modified"><a href="#Last-Modified" class="headerlink" title="Last-Modified"></a>Last-Modified</h4><p>在浏览器第一次请求某一个URL时，服务器端的返回状态会是200，内容是你请求的资源，同时有一个Last-Modified的属性标记(HttpReponse Header)此文件在服务期端最后被修改的时间，格式类似这样：<br><code>Last-Modified:Tue, 24 Feb 2009 08:01:04 GMT</code></p>
+<p>客户端第二次请求此URL时，根据HTTP协议的规定，<strong>浏览器会向服务器传送If-Modified-Since报头(HttpRequest Header)，询问该时间之后文件是否有被修改过</strong>：</p>
+<p><code>If-Modified-Since:Tue, 24 Feb 2009 08:01:04 GMT</code></p>
+<p>如果服务器端的资源没有变化，则自动返回HTTP304（NotChanged.）状态码，内容为空，这样就节省了传输数据量。当服务器端代码发生改变或者重启服务器时，则重新发出资源，返回和第一次请求时类似。从而保证不向客户端重复发出资源，也保证当服务器有变化时，客户端能够得到最新的资源。</p>
+<p>注：如果If-Modified-Since的时间比服务器当前时间(当前的请求时间request_time)还晚，会认为是个非法请求</p>
+<h3 id="HTTP状态码"><a href="#HTTP状态码" class="headerlink" title="HTTP状态码"></a>HTTP状态码</h3><p>200 OK<br>301 永久重定向<br>302 临时重定向<br>304 页面未修改</p>
+<p>400 客户端请求参数有误<br>401 未授权<br>403 拒绝访问<br>404 网页不存在</p>
+<p>500 服务器内部未知错误<br>502 错误的网关<br>503 服务临时不可用<br>504 网关超时</p>
+<h3 id="参考-5"><a href="#参考-5" class="headerlink" title="参考"></a>参考</h3><ul>
+<li><a href="https://gaoshangs.github.io/2018-02-09-http.html">http协议详解</a></li>
+</ul>
+
       
     </div>
     
@@ -396,7 +534,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://gaoshangs.github.io/2018-02-05-nosql-db.html" title="NoSQL数据库知识点">https://gaoshangs.github.io/2018-02-05-nosql-db.html</a>
+    <a href="https://gaoshangs.github.io/2018-02-09-php-Interview-question-3.html" title="PHP面试题汇总(三)">https://gaoshangs.github.io/2018-02-09-php-Interview-question-3.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -409,6 +547,14 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/面试/" rel="tag"># 面试</a>
+          
+            <a href="/tags/一致性哈希/" rel="tag"># 一致性哈希</a>
+          
+        </div>
+      
 
       
       
@@ -418,8 +564,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018-02-05-algorithm-php.html" rel="next" title="常见算法">
-                <i class="fa fa-chevron-left"></i> 常见算法
+              <a href="/2018-02-09-php-interview-question-2.html" rel="next" title="php面试题汇总(二)">
+                <i class="fa fa-chevron-left"></i> php面试题汇总(二)
               </a>
             
           </div>
@@ -428,8 +574,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018-02-05-mysql.html" rel="prev" title="MySQL知识点">
-                MySQL知识点 <i class="fa fa-chevron-right"></i>
+              <a href="/2018-02-09-php-interview-knowledge-point.html" rel="prev" title="PHP面试知识点汇总">
+                PHP面试知识点汇总 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -460,11 +606,6 @@
           
 
   
-    <div class="comments" id="comments">
-      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMzA4OS85NjUw"></div>
-    </div>
-
-  
 
 
 
@@ -487,8 +628,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -507,7 +657,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -529,7 +679,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -575,6 +725,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#归并排序算法原理"><span class="nav-number">1.</span> <span class="nav-text">归并排序算法原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#算法思路"><span class="nav-number">1.1.</span> <span class="nav-text">算法思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例"><span class="nav-number">1.2.</span> <span class="nav-text">实例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">1.3.</span> <span class="nav-text">参考</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一致性HASH原理和应用"><span class="nav-number">2.</span> <span class="nav-text">一致性HASH原理和应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#应用场景"><span class="nav-number">2.1.</span> <span class="nav-text">应用场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法概述"><span class="nav-number">2.2.</span> <span class="nav-text">算法概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考-1"><span class="nav-number">2.3.</span> <span class="nav-text">参考</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL索引知识点"><span class="nav-number">3.</span> <span class="nav-text">MySQL索引知识点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#索引类型"><span class="nav-number">3.1.</span> <span class="nav-text">索引类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#InnoDB-B-Tree索引原理"><span class="nav-number">3.2.</span> <span class="nav-text">InnoDB B+Tree索引原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#聚簇索引和非聚簇索引实现原理和区别"><span class="nav-number">3.3.</span> <span class="nav-text">聚簇索引和非聚簇索引实现原理和区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考-2"><span class="nav-number">3.4.</span> <span class="nav-text">参考</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Redis和Memcached的区别"><span class="nav-number">4.</span> <span class="nav-text">Redis和Memcached的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#参考-3"><span class="nav-number">4.1.</span> <span class="nav-text">参考</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进程、线程、协程-轻量级线程-和go中的Goroutine"><span class="nav-number">5.</span> <span class="nav-text">进程、线程、协程(轻量级线程)和go中的Goroutine</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#进程、线程-和-协程-之间概念的区别"><span class="nav-number">5.1.</span> <span class="nav-text">进程、线程 和 协程 之间概念的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#goroutine-和协程区别"><span class="nav-number">5.2.</span> <span class="nav-text">goroutine 和协程区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线程和协程的区别"><span class="nav-number">5.3.</span> <span class="nav-text">线程和协程的区别?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进程、线程、协程的联系与区别"><span class="nav-number">5.4.</span> <span class="nav-text">进程、线程、协程的联系与区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#区别和优缺点"><span class="nav-number">5.5.</span> <span class="nav-text">区别和优缺点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内存分配中的堆与栈"><span class="nav-number">5.6.</span> <span class="nav-text">内存分配中的堆与栈</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#并行和并发区别"><span class="nav-number">5.7.</span> <span class="nav-text">并行和并发区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考："><span class="nav-number">5.8.</span> <span class="nav-text">参考：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP-IP协议"><span class="nav-number">6.</span> <span class="nav-text">TCP/IP协议</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#参考-4"><span class="nav-number">6.1.</span> <span class="nav-text">参考</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP协议"><span class="nav-number">7.</span> <span class="nav-text">HTTP协议</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#关于-Cache-Control-max-age-秒-和-Expires"><span class="nav-number">7.0.1.</span> <span class="nav-text">关于 Cache-Control: max-age=秒 和 Expires</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#http-code与缓存层"><span class="nav-number">7.0.2.</span> <span class="nav-text">http code与缓存层</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Last-Modified"><span class="nav-number">7.0.3.</span> <span class="nav-text">Last-Modified</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP状态码"><span class="nav-number">7.1.</span> <span class="nav-text">HTTP状态码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考-5"><span class="nav-number">7.2.</span> <span class="nav-text">参考</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -660,8 +826,6 @@
   
 
 
-  
-
 
 
 
@@ -700,11 +864,6 @@
   
   
     <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
   
 
 
@@ -760,17 +919,6 @@
 
 
 
-  
-    <script type="text/javascript">
-      (function(d, s) {
-        var j, e = d.getElementsByTagName(s)[0];
-        if (typeof LivereTower === 'function') { return; }
-        j = d.createElement(s);
-        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-        j.async = true;
-        e.parentNode.insertBefore(j, e);
-      })(document, 'script');
-    </script>
   
 
 

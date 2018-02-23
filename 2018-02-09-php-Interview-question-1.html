@@ -2,10 +2,8 @@
 
 
 
-  
 
-
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next pisces" lang="zh-Hans">
 <head>
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -68,7 +66,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="面试题," />
 
 
 
@@ -81,17 +79,18 @@
 
 
 
-<meta name="description" content="知识点面试知识点总结(持续更新~~) 算法常见算法 PHPPHP面试题汇总一php面试题汇总二Nginx+PHP-fpm运行原理详解2017最新PHP面试题设计模式设计模式面试题 LinuxLinux服务器网站故障分析常用的命令linux网络编程TCP/IP知识点 MySQLMySQL知识点MySQL性能优化总结 NoSQLNoSQL数据库知识点">
+<meta name="description" content="PHP面试题汇总(基础)文章内容主要参考：https://github.com/ycrao/mynotes 1. echo(),print(),print_r()的区别？三者均可以输出信息，但是各有自己的特点：     类型 输出变量个数 输出变量类型 返回值 速度     echo 语言结构 一个或多个 简单类型变量，如int、string 无 最快   print 语言结构 一个 简单类型变量">
+<meta name="keywords" content="面试题">
 <meta property="og:type" content="article">
-<meta property="og:title" content="面试知识点汇总">
-<meta property="og:url" content="https://gaoshangs.github.io/2018-02-07-interview-knowledge-point.html">
+<meta property="og:title" content="PHP面试题汇总(一)">
+<meta property="og:url" content="https://gaoshangs.github.io/2018-02-09-php-Interview-question-1.html">
 <meta property="og:site_name" content="高尚的网络日志">
-<meta property="og:description" content="知识点面试知识点总结(持续更新~~) 算法常见算法 PHPPHP面试题汇总一php面试题汇总二Nginx+PHP-fpm运行原理详解2017最新PHP面试题设计模式设计模式面试题 LinuxLinux服务器网站故障分析常用的命令linux网络编程TCP/IP知识点 MySQLMySQL知识点MySQL性能优化总结 NoSQLNoSQL数据库知识点">
+<meta property="og:description" content="PHP面试题汇总(基础)文章内容主要参考：https://github.com/ycrao/mynotes 1. echo(),print(),print_r()的区别？三者均可以输出信息，但是各有自己的特点：     类型 输出变量个数 输出变量类型 返回值 速度     echo 语言结构 一个或多个 简单类型变量，如int、string 无 最快   print 语言结构 一个 简单类型变量">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-07T06:05:01.561Z">
+<meta property="og:updated_time" content="2018-02-23T16:09:06.293Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="面试知识点汇总">
-<meta name="twitter:description" content="知识点面试知识点总结(持续更新~~) 算法常见算法 PHPPHP面试题汇总一php面试题汇总二Nginx+PHP-fpm运行原理详解2017最新PHP面试题设计模式设计模式面试题 LinuxLinux服务器网站故障分析常用的命令linux网络编程TCP/IP知识点 MySQLMySQL知识点MySQL性能优化总结 NoSQLNoSQL数据库知识点">
+<meta name="twitter:title" content="PHP面试题汇总(一)">
+<meta name="twitter:description" content="PHP面试题汇总(基础)文章内容主要参考：https://github.com/ycrao/mynotes 1. echo(),print(),print_r()的区别？三者均可以输出信息，但是各有自己的特点：     类型 输出变量个数 输出变量类型 返回值 速度     echo 语言结构 一个或多个 简单类型变量，如int、string 无 最快   print 语言结构 一个 简单类型变量">
 
 
 
@@ -104,7 +103,7 @@
     sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
       userId: '0',
       author: '博主'
@@ -121,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://gaoshangs.github.io/2018-02-07-interview-knowledge-point.html"/>
+  <link rel="canonical" href="https://gaoshangs.github.io/2018-02-09-php-Interview-question-1.html"/>
 
 
 
 
 
-  <title>面试知识点汇总 | 高尚的网络日志</title>
+  <title>PHP面试题汇总(一) | 高尚的网络日志</title>
   
 
 
@@ -298,7 +297,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gaoshangs.github.io/2018-02-07-interview-knowledge-point.html">
+    <link itemprop="mainEntityOfPage" href="https://gaoshangs.github.io/2018-02-09-php-Interview-question-1.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Gason Wong">
@@ -315,7 +314,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">面试知识点汇总</h1>
+          <h1 class="post-title" itemprop="name headline">PHP面试题汇总(一)</h1>
         
 
         <div class="post-meta">
@@ -327,8 +326,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-07T01:37:00+08:00">
-                2018-02-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-09T10:36:00+08:00">
+                2018-02-09
               </time>
             
 
@@ -338,6 +337,39 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/软技能/" itemprop="url" rel="index">
+                    <span itemprop="name">软技能</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/软技能/面试/" itemprop="url" rel="index">
+                    <span itemprop="name">面试</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -345,7 +377,7 @@
 
           
           
-             <span id="/2018-02-07-interview-knowledge-point.html" class="leancloud_visitors" data-flag-title="面试知识点汇总">
+             <span id="/2018-02-09-php-Interview-question-1.html" class="leancloud_visitors" data-flag-title="PHP面试题汇总(一)">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -376,12 +408,288 @@
       
 
       
-        <h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><p><a href="https://gaoshangs.github.io/2018-01-15-knowledge-point.html">面试知识点总结(持续更新~~)</a></p>
-<h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p><a href="https://gaoshangs.github.io/2018-02-05-algorithm-php.html">常见算法</a></p>
-<h2 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h2><p><a href="https://gaoshangs.github.io/2018-02-04-php-Interview-question-1.html">PHP面试题汇总一</a><br><a href="https://gaoshangs.github.io/2018-02-04-php-interview-question-2.html">php面试题汇总二</a><br><a href="http://www.cnblogs.com/datang6777/p/6893363.html" target="_blank" rel="noopener">Nginx+PHP-fpm运行原理详解</a><br><a href="http://www.cnblogs.com/datang6777/p/6747764.html" target="_blank" rel="noopener">2017最新PHP面试题</a><br><a href="https://gaoshangs.github.io/2018-02-05-design-pattern.html">设计模式</a><br><a href="https://gaoshangs.github.io/2018-02-06-design-pattern-interview-question.html">设计模式面试题</a></p>
-<h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><p><a href="https://gaoshangs.github.io/2018-02-07-linux-failure-analysis-command.html">Linux服务器网站故障分析常用的命令</a><br><a href="https://gaoshangs.github.io/2018-02-05-linux-network-program.html">linux网络编程</a><br><a href="https://gaoshangs.github.io/2018-01-31-tcp_ip_point.html">TCP/IP知识点</a></p>
-<h2 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h2><p><a href="https://gaoshangs.github.io/2018-02-05-mysql.html">MySQL知识点</a><br><a href="http://www.cnblogs.com/datang6777/p/6888659.html" target="_blank" rel="noopener">MySQL性能优化总结</a></p>
-<h2 id="NoSQL"><a href="#NoSQL" class="headerlink" title="NoSQL"></a>NoSQL</h2><p><a href="https://gaoshangs.github.io/2018-02-05-nosql-db.html">NoSQL数据库知识点</a></p>
+        <h1 id="PHP面试题汇总-基础"><a href="#PHP面试题汇总-基础" class="headerlink" title="PHP面试题汇总(基础)"></a>PHP面试题汇总(基础)</h1><p>文章内容主要参考：<a href="https://github.com/ycrao/mynotes" target="_blank" rel="noopener">https://github.com/ycrao/mynotes</a></p>
+<h2 id="1-echo-print-print-r-的区别？"><a href="#1-echo-print-print-r-的区别？" class="headerlink" title="1. echo(),print(),print_r()的区别？"></a>1. echo(),print(),print_r()的区别？</h2><p>三者均可以输出信息，但是各有自己的特点：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>类型</th>
+<th>输出变量个数</th>
+<th>输出变量类型</th>
+<th>返回值</th>
+<th>速度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>echo</td>
+<td>语言结构</td>
+<td>一个或多个</td>
+<td>简单类型变量，如int、string</td>
+<td>无</td>
+<td>最快</td>
+</tr>
+<tr>
+<td>print</td>
+<td>语言结构</td>
+<td>一个</td>
+<td>简单类型变量，如int、string</td>
+<td>int</td>
+<td>快</td>
+</tr>
+<tr>
+<td>print_r</td>
+<td>函数</td>
+<td>一个</td>
+<td>复杂类型，如数组、对象</td>
+<td>bool</td>
+<td>慢</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-语句include和require的区别是什么"><a href="#2-语句include和require的区别是什么" class="headerlink" title="2. 语句include和require的区别是什么?"></a>2. 语句include和require的区别是什么?</h2><p>在失败的时候：  </p>
+<p><code>include</code> 产生一个 <code>warning</code> ，而 <code>require</code> 直接产生错误中断；  </p>
+<p><code>require</code> 在运行前载入；  </p>
+<p><code>include</code> 在运行时载入；  </p>
+<p><code>require_once</code> 和 <code>include_once</code> 可以避免重复包含同一文件。  </p>
+<h2 id="3-php中传值与传引用有啥区别"><a href="#3-php中传值与传引用有啥区别" class="headerlink" title="3. php中传值与传引用有啥区别?"></a>3. php中传值与传引用有啥区别?</h2><p>&amp;表示传引用；<br>函数中参数传引用会将参数进行改变；<br>一般在输出参数有多个的时候可以考虑使用引用。  </p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$num = <span class="number">10</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">multiply</span><span class="params">(&amp;$num)</span></span>&#123;</span><br><span class="line">    $num = $num * <span class="number">10</span>;</span><br><span class="line">&#125;</span><br><span class="line">multiply($num);</span><br><span class="line"><span class="keyword">echo</span> $num;</span><br></pre></td></tr></table></figure>
+<h2 id="4-下面哪项没有将john添加到users数组中？"><a href="#4-下面哪项没有将john添加到users数组中？" class="headerlink" title="4. 下面哪项没有将john添加到users数组中？"></a>4. 下面哪项没有将john添加到users数组中？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(a) $users[] = &apos;john&apos;;</span><br><span class="line">(b) array_add($users,&apos;john&apos;);</span><br><span class="line">(c) array_push($users,&apos;john&apos;);</span><br><span class="line">(d) $users ||= &apos;john&apos;;</span><br></pre></td></tr></table></figure>
+<p>答案为bd，php 里面无 <code>array_add</code> 函数，d项为语法错误的表达。</p>
+<h2 id="5-HTTP协议中几个状态码的含义。"><a href="#5-HTTP协议中几个状态码的含义。" class="headerlink" title="5. HTTP协议中几个状态码的含义。"></a>5. HTTP协议中几个状态码的含义。</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">200 OK 客户端请求成功</span><br><span class="line">301 Moved Permanently 请求永久重定向</span><br><span class="line">302 Moved Temporarily 请求临时重定向</span><br><span class="line">304 Not Modified 文件未修改，可以直接使用缓存的文件。</span><br><span class="line">400 Bad Request 由于客户端请求有语法错误，不能被服务器所理解。</span><br><span class="line">401 Unauthorized 请求未经授权。这个状态代码必须和WWW-Authenticate报头域一起使用</span><br><span class="line">403 Forbidden 服务器拒绝执行请求，即没有权限</span><br><span class="line">404 Not Found 请求的资源不存在，例如，输入了错误的URL</span><br><span class="line">500 Internal Server Error 服务器发生不可预期的错误，导致无法完成客户端的请求。</span><br><span class="line">502 Bad Gateway 错误的网关，上游服务器错误(如php-fpm挂掉了)</span><br><span class="line">503 Service Unavailable 服务器当前不能够处理客户端的请求，在一段时间之后，服务器可能会恢复正常。</span><br><span class="line">504 Gateway Timeout 网关超时（上游服务器超时）</span><br></pre></td></tr></table></figure>
+<p>参考：<br><a href="http://tool.oschina.net/commons?type=5" target="_blank" rel="noopener">HTTP状态码详解</a><br><a href="https://github.com/zhangyachen/zhangyachen.github.io/issues/89" target="_blank" rel="noopener">502 VS 504</a></p>
+<h2 id="6-写出一些php魔术方法。"><a href="#6-写出一些php魔术方法。" class="headerlink" title="6. 写出一些php魔术方法。"></a>6. 写出一些php魔术方法。</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">__construct() 实例化类时自动调用。</span><br><span class="line">__destruct() 类对象使用结束时自动调用。</span><br><span class="line">__set() 在给未定义的属性赋值的时候调用。</span><br><span class="line">__get() 调用未定义的属性时候调用。</span><br><span class="line">__isset() 使用isset()或empty()函数时候会调用。</span><br><span class="line">__unset() 使用unset()时候会调用。</span><br><span class="line">__sleep() 使用serialize序列化时候调用。</span><br><span class="line">__wakeup() 使用unserialize反序列化的时候调用。</span><br><span class="line">__call() 调用一个不存在的方法的时候调用。</span><br><span class="line">__callStatic()调用一个不存在的静态方法是调用。</span><br><span class="line">__toString() 把对象转换成字符串的时候会调用。比如 echo。</span><br><span class="line">__invoke() 当尝试把对象当方法调用时调用。</span><br><span class="line">__set_state() 当使用var_export()函数时候调用。接受一个数组参数。</span><br><span class="line">__clone() 当使用clone复制一个对象时候调用。</span><br></pre></td></tr></table></figure>
+<h2 id="7-MySQL存储引擎-MyISAM-和-InnoDB-的区别"><a href="#7-MySQL存储引擎-MyISAM-和-InnoDB-的区别" class="headerlink" title="7. MySQL存储引擎 MyISAM 和 InnoDB 的区别"></a>7. MySQL存储引擎 MyISAM 和 InnoDB 的区别</h2><table>
+<thead>
+<tr>
+<th><strong>  </strong></th>
+<th><strong>MyISAM</strong></th>
+<th><strong>InnoDB</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>构成上的区别</strong></td>
+<td>每个MyISAM在磁盘上存储成三个文件。第一个文件的名字以表的名字开始，扩展名指出文件类型。  .frm文件存储表定义。  数据文件的扩展名为.MYD (MYData)。  索引文件的扩展名是.MYI (MYIndex)。</td>
+<td>基于磁盘的资源是InnoDB表空间数据文件(.frm和它的日志文件(.ibd)，InnoDB 表的大小只受限于操作系统文件的大小，一般为 2GB</td>
+</tr>
+<tr>
+<td><strong>事务处理上方面</strong></td>
+<td>MyISAM类型的表强调的是性能，其执行数度比InnoDB类型更快，但是不提供事务支持</td>
+<td>InnoDB提供事务支持事务，外部键（foreign key）等高级数据库功能</td>
+</tr>
+<tr>
+<td><strong>SELECT   UPDATE,INSERT</strong>，<strong>Delete</strong>操作</td>
+<td>如果执行大量的SELECT，MyISAM是更好的选择</td>
+<td><strong>1.</strong>如果你的数据执行大量的<strong>INSERT**</strong>或<strong>**UPDATE</strong>，出于性能方面的考虑，应该使用InnoDB表  <strong>2.DELETE   FROM table</strong>时，InnoDB不会重新建立表，而是一行一行的删除。  <strong>3.LOAD   TABLE FROM MASTER</strong>操作对InnoDB是不起作用的，解决方法是首先把InnoDB表改成MyISAM表，导入数据后再改成InnoDB表，但是对于使用的额外的InnoDB特性（例如外键）的表不适用</td>
+</tr>
+<tr>
+<td><strong>AUTO_INCREMENT</strong>类型的字段</td>
+<td>在MyISAM表中，可以和其他字段一起建立联合索引</td>
+<td>对于AUTO_INCREMENT类型的字段，InnoDB中必须包含只有该字段的索引</td>
+</tr>
+<tr>
+<td><strong>表的具体行数</strong></td>
+<td>select count(<em>) from table,MyISAM只要简单的读出保存好的行数，注意的是，当count(</em>)语句包含   where条件时，两种表的操作是一样的</td>
+<td>InnoDB 中不保存表的具体行数，也就是说，执行select count(*) from table时，InnoDB要扫描一遍整个表来计算有多少行</td>
+</tr>
+<tr>
+<td><strong>锁</strong></td>
+<td>表锁</td>
+<td>提供行锁(locking on row level)，提供与 Oracle 类型一致的不加锁读取(non-locking read in   SELECTs)，另外，InnoDB表的行锁也不是绝对的，如果在执行一个SQL语句时MySQL不能确定要扫描的范围，InnoDB表同样会锁全表， 例如update table set num=1 where name like “%aaa%”</td>
+</tr>
+</tbody>
+</table>
+<h2 id="8-说出一些MySQL优化方法？"><a href="#8-说出一些MySQL优化方法？" class="headerlink" title="8. 说出一些MySQL优化方法？"></a>8. 说出一些MySQL优化方法？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a. 设计良好的数据库结构，允许部分数据冗余，尽量避免join查询，提高效率。</span><br><span class="line">b. 选择合适的表字段数据类型和存储引擎，适当的添加索引。</span><br><span class="line">c. mysql库主从读写分离。</span><br><span class="line">d. 找规律分表，减少单表中的数据量提高查询速度。</span><br><span class="line">e. 添加缓存机制，比如memcached，apc等。</span><br><span class="line">f. 不经常改动的页面，生成静态页面。</span><br><span class="line">g. 书写高效率的SQL。比如 SELECT * FROM TABEL 改为 SELECT field_1, field_2, field_3 FROM TABLE.</span><br></pre></td></tr></table></figure>
+<h2 id="9-下面-r的结果是："><a href="#9-下面-r的结果是：" class="headerlink" title="9. 下面$r的结果是："></a>9. 下面$r的结果是：</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">$a = in_array(<span class="string">'01'</span>, <span class="keyword">array</span>(<span class="string">'1'</span>)); <span class="comment">// true</span></span><br><span class="line">$a1 = in_array(<span class="string">'01'</span>, <span class="keyword">array</span>(<span class="string">'1'</span>), <span class="keyword">true</span>); <span class="comment">// false </span></span><br><span class="line">$b = <span class="string">'01'</span> == <span class="number">1</span>; <span class="comment">// true</span></span><br><span class="line">$b1 = <span class="string">'02'</span> == <span class="number">1</span>; <span class="comment">// false</span></span><br><span class="line">$r = $a == $b</span><br></pre></td></tr></table></figure>
+<p>A true<br>B false  </p>
+<p>答案为A</p>
+<h2 id="10-说下php中empty-和isset-的区别。"><a href="#10-说下php中empty-和isset-的区别。" class="headerlink" title="10. 说下php中empty()和isset()的区别。"></a>10. 说下php中empty()和isset()的区别。</h2><table>
+<thead>
+<tr>
+<th>Expression</th>
+<th><a href="http://php.net/manual/en/function.gettype.php" target="_blank" rel="noopener">gettype()</a></th>
+<th><a href="http://php.net/manual/en/function.empty.php" target="_blank" rel="noopener">empty()</a></th>
+<th><a href="http://php.net/manual/en/function.is-null.php" target="_blank" rel="noopener">is_null()</a></th>
+<th><a href="http://php.net/manual/en/function.isset.php" target="_blank" rel="noopener">isset()</a></th>
+<th><a href="http://php.net/manual/en/language.types.boolean.php" target="_blank" rel="noopener">boolean</a> : <em>if($x)</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>$x = “”;</em></td>
+<td><a href="http://php.net/manual/en/language.types.string.php" target="_blank" rel="noopener">string</a></td>
+<td><strong>TRUE</strong></td>
+<td><strong>FALSE</strong></td>
+<td><strong>TRUE</strong></td>
+<td><strong>FALSE</strong></td>
+</tr>
+<tr>
+<td><em>$x = null;</em></td>
+<td><a href="http://php.net/manual/en/language.types.null.php" target="_blank" rel="noopener">NULL</a></td>
+<td><strong>TRUE</strong></td>
+<td><strong>TRUE</strong></td>
+<td><strong>FALSE</strong></td>
+<td><strong>FALSE</strong></td>
+</tr>
+<tr>
+<td><em>var $x;</em></td>
+<td><a href="http://php.net/manual/en/language.types.null.php" target="_blank" rel="noopener">NULL</a></td>
+<td><strong>TRUE</strong></td>
+<td><strong>TRUE</strong></td>
+<td><strong>FALSE</strong></td>
+<td><strong>FALSE</strong></td>
+</tr>
+<tr>
+<td>$x is undefined</td>
+<td><a href="http://php.net/manual/en/language.types.null.php" target="_blank" rel="noopener">NULL</a></td>
+<td><strong>TRUE</strong></td>
+<td><strong>TRUE</strong></td>
+<td><strong>FALSE</strong></td>
+<td><strong>FALSE</strong></td>
+</tr>
+<tr>
+<td><em>$x = array();</em></td>
+<td><a href="http://php.net/manual/en/language.types.array.php" target="_blank" rel="noopener">array</a></td>
+<td><strong>TRUE</strong></td>
+<td><strong>FALSE</strong></td>
+<td><strong>TRUE</strong></td>
+<td><strong>FALSE</strong></td>
+</tr>
+<tr>
+<td><em>$x = array(‘a’, ‘b’);</em></td>
+<td><a href="http://php.net/manual/en/language.types.array.php" target="_blank" rel="noopener">array</a></td>
+<td><strong>FALSE</strong></td>
+<td><strong>FALSE</strong></td>
+<td><strong>TRUE</strong></td>
+<td><strong>TRUE</strong></td>
+</tr>
+<tr>
+<td><em>$x = false;</em></td>
+<td><a href="http://php.net/manual/en/language.types.boolean.php" target="_blank" rel="noopener">boolean</a></td>
+<td><strong>TRUE</strong></td>
+<td><strong>FALSE</strong></td>
+<td><strong>TRUE</strong></td>
+<td><strong>FALSE</strong></td>
+</tr>
+<tr>
+<td><em>$x = true;</em></td>
+<td><a href="http://php.net/manual/en/language.types.boolean.php" target="_blank" rel="noopener">boolean</a></td>
+<td><strong>FALSE</strong></td>
+<td><strong>FALSE</strong></td>
+<td><strong>TRUE</strong></td>
+<td><strong>TRUE</strong></td>
+</tr>
+<tr>
+<td><em>$x = 1;</em></td>
+<td><a href="http://php.net/manual/en/language.types.integer.php" target="_blank" rel="noopener">integer</a></td>
+<td><strong>FALSE</strong></td>
+<td><strong>FALSE</strong></td>
+<td><strong>TRUE</strong></td>
+<td><strong>TRUE</strong></td>
+</tr>
+<tr>
+<td><em>$x = 42;</em></td>
+<td><a href="http://php.net/manual/en/language.types.integer.php" target="_blank" rel="noopener">integer</a></td>
+<td><strong>FALSE</strong></td>
+<td><strong>FALSE</strong></td>
+<td><strong>TRUE</strong></td>
+<td><strong>TRUE</strong></td>
+</tr>
+<tr>
+<td><em>$x = 0;</em></td>
+<td><a href="http://php.net/manual/en/language.types.integer.php" target="_blank" rel="noopener">integer</a></td>
+<td><strong>TRUE</strong></td>
+<td><strong>FALSE</strong></td>
+<td><strong>TRUE</strong></td>
+<td><strong>FALSE</strong></td>
+</tr>
+<tr>
+<td><em>$x = -1;</em></td>
+<td><a href="http://php.net/manual/en/language.types.integer.php" target="_blank" rel="noopener">integer</a></td>
+<td><strong>FALSE</strong></td>
+<td><strong>FALSE</strong></td>
+<td><strong>TRUE</strong></td>
+<td><strong>TRUE</strong></td>
+</tr>
+<tr>
+<td><em>$x = “1”;</em></td>
+<td><a href="http://php.net/manual/en/language.types.string.php" target="_blank" rel="noopener">string</a></td>
+<td><strong>FALSE</strong></td>
+<td><strong>FALSE</strong></td>
+<td><strong>TRUE</strong></td>
+<td><strong>TRUE</strong></td>
+</tr>
+<tr>
+<td><em>$x = “0”;</em></td>
+<td><a href="http://php.net/manual/en/language.types.string.php" target="_blank" rel="noopener">string</a></td>
+<td><strong>TRUE</strong></td>
+<td><strong>FALSE</strong></td>
+<td><strong>TRUE</strong></td>
+<td><strong>FALSE</strong></td>
+</tr>
+<tr>
+<td><em>$x = “-1”;</em></td>
+<td><a href="http://php.net/manual/en/language.types.string.php" target="_blank" rel="noopener">string</a></td>
+<td><strong>FALSE</strong></td>
+<td><strong>FALSE</strong></td>
+<td><strong>TRUE</strong></td>
+<td><strong>TRUE</strong></td>
+</tr>
+<tr>
+<td><em>$x = “php”;</em></td>
+<td><a href="http://php.net/manual/en/language.types.string.php" target="_blank" rel="noopener">string</a></td>
+<td><strong>FALSE</strong></td>
+<td><strong>FALSE</strong></td>
+<td><strong>TRUE</strong></td>
+<td><strong>TRUE</strong></td>
+</tr>
+<tr>
+<td><em>$x = “true”;</em></td>
+<td><a href="http://php.net/manual/en/language.types.string.php" target="_blank" rel="noopener">string</a></td>
+<td><strong>FALSE</strong></td>
+<td><strong>FALSE</strong></td>
+<td><strong>TRUE</strong></td>
+<td><strong>TRUE</strong></td>
+</tr>
+<tr>
+<td><em>$x = “false”;</em></td>
+<td><a href="http://php.net/manual/en/language.types.string.php" target="_blank" rel="noopener">string</a></td>
+<td><strong>FALSE</strong></td>
+<td><strong>FALSE</strong></td>
+<td><strong>TRUE</strong></td>
+<td><strong>TRUE</strong></td>
+</tr>
+</tbody>
+</table>
+<p>引用：<a href="http://php.net/manual/en/types.comparisons.php" target="_blank" rel="noopener">PHP 类型比较表 </a></p>
+<p><code>isset</code> 用于检测变量是否被设置，使用 <code>isset()</code> 测试一个被设置成 NULL 的变量，将返回 <code>FALSE</code> 。<br><code>empty</code> 如果 <code>var</code> 是非空或非零的值，则 <code>empty()</code> 返回 <code>FALSE</code>。换句话说，<code>&quot;&quot;、0、&quot;0&quot;、NULL、FALSE、array()、var $var;</code> 以及没有任何属性的对象都将被认为是空的，如果 <code>var</code> 为空，则返回 <code>TRUE</code> 。</p>
+<p>如果变量为 <code>0</code> ，则<code>empty()</code>会返回<code>TRUE</code>，<code>isset()</code>会返回<code>TRUE</code>；<br>如果变量为空字符串，则<code>empty()</code>会返回TRUE，<code>isset()</code>会返回<code>TRUE</code>；<br>如果变量未定义，则<code>empty()</code>会返回<code>TRUE</code>，<code>isset()</code>会返回<code>FLASE</code>。</p>
+<p>注意：<code>isset()</code> 只能用于变量，因为传递任何其它参数都将造成解析错误。若想检测常量是否已设置，可使用 <code>defined()</code> 函数。<br>当要 判断一个变量是否已经声明的时候 可以使用 <code>isset</code> 函数；<br>当要 判断一个变量是否已经赋予数据且不为空 可以用 <code>empty</code>函数；<br>当要 判断 一个变量 存在且不为空 先 <code>isset</code> 函数 再用 <code>empty</code> 函数；  </p>
+<h2 id="11-cookie和session的区别、cookie禁用后session还可以用吗？"><a href="#11-cookie和session的区别、cookie禁用后session还可以用吗？" class="headerlink" title="11. cookie和session的区别、cookie禁用后session还可以用吗？"></a>11. cookie和session的区别、cookie禁用后session还可以用吗？</h2><p>工作流程：</p>
+<p>以下以PHP为例：</p>
+<ol>
+<li>你第一次访问网站时，</li>
+<li>服务端脚本中开启了Session<code>session_start();</code>，</li>
+<li>服务器会生成一个不重复的 SESSIONID 的文件<code>session_id();</code>，比如在<code>/var/lib/php/session</code>目录</li>
+<li>并将返回(Response)如下的HTTP头 <code>Set-Cookie:PHPSESSIONID=xxxxxxx</code></li>
+<li>客户端接收到<code>Set-Cookie</code>的头，将<code>PHPSESSIONID</code>写入cookie</li>
+<li>当你第二次访问页面时，所有Cookie会附带的请求头(Request)发送给服务器端</li>
+<li>服务器识别<code>PHPSESSIONID</code>这个cookie，然后去session目录查找对应session文件，</li>
+<li>找到这个session文件后，检查是否过期，如果没有过期，去读取Session文件中的配置；如果已经过期，清空其中的配置</li>
+</ol>
+<p>区别：</p>
+<p>1、cookie就是服务器发放给客户端的一些标识，保存在客户端，让客户端每次请求的时候带上，以区分不同的用户；</p>
+<p>2、session是服务器存放在自己那里的用户相关的数据，用每次用户带来的cookie去提取出来，恢复一个之前访问的历史或者相关环境。</p>
+<p>3、cookie不是很安全，别人可以分析存放在本地的COOKIE并进行COOKIE欺骗 考虑到安全应当使用session。</p>
+<p>4、session会在一定时间内保存在服务器上。当访问增多，会比较占用你服务器的性能考虑到减轻服务器性能方面，应当使用COOKIE。</p>
+<p>5、单个cookie保存的数据不能超过4K，很多浏览器都限制一个站点最多保存20个cookie</p>
+<p>参考：</p>
+<ul>
+<li><a href="https://segmentfault.com/q/1010000007715137" target="_blank" rel="noopener">https://segmentfault.com/q/1010000007715137</a></li>
+<li><a href="http://blog.csdn.net/baidu_31337243/article/details/48954445" target="_blank" rel="noopener">http://blog.csdn.net/baidu_31337243/article/details/48954445</a></li>
+</ul>
 
       
     </div>
@@ -402,7 +710,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://gaoshangs.github.io/2018-02-07-interview-knowledge-point.html" title="面试知识点汇总">https://gaoshangs.github.io/2018-02-07-interview-knowledge-point.html</a>
+    <a href="https://gaoshangs.github.io/2018-02-09-php-Interview-question-1.html" title="PHP面试题汇总(一)">https://gaoshangs.github.io/2018-02-09-php-Interview-question-1.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -415,6 +723,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/面试题/" rel="tag"># 面试题</a>
+          
+        </div>
+      
 
       
       
@@ -424,8 +738,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018-02-07-linux-failure-analysis-command.html" rel="next" title="Linux服务器网站故障分析常用的命令">
-                <i class="fa fa-chevron-left"></i> Linux服务器网站故障分析常用的命令
+              <a href="/2018-02-09-http.html" rel="next" title="http协议详解">
+                <i class="fa fa-chevron-left"></i> http协议详解
               </a>
             
           </div>
@@ -434,8 +748,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018-02-07-algorithm-merging-sorting.html" rel="prev" title="归并排序算法">
-                归并排序算法 <i class="fa fa-chevron-right"></i>
+              <a href="/2018-02-09-php-interview-question-2.html" rel="prev" title="php面试题汇总(二)">
+                php面试题汇总(二) <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -464,11 +778,6 @@
 
 
           
-
-  
-    <div class="comments" id="comments">
-      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMzA4OS85NjUw"></div>
-    </div>
 
   
 
@@ -522,7 +831,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -544,7 +853,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -600,7 +909,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#知识点"><span class="nav-number">1.</span> <span class="nav-text">知识点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法"><span class="nav-number">2.</span> <span class="nav-text">算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PHP"><span class="nav-number">3.</span> <span class="nav-text">PHP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux"><span class="nav-number">4.</span> <span class="nav-text">Linux</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL"><span class="nav-number">5.</span> <span class="nav-text">MySQL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NoSQL"><span class="nav-number">6.</span> <span class="nav-text">NoSQL</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#PHP面试题汇总-基础"><span class="nav-number">1.</span> <span class="nav-text">PHP面试题汇总(基础)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-echo-print-print-r-的区别？"><span class="nav-number">1.1.</span> <span class="nav-text">1. echo(),print(),print_r()的区别？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-语句include和require的区别是什么"><span class="nav-number">1.2.</span> <span class="nav-text">2. 语句include和require的区别是什么?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-php中传值与传引用有啥区别"><span class="nav-number">1.3.</span> <span class="nav-text">3. php中传值与传引用有啥区别?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-下面哪项没有将john添加到users数组中？"><span class="nav-number">1.4.</span> <span class="nav-text">4. 下面哪项没有将john添加到users数组中？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-HTTP协议中几个状态码的含义。"><span class="nav-number">1.5.</span> <span class="nav-text">5. HTTP协议中几个状态码的含义。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-写出一些php魔术方法。"><span class="nav-number">1.6.</span> <span class="nav-text">6. 写出一些php魔术方法。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-MySQL存储引擎-MyISAM-和-InnoDB-的区别"><span class="nav-number">1.7.</span> <span class="nav-text">7. MySQL存储引擎 MyISAM 和 InnoDB 的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-说出一些MySQL优化方法？"><span class="nav-number">1.8.</span> <span class="nav-text">8. 说出一些MySQL优化方法？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-下面-r的结果是："><span class="nav-number">1.9.</span> <span class="nav-text">9. 下面$r的结果是：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-说下php中empty-和isset-的区别。"><span class="nav-number">1.10.</span> <span class="nav-text">10. 说下php中empty()和isset()的区别。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-cookie和session的区别、cookie禁用后session还可以用吗？"><span class="nav-number">1.11.</span> <span class="nav-text">11. cookie和session的区别、cookie禁用后session还可以用吗？</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -691,8 +1000,6 @@
   
 
 
-  
-
 
 
 
@@ -731,11 +1038,6 @@
   
   
     <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
   
 
 
@@ -791,17 +1093,6 @@
 
 
 
-  
-    <script type="text/javascript">
-      (function(d, s) {
-        var j, e = d.getElementsByTagName(s)[0];
-        if (typeof LivereTower === 'function') { return; }
-        j = d.createElement(s);
-        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-        j.async = true;
-        e.parentNode.insertBefore(j, e);
-      })(document, 'script');
-    </script>
   
 
 
