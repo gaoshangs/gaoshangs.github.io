@@ -4,6 +4,9 @@
     <title><![CDATA[PHP面试知识点汇总]]></title>
     <url>%2F2018-03-01-php-interview-knowledge-point.html</url>
     <content type="text"><![CDATA[知识点 面试知识点总结(持续更新~~) 全网最全php面试题目算法 常见算法 归并排序算法 一致性hash算法和应用 跳跃表算法 PHP PHP面试题汇总(一) php面试题汇总(二) PHP面试题汇总(三) PHP面试题汇总(四) 设计模式 设计模式面试题 2017最新PHP面试题 正则表达式知识点 PHP7 新特性 正则表达式知识点 Linux http协议详解 Linux服务器网站故障分析常用的命令 linux网络编程 TCP/IP知识点 CURL用法 MySQL MySQL InnoDB索引底层原理详解 MySQL知识点 MySQL性能优化总结 NoSQL redis和memcached的区别 架构 负载均衡知识点 浏览器输入url之后的技术栈]]></content>
+      <tags>
+        <tag>面试题</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[正则表达式知识点]]></title>
