@@ -93,7 +93,7 @@
 <meta property="og:image" content="https://pic002.cnblogs.com/images/2012/270324/2012040114105477.png">
 <meta property="og:image" content="http://images0.cnblogs.com/blog2015/487276/201505/191926445106317.png">
 <meta property="og:image" content="http://images0.cnblogs.com/blog2015/487276/201505/191937431352964.png">
-<meta property="og:updated_time" content="2018-02-08T10:39:02.657Z">
+<meta property="og:updated_time" content="2018-02-28T16:02:47.814Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL知识点">
 <meta name="twitter:description" content="数据库三大范式1. 第一范式(确保每列保持原子性) 第一范式是最基本的范式。如果数据库表中的所有字段值都是不可分解的原子值，就说明该数据库表满足了第一范式  第一范式需要按照系统的实际需求来定。比如一般”地址”这个属性都是一个字段就可以了，但是如果系统经常访问城市，那就可以对地址进行拆分，这样在对地址进行查询的时候就比较的方便。  上表所示的用户信息遵循了第一范式的要求，这样在对用户使用城市进行分">
@@ -506,7 +506,182 @@
 <p>ref: 显示索引的哪一列被使用了，如果可能的话，是一个常数</p>
 <p><strong>rows</strong>: MYSQL认为必须检查的用来返回请求数据的行数</p>
 <p>extra: 执行情况的说明和描述</p>
-<p>参考:<br><a href="https://www.cnblogs.com/frankielf0921/p/5930743.html" target="_blank" rel="noopener">MySQL常见面试题</a><br><a href="http://www.cnblogs.com/datang6777/p/6888659.html" target="_blank" rel="noopener">MySQL性能优化总结</a><br><a href="https://www.jianshu.com/p/52843a98acda" target="_blank" rel="noopener">MySQL分区表详解</a><br><a href="https://zhuanlan.zhihu.com/p/23713529" target="_blank" rel="noopener">常见面试题整理–数据库篇（每位开发者必备）</a><br><a href="https://www.kancloud.cn/thinkphp/mysql-design-optimalize/39326" target="_blank" rel="noopener">表的垂直拆分和水平拆分</a><br><a href="http://www.cnblogs.com/T8881/p/5940000.html" target="_blank" rel="noopener">如何查找MySQL中查询慢的SQL语句</a></p>
+<p>参考:</p>
+<ul>
+<li><a href="https://www.cnblogs.com/frankielf0921/p/5930743.html" target="_blank" rel="noopener">MySQL常见面试题</a></li>
+<li><a href="http://www.cnblogs.com/datang6777/p/6888659.html" target="_blank" rel="noopener">MySQL性能优化总结</a></li>
+<li><a href="https://www.jianshu.com/p/52843a98acda" target="_blank" rel="noopener">MySQL分区表详解</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/23713529" target="_blank" rel="noopener">常见面试题整理–数据库篇（每位开发者必备）</a></li>
+<li><a href="https://www.kancloud.cn/thinkphp/mysql-design-optimalize/39326" target="_blank" rel="noopener">表的垂直拆分和水平拆分</a></li>
+<li><a href="http://www.cnblogs.com/T8881/p/5940000.html" target="_blank" rel="noopener">如何查找MySQL中查询慢的SQL语句</a></li>
+</ul>
+<h2 id="mysql-数据类型"><a href="#mysql-数据类型" class="headerlink" title="mysql 数据类型"></a>mysql 数据类型</h2><p><strong>1、整型</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>MySQL数据类型</strong></th>
+<th><strong>含义（有符号）</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tinyint(m)</td>
+<td>1个字节  范围(-128~127)</td>
+</tr>
+<tr>
+<td>smallint(m)</td>
+<td>2个字节  范围(-32768~32767)</td>
+</tr>
+<tr>
+<td>mediumint(m)</td>
+<td>3个字节  范围(-8388608~8388607)</td>
+</tr>
+<tr>
+<td>int(m)</td>
+<td>4个字节  范围(-2147483648~2147483647)</td>
+</tr>
+<tr>
+<td>bigint(m)</td>
+<td>8个字节  范围(+-9.22*10的18次方)</td>
+</tr>
+</tbody>
+</table>
+<p>取值范围如果加了unsigned，则最大值翻倍，如tinyint unsigned的取值范围为(0~256)。<br>int(m)里的m是表示SELECT查询结果集中的显示宽度，并不影响实际的取值范围，没有影响到显示的宽度，不知道这个m有什么用。</p>
+<p><strong>2、浮点型(float和double)</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>MySQL数据类型</strong></th>
+<th><strong>含义</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>float(m,d)</td>
+<td>单精度浮点型    8位精度(4字节)     m总个数，d小数位</td>
+</tr>
+<tr>
+<td>double(m,d)</td>
+<td>双精度浮点型    16位精度(8字节)    m总个数，d小数位</td>
+</tr>
+</tbody>
+</table>
+<p>设一个字段定义为float(5,3)，如果插入一个数123.45678,实际数据库里存的是123.457，但总个数还以实际为准，即6位。</p>
+<p><strong>3、定点数</strong></p>
+<p>浮点型在数据库中存放的是近似值，而定点类型在数据库中存放的是精确值。<br>decimal(m,d) 参数m&lt;65 是总个数，d&lt;30且 d&lt;m 是小数位。</p>
+<p><strong>4、字符串(char,varchar,_text)</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>MySQL数据类型</strong></th>
+<th><strong>含义</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>char(n)</td>
+<td>固定长度，最多255个字符</td>
+</tr>
+<tr>
+<td>varchar(n)</td>
+<td>固定长度，最多65535个字符</td>
+</tr>
+<tr>
+<td>tinytext</td>
+<td>可变长度，最多255个字符</td>
+</tr>
+<tr>
+<td>text</td>
+<td>可变长度，最多65535个字符</td>
+</tr>
+<tr>
+<td>mediumtext</td>
+<td>可变长度，最多2的24次方-1个字符</td>
+</tr>
+<tr>
+<td>longtext</td>
+<td>可变长度，最多2的32次方-1个字符</td>
+</tr>
+</tbody>
+</table>
+<p>char和varchar：<br>1.char(n) 若存入字符数小于n，则以空格补于其后，查询之时再将空格去掉。所以char类型存储的字符串末尾不能有空格，varchar不限于此。<br>2.char(n) 固定长度，char(4)不管是存入几个字符，都将占用4个字节，varchar是存入的实际字符数+1个字节（n&lt;=255）或2个字节(n&gt;255)，所以varchar(4),存入3个字符将占用4个字节。<br>3.char类型的字符串检索速度要比varchar类型的快。<br>varchar和text：<br>1.varchar可指定n，text不能指定，内部存储varchar是存入的实际字符数+1个字节（n&lt;=255）或2个字节(n&gt;255)，text是实际字符数+2个字节。<br>2.text类型不能有默认值。<br>3.varchar可直接创建索引，text创建索引要指定前多少个字符。varchar查询速度快于text,在都创建索引的情况下，text的索引似乎不起作用。</p>
+<p><strong>5.二进制数据(_Blob)</strong></p>
+<p>1._BLOB和_text存储方式不同，_TEXT以文本方式存储，英文存储区分大小写，而_Blob是以二进制方式存储，不分大小写。<br>2._BLOB存储的数据只能整体读出。<br>3._TEXT可以指定字符集，_BLO不用指定字符集。</p>
+<p><strong>6.日期时间类型</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>MySQL数据类型</strong></th>
+<th><strong>含义</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>date</td>
+<td>日期 ‘2008-12-2’</td>
+</tr>
+<tr>
+<td>time</td>
+<td>时间 ‘12:25:36’</td>
+</tr>
+<tr>
+<td>datetime</td>
+<td>日期时间 ‘2008-12-2 22:06:44’</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>自动存储记录修改时间</td>
+</tr>
+</tbody>
+</table>
+<p>若定义一个字段为timestamp，这个字段里的时间数据会随其他字段修改的时候自动刷新，所以这个数据类型的字段可以存放这条记录最后被修改的时间。</p>
+<p><strong>数据类型的属性</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>MySQL关键字</strong></th>
+<th><strong>含义</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NULL</td>
+<td>数据列可包含NULL值</td>
+</tr>
+<tr>
+<td>NOT NULL</td>
+<td>数据列不允许包含NULL值</td>
+</tr>
+<tr>
+<td>DEFAULT</td>
+<td>默认值</td>
+</tr>
+<tr>
+<td>PRIMARY KEY</td>
+<td>主键</td>
+</tr>
+<tr>
+<td>AUTO_INCREMENT</td>
+<td>自动递增，适用于整数类型</td>
+</tr>
+<tr>
+<td>UNSIGNED</td>
+<td>无符号</td>
+</tr>
+<tr>
+<td>CHARACTER SET name</td>
+<td>指定一个字符集</td>
+</tr>
+</tbody>
+</table>
+<h2 id="mysql-CPU告警解决思路"><a href="#mysql-CPU告警解决思路" class="headerlink" title="mysql CPU告警解决思路"></a>mysql CPU告警解决思路</h2><ul>
+<li>top 之后，确实是mysqld进程占据了所有资源</li>
+<li>查看error日志，无任何异常</li>
+<li>show eninge innodb status\G，没有死锁信息</li>
+<li>show full processlist:没有耗时非常大的慢sql再跑。看并发，当前的线程总数量也才30个左右</li>
+<li>查看iostat，读写正常</li>
+<li>查看slow log:然后优化sql</li>
+</ul>
 
       
     </div>
@@ -728,7 +903,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库三大范式"><span class="nav-number">1.</span> <span class="nav-text">数据库三大范式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-第一范式-确保每列保持原子性"><span class="nav-number">1.1.</span> <span class="nav-text">1. 第一范式(确保每列保持原子性)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-第二范式-确保表中的每列都和主键相关"><span class="nav-number">1.2.</span> <span class="nav-text">2. 第二范式(确保表中的每列都和主键相关)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-第三范式-确保每列都和主键列直接相关-而不是间接相关"><span class="nav-number">1.3.</span> <span class="nav-text">3. 第三范式(确保每列都和主键列直接相关,而不是间接相关)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">1.4.</span> <span class="nav-text">参考</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mysql创建索引原则"><span class="nav-number">2.</span> <span class="nav-text">mysql创建索引原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库优化的思路"><span class="nav-number">3.</span> <span class="nav-text">数据库优化的思路</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-SQL语句优化"><span class="nav-number">3.1.</span> <span class="nav-text">1. SQL语句优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-索引优化"><span class="nav-number">3.2.</span> <span class="nav-text">2. 索引优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-数据库结构优化"><span class="nav-number">3.3.</span> <span class="nav-text">3. 数据库结构优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-服务器硬件优化"><span class="nav-number">3.4.</span> <span class="nav-text">4. 服务器硬件优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-缓存机制"><span class="nav-number">3.5.</span> <span class="nav-text">5. 缓存机制</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表的垂直拆分和水平拆分"><span class="nav-number">4.</span> <span class="nav-text">表的垂直拆分和水平拆分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#垂直拆分"><span class="nav-number">4.1.</span> <span class="nav-text">垂直拆分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#水平拆分"><span class="nav-number">4.2.</span> <span class="nav-text">水平拆分</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#drop-delete与truncate的区别"><span class="nav-number">5.</span> <span class="nav-text">drop,delete与truncate的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库事务的四个特性及含义"><span class="nav-number">6.</span> <span class="nav-text">数据库事务的四个特性及含义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查找慢SQL查询"><span class="nav-number">7.</span> <span class="nav-text">查找慢SQL查询</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#开启慢查询配置"><span class="nav-number">7.1.</span> <span class="nav-text">开启慢查询配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#检测执行效率"><span class="nav-number">7.2.</span> <span class="nav-text">检测执行效率</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-查看慢查询日志"><span class="nav-number">7.2.1.</span> <span class="nav-text">1. 查看慢查询日志</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-show-processlist-命令"><span class="nav-number">7.2.2.</span> <span class="nav-text">2. show processlist 命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-explain来了解SQL执行的状态"><span class="nav-number">7.2.3.</span> <span class="nav-text">3. explain来了解SQL执行的状态</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库三大范式"><span class="nav-number">1.</span> <span class="nav-text">数据库三大范式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-第一范式-确保每列保持原子性"><span class="nav-number">1.1.</span> <span class="nav-text">1. 第一范式(确保每列保持原子性)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-第二范式-确保表中的每列都和主键相关"><span class="nav-number">1.2.</span> <span class="nav-text">2. 第二范式(确保表中的每列都和主键相关)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-第三范式-确保每列都和主键列直接相关-而不是间接相关"><span class="nav-number">1.3.</span> <span class="nav-text">3. 第三范式(确保每列都和主键列直接相关,而不是间接相关)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">1.4.</span> <span class="nav-text">参考</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mysql创建索引原则"><span class="nav-number">2.</span> <span class="nav-text">mysql创建索引原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库优化的思路"><span class="nav-number">3.</span> <span class="nav-text">数据库优化的思路</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-SQL语句优化"><span class="nav-number">3.1.</span> <span class="nav-text">1. SQL语句优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-索引优化"><span class="nav-number">3.2.</span> <span class="nav-text">2. 索引优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-数据库结构优化"><span class="nav-number">3.3.</span> <span class="nav-text">3. 数据库结构优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-服务器硬件优化"><span class="nav-number">3.4.</span> <span class="nav-text">4. 服务器硬件优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-缓存机制"><span class="nav-number">3.5.</span> <span class="nav-text">5. 缓存机制</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表的垂直拆分和水平拆分"><span class="nav-number">4.</span> <span class="nav-text">表的垂直拆分和水平拆分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#垂直拆分"><span class="nav-number">4.1.</span> <span class="nav-text">垂直拆分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#水平拆分"><span class="nav-number">4.2.</span> <span class="nav-text">水平拆分</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#drop-delete与truncate的区别"><span class="nav-number">5.</span> <span class="nav-text">drop,delete与truncate的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库事务的四个特性及含义"><span class="nav-number">6.</span> <span class="nav-text">数据库事务的四个特性及含义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查找慢SQL查询"><span class="nav-number">7.</span> <span class="nav-text">查找慢SQL查询</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#开启慢查询配置"><span class="nav-number">7.1.</span> <span class="nav-text">开启慢查询配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#检测执行效率"><span class="nav-number">7.2.</span> <span class="nav-text">检测执行效率</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-查看慢查询日志"><span class="nav-number">7.2.1.</span> <span class="nav-text">1. 查看慢查询日志</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-show-processlist-命令"><span class="nav-number">7.2.2.</span> <span class="nav-text">2. show processlist 命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-explain来了解SQL执行的状态"><span class="nav-number">7.2.3.</span> <span class="nav-text">3. explain来了解SQL执行的状态</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mysql-数据类型"><span class="nav-number">8.</span> <span class="nav-text">mysql 数据类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mysql-CPU告警解决思路"><span class="nav-number">9.</span> <span class="nav-text">mysql CPU告警解决思路</span></a></li></ol></div>
             
 
           </div>
