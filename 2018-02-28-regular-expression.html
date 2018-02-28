@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="常用命令简单说明grep 命令 grep命令是一种强大的文本搜索工具，它能使用正则表达式搜索文本，并把匹 配的行打印出来  格式grep [option] pattern file 选项-v   –revert-match   #显示不包含匹配文本的所有行-w   –word-regexp   #只显示全字符合的列-h   –no-filename   #在显示符合样式的那一行之前，不标示该行所属">
+<meta name="description" content="表达式合集12345678910111213141516171819202122232425262728293031323334353637383940414243字符	描述\	将下一个字符标记为一个特殊字符、或一个原义字符、或一个向后引用、或一个八进制转义符。例如，“n”匹配字符“n”。“\n”匹配一个换行符。串行“\\”匹配“\”而“\(”则匹配“(”。^	匹配输入字符串的开始位置。如果设置了">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux服务器网站故障分析常用的命令">
-<meta property="og:url" content="https://gaoshangs.github.io/2018-02-07-linux-failure-analysis-command.html">
+<meta property="og:title" content="正则表达式知识点">
+<meta property="og:url" content="https://gaoshangs.github.io/2018-02-28-regular-expression.html">
 <meta property="og:site_name" content="高尚的网络日志">
-<meta property="og:description" content="常用命令简单说明grep 命令 grep命令是一种强大的文本搜索工具，它能使用正则表达式搜索文本，并把匹 配的行打印出来  格式grep [option] pattern file 选项-v   –revert-match   #显示不包含匹配文本的所有行-w   –word-regexp   #只显示全字符合的列-h   –no-filename   #在显示符合样式的那一行之前，不标示该行所属">
+<meta property="og:description" content="表达式合集12345678910111213141516171819202122232425262728293031323334353637383940414243字符	描述\	将下一个字符标记为一个特殊字符、或一个原义字符、或一个向后引用、或一个八进制转义符。例如，“n”匹配字符“n”。“\n”匹配一个换行符。串行“\\”匹配“\”而“\(”则匹配“(”。^	匹配输入字符串的开始位置。如果设置了">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-07T06:05:01.562Z">
+<meta property="og:updated_time" content="2018-02-28T08:42:09.396Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux服务器网站故障分析常用的命令">
-<meta name="twitter:description" content="常用命令简单说明grep 命令 grep命令是一种强大的文本搜索工具，它能使用正则表达式搜索文本，并把匹 配的行打印出来  格式grep [option] pattern file 选项-v   –revert-match   #显示不包含匹配文本的所有行-w   –word-regexp   #只显示全字符合的列-h   –no-filename   #在显示符合样式的那一行之前，不标示该行所属">
+<meta name="twitter:title" content="正则表达式知识点">
+<meta name="twitter:description" content="表达式合集12345678910111213141516171819202122232425262728293031323334353637383940414243字符	描述\	将下一个字符标记为一个特殊字符、或一个原义字符、或一个向后引用、或一个八进制转义符。例如，“n”匹配字符“n”。“\n”匹配一个换行符。串行“\\”匹配“\”而“\(”则匹配“(”。^	匹配输入字符串的开始位置。如果设置了">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="https://gaoshangs.github.io/2018-02-07-linux-failure-analysis-command.html"/>
+  <link rel="canonical" href="https://gaoshangs.github.io/2018-02-28-regular-expression.html"/>
 
 
 
 
 
-  <title>Linux服务器网站故障分析常用的命令 | 高尚的网络日志</title>
+  <title>正则表达式知识点 | 高尚的网络日志</title>
   
 
 
@@ -296,7 +296,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gaoshangs.github.io/2018-02-07-linux-failure-analysis-command.html">
+    <link itemprop="mainEntityOfPage" href="https://gaoshangs.github.io/2018-02-28-regular-expression.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Gason Wong">
@@ -313,7 +313,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Linux服务器网站故障分析常用的命令</h1>
+          <h1 class="post-title" itemprop="name headline">正则表达式知识点</h1>
         
 
         <div class="post-meta">
@@ -325,8 +325,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-07T01:06:00+08:00">
-                2018-02-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-28T16:18:00+08:00">
+                2018-02-28
               </time>
             
 
@@ -343,7 +343,7 @@
 
           
           
-             <span id="/2018-02-07-linux-failure-analysis-command.html" class="leancloud_visitors" data-flag-title="Linux服务器网站故障分析常用的命令">
+             <span id="/2018-02-28-regular-expression.html" class="leancloud_visitors" data-flag-title="正则表达式知识点">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -374,109 +374,12 @@
       
 
       
-        <h2 id="常用命令简单说明"><a href="#常用命令简单说明" class="headerlink" title="常用命令简单说明"></a>常用命令简单说明</h2><h3 id="grep-命令"><a href="#grep-命令" class="headerlink" title="grep 命令"></a>grep 命令</h3><blockquote>
-<p>grep命令是一种强大的文本搜索工具，它能使用正则表达式搜索文本，并把匹 配的行打印出来</p>
-<ol>
-<li>格式<br>grep [option] pattern file</li>
-<li>选项<br>-v   –revert-match   #显示不包含匹配文本的所有行<br>-w   –word-regexp   #只显示全字符合的列<br>-h   –no-filename   #在显示符合样式的那一行之前，不标示该行所属的文件名称</li>
-</ol>
-</blockquote>
-<h3 id="awk命令"><a href="#awk命令" class="headerlink" title="awk命令"></a>awk命令</h3><blockquote>
-<p>是一种处理文本文件的语言，是一个强大的文本分析工具</p>
-<ol>
-<li><strong>规则</strong>：awk [选项参数] ‘条件1{动作1} 条件2{动作2} …’ 文件名<br>（ 如果条件1，执行动作1；如果条件2，执行动作2 ）</li>
-<li><strong>变量</strong> ：$1：提取第一列 ,$2提取第二列,</li>
-<li>选项<br>-F :指定输入文件折分隔符</li>
-<li>输出<br>print：会在每个输出之后自动加入一个换行符<br>printf：标准格式输出命令，需要换行需手动加入</li>
-</ol>
-</blockquote>
-<ol>
-<li>应用<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">awk <span class="string">'&#123;printf $2 "\t" $3"\n"&#125;'</span> user.txt</span><br><span class="line">awk -F, <span class="string">'&#123;print $1,$2&#125;'</span>   log.txt</span><br><span class="line">awk -F <span class="string">'[ ,]'</span>  <span class="string">'&#123;print $1,$2,$5&#125;'</span>   log.txt <span class="comment"># 使用多个分隔符.先使用空格分割，然后对分割结果再使用","分割</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h3 id="cut命令"><a href="#cut命令" class="headerlink" title="cut命令"></a>cut命令</h3><blockquote>
-<p>提取列: cut [选项] 文件</p>
-<ol>
-<li>选项:<br>-f 列号        （ –field 提取第几列 ）<br>-d 分隔符    （ –delimiter 按照指定分隔符分割列 ）</li>
-<li>应用：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cut -d <span class="string">":"</span> -f 1,3 /etc/passwd <span class="comment"># :分隔，输出1，3行</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-</blockquote>
-<h3 id="sed命令"><a href="#sed命令" class="headerlink" title="sed命令"></a>sed命令</h3><blockquote>
-<p>数据进行选取、替换、删除、新增的命令</p>
-<ol>
-<li>使用方法：sed [选项] ‘[动作]’ 文件名</li>
-<li>选项<br>-n    :    一般sed命令会把所有数据都输出到屏幕；如果加入此选项，则只会把经过sed命令处理的行输出到屏幕。(如：sed -n ‘2p’ user.txt    # 输出第二行)</li>
-<li>动作<br>d : 删除，删除指定的行。<br>p : 打印，输出指定的行。<br>s  : 字串替换，用一个字符串替换另外一个字符串。格式为“行范围s/旧字串/新字串/g”（和vim中的替换格式类似）如：sed “s/r//g” user.txt 替换r为空</li>
-<li>实例：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sed -n <span class="string">'2p'</span> user.txt <span class="comment"># 输出第二行, p一般都要和-n使用，不加-n会显示出所有的行</span></span><br><span class="line">sed <span class="string">"s/r//g"</span> user.txt <span class="comment"># 替换r为空</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-</blockquote>
-<h3 id="sort命令"><a href="#sort命令" class="headerlink" title="sort命令"></a>sort命令</h3><blockquote>
-<p>排序</p>
-<ol>
-<li>选项<br>-n：按数值排序，默认按ASCII码值排序<br>\u：在输出行中去除重复行<br>-r：降序(默认是降序)<br>-o：输出结果重定向到文件<br>\t：指定间隔符(配合-k指定列数排序)<br>-k: 指定列排序</li>
-</ol>
-</blockquote>
-<h3 id="netstat-命令"><a href="#netstat-命令" class="headerlink" title="netstat 命令"></a>netstat 命令</h3><blockquote>
-<p>用于显示各种网络相关信息，如网络连接，路由表，接口状态</p>
-<ol>
-<li>选项<br>-a (all)显示所有选项，默认不显示LISTEN相关(<strong>如果需要显示LISTEN相关需增加-l选项</strong>)<br>-t (tcp)仅显示tcp相关选项<br>-u (udp)仅显示udp相关选项<br>-n 拒绝显示别名，能显示数字的全部转化成数字。<br>-l 仅列出有在 Listen (监听) 的服務状态<br>-p 显示建立相关链接的程序名</li>
-</ol>
-</blockquote>
-<h2 id="系统连接状态"><a href="#系统连接状态" class="headerlink" title="系统连接状态"></a>系统连接状态</h2><ol>
-<li>查看TCP连接状态<br>常用：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -ant |awk <span class="string">'&#123;print $6&#125;'</span>|sort|uniq -c|sort -rn</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>可用：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">netstat -n | awk <span class="string">'/^tcp/ &#123;++S[$NF]&#125;;END &#123;for(a in S) print a, S[a]&#125;'</span> </span><br><span class="line">netstat -n | awk <span class="string">'/^tcp/ &#123;++state[$NF]&#125;; END &#123;for(key in state) print key,"t",state[key]&#125;'</span></span><br><span class="line">netstat -n | awk <span class="string">'/^tcp/ &#123;++arr[$NF]&#125;;END &#123;for(k in arr) print k,"t",arr[k]&#125;'</span></span><br><span class="line">netstat -n |awk <span class="string">'/^tcp/ &#123;print $NF&#125;'</span>|sort|uniq -c|sort -rn</span><br></pre></td></tr></table></figure></p>
-<ol>
-<li>查找请求数20个IP<br><code>netstat -anlp|grep 80|grep tcp|awk &#39;{print $5}&#39;|awk -F: &#39;{print $1}&#39;|sort|uniq -c|sort -nr|head -n20</code></li>
-</ol>
-<p><code>netstat -ant |awk &#39;/:80/{split($5,ip,&quot;:&quot;);++A[ip[1]]}END{for(i in A) print A[i],i}&#39; |sort -rn|head -n20</code></p>
-<ol>
-<li><p>用tcpdump嗅探80端口的访问看看谁最高<br><code>tcpdump -i eth0 -tnn dst port 80 -c 1000 | awk -F&quot;.&quot; &#39;{print $1&quot;.&quot;$2&quot;.&quot;$3&quot;.&quot;$4}&#39; | sort | uniq -c | sort -nr |head -20</code></p>
-</li>
-<li><p>查找较多time_wait连接<br><code>netstat -n|grep TIME_WAIT|awk &#39;{print $5}&#39;| cut -d &#39;:&#39; -f 1 | sort|uniq -c|sort -rn|head -n2</code></p>
-</li>
-<li>找查较多的SYN连接<br><code>netstat -an | grep SYN | awk &#39;{print $5}&#39; | awk -F: &#39;{print $1}&#39; | sort | uniq -c | sort -nr | more</code></li>
-<li>根据端口列进程<br><code>netstat -ntlp | grep 80 | awk &#39;{print $NF}&#39; | cut -d &#39;/&#39; -f1</code></li>
-</ol>
-<h2 id="nginx日志知识"><a href="#nginx日志知识" class="headerlink" title="nginx日志知识"></a>nginx日志知识</h2><blockquote>
-<p>nginx有一个非常灵活的日志记录模式。每个级别的配置可以有各自独立的访问日志。日志格式通过log_format命令来定义。</p>
-</blockquote>
-<h3 id="access-log指令"><a href="#access-log指令" class="headerlink" title="access_log指令"></a>access_log指令</h3><p>语法: <code>access_log path [format [buffer=size [flush=time]]];</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">access_log path format gzip [=level] [buffer=size] [flush=time];</span><br><span class="line">access_log syslog:server=address\[,parameter=value] [format];</span><br><span class="line">access_log off;</span><br></pre></td></tr></table></figure></p>
-<p>默认值: <code>access_log logs/access.log combined;</code><br>配置段: <code>http, server, location, if in location, limit_except</code><br><code>gzip</code>：压缩等级。<br><code>buffer</code>：设置内存缓存区大小。<br><code>flush</code>：保存在缓存区中的最长时间。<br>不记录日志：<code>access_log off;</code><br>使用默认<code>combined</code>格式记录日志：<br><code>access_log logs/access.log 或 access_log logs/access.log combined;</code></p>
-<h3 id="log-format指令"><a href="#log-format指令" class="headerlink" title="log_format指令"></a>log_format指令</h3><ol>
-<li>语法: <code>log_format name string …;</code></li>
-<li>默认值: <code>log_format combined “…”;</code></li>
-<li><p>配置段: <code>http</code><br><strong>name表示格式名称，string表示等义的格式。</strong></p>
-</li>
-<li><p>默认配置：log_format有一个默认的无需设置的combined日志格式</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">log_format combined <span class="string">'$remote_addr - $remote_user [$time_local] "$request" $status $body_bytes_sent "$http_referer" "$http_user_agent" "$http_x_forwarded_for"'</span>;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>对应的日志记录:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1 - - [21/Sep/2016:10:57:04 +0800] <span class="string">"GET / HTTP/1.1"</span> 302 5 <span class="string">"-"</span> <span class="string">"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36"</span> <span class="string">"-"</span> </span><br><span class="line">127.0.0.1 - - [21/Sep/2016:10:57:04 +0800] <span class="string">"GET /dashboard.php HTTP/1.1"</span> 200 26652 <span class="string">"-"</span> <span class="string">"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36"</span> <span class="string">"-"</span></span><br></pre></td></tr></table></figure></p>
-<ol>
-<li><p>日志格式变量含义</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$remote_addr</span>, <span class="variable">$http_x_forwarded_for</span> 记录客户端IP地址</span><br><span class="line"><span class="variable">$remote_user</span> 记录客户端用户名称</span><br><span class="line"><span class="variable">$request</span> 记录请求的URL和HTTP协议</span><br><span class="line"><span class="variable">$status</span> 记录请求状态</span><br><span class="line"><span class="variable">$body_bytes_sent</span> 发送给客户端的字节数，不包括响应头的大小； 该变量与Apache模块mod_log_config里的“%B”参数兼容。</span><br><span class="line"><span class="variable">$bytes_sent</span> 发送给客户端的总字节数。</span><br><span class="line"><span class="variable">$connection</span> 连接的序列号。</span><br><span class="line"><span class="variable">$connection_requests</span> 当前通过一个连接获得的请求数量。</span><br><span class="line"><span class="variable">$msec</span> 日志写入时间。单位为秒，精度是毫秒。</span><br><span class="line"><span class="variable">$pipe</span> 如果请求是通过HTTP流水线(pipelined)发送，pipe值为“p”，否则为“.”。</span><br><span class="line"><span class="variable">$http_referer</span> 记录从哪个页面链接访问过来的</span><br><span class="line"><span class="variable">$http_user_agent</span> 记录客户端浏览器相关信息</span><br><span class="line"><span class="variable">$request_length</span> 请求的长度（包括请求行，请求头和请求正文）。</span><br><span class="line"><span class="variable">$request_time</span> 请求处理时间，单位为秒，精度毫秒； 从读入客户端的第一个字节开始，直到把最后一个字符发送给客户端后进行日志写入为止。</span><br><span class="line"><span class="variable">$time_iso8601</span> ISO8601标准格式下的本地时间。</span><br><span class="line"><span class="variable">$time_local</span> 通用日志格式下的本地时间。</span><br><span class="line">[warning]发送给客户端的响应头拥有“sent_http_”前缀。 比如<span class="variable">$sent_http_content_range</span>。[/warning]</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>常见问题</p>
-</li>
-</ol>
-<ul>
-<li>获取真实客户IP：如果nginx位于负载均衡器，squid，nginx反向代理之后，web服务器无法直接获取到客户端真实的IP地址了。 $remote_addr获取反向代理的IP地址。反向代理服务器在转发请求的http头信息中，可以增加X-Forwarded-For信息，用来记录 客户端IP地址和客户端请求的服务器地址。PS: 获取用户真实IP 参见<a href="http://www.ttlsa.com/html/2235.html" target="_blank" rel="noopener">http://www.ttlsa.com/html/2235.html</a></li>
+        <h2 id="表达式合集"><a href="#表达式合集" class="headerlink" title="表达式合集"></a>表达式合集</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">字符	描述</span><br><span class="line">\	将下一个字符标记为一个特殊字符、或一个原义字符、或一个向后引用、或一个八进制转义符。例如，“n”匹配字符“n”。“\n”匹配一个换行符。串行“\\”匹配“\”而“\(”则匹配“(”。</span><br><span class="line">^	匹配输入字符串的开始位置。如果设置了RegExp对象的Multiline属性，^也匹配“\n”或“\r”之后的位置。</span><br><span class="line">$	匹配输入字符串的结束位置。如果设置了RegExp对象的Multiline属性，$也匹配“\n”或“\r”之前的位置。</span><br><span class="line">*	匹配前面的子表达式零次或多次。例如，zo*能匹配“z”以及“zoo”。*等价于&#123;0,&#125;。</span><br><span class="line">+	匹配前面的子表达式一次或多次。例如，“zo+”能匹配“zo”以及“zoo”，但不能匹配“z”。+等价于&#123;1,&#125;。</span><br><span class="line">?	匹配前面的子表达式零次或一次。例如，“<span class="keyword">do</span>(es)?”可以匹配“does”或“does”中的“<span class="keyword">do</span>”。?等价于&#123;0,1&#125;。</span><br><span class="line">&#123;n&#125;	n是一个非负整数。匹配确定的n次。例如，“o&#123;2&#125;”不能匹配“Bob”中的“o”，但是能匹配“food”中的两个o。</span><br><span class="line">&#123;n,&#125;	n是一个非负整数。至少匹配n次。例如，“o&#123;2,&#125;”不能匹配“Bob”中的“o”，但能匹配“foooood”中的所有o。“o&#123;1,&#125;”等价于“o+”。“o&#123;0,&#125;”则等价于“o*”。</span><br><span class="line">&#123;n,m&#125;	m和n均为非负整数，其中n&lt;=m。最少匹配n次且最多匹配m次。例如，“o&#123;1,3&#125;”将匹配“fooooood”中的前三个o。“o&#123;0,1&#125;”等价于“o?”。请注意在逗号和两个数之间不能有空格。</span><br><span class="line">?	当该字符紧跟在任何一个其他限制符（*,+,?，&#123;n&#125;，&#123;n,&#125;，&#123;n,m&#125;）后面时，匹配模式是非贪婪的。非贪婪模式尽可能少的匹配所搜索的字符串，而默认的贪婪模式则尽可能多的匹配所搜索的字符串。例如，对于字符串“oooo”，“o+?”将匹配单个“o”，而“o+”将匹配所有“o”。</span><br><span class="line">.	匹配除“\n”之外的任何单个字符。要匹配包括“\n”在内的任何字符，请使用像“(.|\n)”的模式。</span><br><span class="line">(pattern)	匹配pattern并获取这一匹配。所获取的匹配可以从产生的Matches集合得到，在VBScript中使用SubMatches集合，在JScript中则使用<span class="variable">$0</span>…<span class="variable">$9</span>属性。要匹配圆括号字符，请使用“\(”或“\)”。</span><br><span class="line">(?:pattern)	匹配pattern但不获取匹配结果，也就是说这是一个非获取匹配，不进行存储供以后使用。这在使用或字符“(|)”来组合一个模式的各个部分是很有用。例如“industr(?:y|ies)”就是一个比“industry|industries”更简略的表达式。</span><br><span class="line">(?=pattern)	正向肯定预查，在任何匹配pattern的字符串开始处匹配查找字符串。这是一个非获取匹配，也就是说，该匹配不需要获取供以后使用。例如，“Windows(?=95|98|NT|2000)”能匹配“Windows2000”中的“Windows”，但不能匹配“Windows3.1”中的“Windows”。预查不消耗字符，也就是说，在一个匹配发生后，在最后一次匹配之后立即开始下一次匹配的搜索，而不是从包含预查的字符之后开始。</span><br><span class="line">(?!pattern)	正向否定预查，在任何不匹配pattern的字符串开始处匹配查找字符串。这是一个非获取匹配，也就是说，该匹配不需要获取供以后使用。例如“Windows(?!95|98|NT|2000)”能匹配“Windows3.1”中的“Windows”，但不能匹配“Windows2000”中的“Windows”。预查不消耗字符，也就是说，在一个匹配发生后，在最后一次匹配之后立即开始下一次匹配的搜索，而不是从包含预查的字符之后开始</span><br><span class="line">(?&lt;=pattern)	反向肯定预查，与正向肯定预查类拟，只是方向相反。例如，“(?&lt;=95|98|NT|2000)Windows”能匹配“2000Windows”中的“Windows”，但不能匹配“3.1Windows”中的“Windows”。</span><br><span class="line">(?&lt;!pattern)	反向否定预查，与正向否定预查类拟，只是方向相反。例如“(?&lt;!95|98|NT|2000)Windows”能匹配“3.1Windows”中的“Windows”，但不能匹配“2000Windows”中的“Windows”。</span><br><span class="line">x|y	匹配x或y。例如，“z|food”能匹配“z”或“food”。“(z|f)ood”则匹配“zood”或“food”。</span><br><span class="line">[xyz]	字符集合。匹配所包含的任意一个字符。例如，“[abc]”可以匹配“plain”中的“a”。</span><br><span class="line">[^xyz]	负值字符集合。匹配未包含的任意字符。例如，“[^abc]”可以匹配“plain”中的“p”。</span><br><span class="line">[a-z]	字符范围。匹配指定范围内的任意字符。例如，“[a-z]”可以匹配“a”到“z”范围内的任意小写字母字符。</span><br><span class="line">[^a-z]	负值字符范围。匹配任何不在指定范围内的任意字符。例如，“[^a-z]”可以匹配任何不在“a”到“z”范围内的任意字符。</span><br><span class="line">\b	匹配一个单词边界，也就是指单词和空格间的位置。例如，“er\b”可以匹配“never”中的“er”，但不能匹配“verb”中的“er”。</span><br><span class="line">\B	匹配非单词边界。“er\B”能匹配“verb”中的“er”，但不能匹配“never”中的“er”。</span><br><span class="line">\cx	匹配由x指明的控制字符。例如，\cM匹配一个Control-M或回车符。x的值必须为A-Z或a-z之一。否则，将c视为一个原义的“c”字符。</span><br><span class="line">\d	匹配一个数字字符。等价于[0-9]。</span><br><span class="line">\D	匹配一个非数字字符。等价于[^0-9]。</span><br><span class="line">\f	匹配一个换页符。等价于\x0c和\cL。</span><br><span class="line">\n	匹配一个换行符。等价于\x0a和\cJ。</span><br><span class="line">\r	匹配一个回车符。等价于\x0d和\cM。</span><br><span class="line">\s	匹配任何空白字符，包括空格、制表符、换页符等等。等价于[ \f\n\r\t\v]。</span><br><span class="line">\S	匹配任何非空白字符。等价于[^ \f\n\r\t\v]。</span><br><span class="line">\t	匹配一个制表符。等价于\x09和\cI。</span><br><span class="line">\v	匹配一个垂直制表符。等价于\x0b和\cK。</span><br><span class="line">\w	匹配包括下划线的任何单词字符。等价于“[A-Za-z0-9_]”。</span><br><span class="line">\W	匹配任何非单词字符。等价于“[^A-Za-z0-9_]”。</span><br><span class="line">\xn	匹配n，其中n为十六进制转义值。十六进制转义值必须为确定的两个数字长。例如，“\x41”匹配“A”。“\x041”则等价于“\x04&amp;1”。正则表达式中可以使用ASCII编码。.</span><br><span class="line">\num	匹配num，其中num是一个正整数。对所获取的匹配的引用。例如，“(.)\1”匹配两个连续的相同字符。</span><br><span class="line">\n	标识一个八进制转义值或一个向后引用。如果\n之前至少n个获取的子表达式，则n为向后引用。否则，如果n为八进制数字（0-7），则n为一个八进制转义值。</span><br><span class="line">\nm	标识一个八进制转义值或一个向后引用。如果\nm之前至少有nm个获得子表达式，则nm为向后引用。如果\nm之前至少有n个获取，则n为一个后跟文字m的向后引用。如果前面的条件都不满足，若n和m均为八进制数字（0-7），则\nm将匹配八进制转义值nm。</span><br><span class="line">\nml	如果n为八进制数字（0-3），且m和l均为八进制数字（0-7），则匹配八进制转义值nml。</span><br><span class="line">\un	匹配n，其中n是一个用四个十六进制数字表示的Unicode字符。例如，\u00A9匹配版权符号（©）。</span><br></pre></td></tr></table></figure>
+<h2 id="常用正则表达式"><a href="#常用正则表达式" class="headerlink" title="常用正则表达式"></a>常用正则表达式</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">网址（URL）	[a-zA-z]+://[^\s]*</span><br><span class="line">IP地址(IP Address)	((2[0-4]\d|25[0-5]|[01]?\d\d?)\.)&#123;3&#125;(2[0-4]\d|25[0-5]|[01]?\d\d?)</span><br><span class="line">电子邮件(Email)	\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*</span><br><span class="line">QQ号码	[1-9]\d&#123;4,&#125;</span><br><span class="line">HTML标记(包含内容或自闭合)	&lt;(.*)(.*)&gt;.*&lt;\/\1&gt;|&lt;(.*) \/&gt;</span><br><span class="line">密码(由数字/大写字母/小写字母/标点符号组成，四种都必有，8位以上)	(?=^.&#123;8,&#125;$)(?=.*\d)(?=.*\W+)(?=.*[A-Z])(?=.*[a-z])(?!.*\n).*$</span><br><span class="line">日期(年-月-日)	(\d&#123;4&#125;|\d&#123;2&#125;)-((1[0-2])|(0?[1-9]))-(([12][0-9])|(3[01])|(0?[1-9]))</span><br><span class="line">日期(月/日/年)	((1[0-2])|(0?[1-9]))/(([12][0-9])|(3[01])|(0?[1-9]))/(\d&#123;4&#125;|\d&#123;2&#125;)</span><br><span class="line">时间(小时:分钟, 24小时制)	((1|0?)[0-9]|2[0-3]):([0-5][0-9])</span><br><span class="line">汉字(字符)	[\u4e00-\u9fa5]</span><br><span class="line">中文及全角标点符号(字符)	[\u3000-\u301e\ufe10-\ufe19\ufe30-\ufe44\ufe50-\ufe6b\uff01-\uffee]</span><br><span class="line">中国大陆固定电话号码	(\d&#123;4&#125;-|\d&#123;3&#125;-)?(\d&#123;8&#125;|\d&#123;7&#125;)</span><br><span class="line">中国大陆手机号码	1\d&#123;10&#125;</span><br><span class="line">中国大陆邮政编码	[1-9]\d&#123;5&#125;</span><br><span class="line">中国大陆身份证号(15位或18位)	\d&#123;15&#125;(\d\d[0-9xX])?</span><br><span class="line">非负整数(正整数或零)	\d+</span><br><span class="line">正整数	[0-9]*[1-9][0-9]*</span><br><span class="line">负整数	-[0-9]*[1-9][0-9]*</span><br><span class="line">整数	-?\d+</span><br><span class="line">小数	(-?\d+)(\.\d+)?</span><br><span class="line">不包含abc的单词	\b((?!abc)\w)+\b</span><br><span class="line">匹配a标签的href地址    |&lt;a[^href]+href=<span class="string">"(.*)"</span>.*&gt;|U</span><br></pre></td></tr></table></figure>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="http://tool.oschina.net/uploads/apidocs/jquery/regexp.html" target="_blank" rel="noopener">表达式全集</a></li>
+<li><a href="http://deerchao.net/tutorials/regex/regex.htm" target="_blank" rel="noopener">正则表达式30分钟入门教程</a></li>
 </ul>
-<h2 id="网站日志分析篇-nginx"><a href="#网站日志分析篇-nginx" class="headerlink" title="网站日志分析篇(nginx)"></a>网站日志分析篇(nginx)</h2><ol>
-<li><p>获得访问前10位的ip地址</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cat nginx.log | awk <span class="string">'&#123;print $1&#125;'</span> | sort | uniq -c | sort -nr | head -n 10 </span><br><span class="line"></span><br><span class="line">cat nginx.log|awk <span class="string">'&#123;counts[$(1)]+=1&#125;; END &#123;for(url in counts) print counts[url], url&#125;'</span> | sort -nr</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>访问次数最多的文件或页面,取前20<br><code>cat nginx.log | awk &#39;{print $7}&#39; | grep -E &quot;^/.*&quot; | sort | uniq -c | sort -nr | head -n 20</code></p>
-</li>
-<li><p>统计404的连接<br><code>cat nginx.log | awk &#39;/ 404 /{print $7}&#39; | sort | uniq -c | sort -nr | more</code></p>
-</li>
-</ol>
-<h2 id="系统Debug分析篇"><a href="#系统Debug分析篇" class="headerlink" title="系统Debug分析篇"></a>系统Debug分析篇</h2><p>1.调试命令<br><code>strace -p pid</code><br>2.跟踪指定进程的PID<br><code>gdb -p pid</code></p>
-<p>参考：<br><a href="http://blog.csdn.net/xiangliangyu/article/details/7056937" target="_blank" rel="noopener">Linux Web服务器网站故障分析常用的命令</a><br><a href="http://www.ttlsa.com/linux/the-nginx-log-configuration/" target="_blank" rel="noopener">nginx日志配置</a></p>
 
       
     </div>
@@ -497,7 +400,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://gaoshangs.github.io/2018-02-07-linux-failure-analysis-command.html" title="Linux服务器网站故障分析常用的命令">https://gaoshangs.github.io/2018-02-07-linux-failure-analysis-command.html</a>
+    <a href="https://gaoshangs.github.io/2018-02-28-regular-expression.html" title="正则表达式知识点">https://gaoshangs.github.io/2018-02-28-regular-expression.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -519,8 +422,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018-02-06-design-pattern-interview-question.html" rel="next" title="设计模式面试题">
-                <i class="fa fa-chevron-left"></i> 设计模式面试题
+              <a href="/2018-02-27-php-Interview-question-4.html" rel="next" title="PHP面试题汇总(四)">
+                <i class="fa fa-chevron-left"></i> PHP面试题汇总(四)
               </a>
             
           </div>
@@ -528,10 +431,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018-02-07-algorithm-merging-sorting.html" rel="prev" title="归并排序算法">
-                归并排序算法 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -612,7 +511,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -634,7 +533,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -690,7 +589,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#常用命令简单说明"><span class="nav-number">1.</span> <span class="nav-text">常用命令简单说明</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#grep-命令"><span class="nav-number">1.1.</span> <span class="nav-text">grep 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#awk命令"><span class="nav-number">1.2.</span> <span class="nav-text">awk命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cut命令"><span class="nav-number">1.3.</span> <span class="nav-text">cut命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sed命令"><span class="nav-number">1.4.</span> <span class="nav-text">sed命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sort命令"><span class="nav-number">1.5.</span> <span class="nav-text">sort命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#netstat-命令"><span class="nav-number">1.6.</span> <span class="nav-text">netstat 命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统连接状态"><span class="nav-number">2.</span> <span class="nav-text">系统连接状态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nginx日志知识"><span class="nav-number">3.</span> <span class="nav-text">nginx日志知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#access-log指令"><span class="nav-number">3.1.</span> <span class="nav-text">access_log指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#log-format指令"><span class="nav-number">3.2.</span> <span class="nav-text">log_format指令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网站日志分析篇-nginx"><span class="nav-number">4.</span> <span class="nav-text">网站日志分析篇(nginx)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统Debug分析篇"><span class="nav-number">5.</span> <span class="nav-text">系统Debug分析篇</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#表达式合集"><span class="nav-number">1.</span> <span class="nav-text">表达式合集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用正则表达式"><span class="nav-number">2.</span> <span class="nav-text">常用正则表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>

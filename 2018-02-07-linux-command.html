@@ -66,7 +66,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="故障分析,Linux命令," />
 
 
 
@@ -79,17 +79,21 @@
 
 
 
-<meta name="description" content="官方的文档显示，PHP7可以达到PHP5.x版本两倍的性能。同时还提供了很多其他语言流行的语法格式。另外其PHP7的兼容性也是非常好的。  函数参数支持标量类型声明在PHP5中，可以将函数参数指定为类名、接口名、数组和回调类型中的一种，但是无法将类型指定为标量。PHP7中新增了对函数参数声明为四种标量类型的支持，即可以指定参数类型为整型（int）、浮点型（float）、字符串（string）以及布">
+<meta name="description" content="常用命令简单说明grep 命令 grep命令是一种强大的文本搜索工具，它能使用正则表达式搜索文本，并把匹 配的行打印出来  格式grep [option] pattern file 选项-v   –revert-match   #显示不包含匹配文本的所有行-w   –word-regexp   #只显示全字符合的列-h   –no-filename   #在显示符合样式的那一行之前，不标示该行所属">
+<meta name="keywords" content="故障分析,Linux命令">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PHP7 新特性">
-<meta property="og:url" content="https://gaoshangs.github.io/2018-02-23-php7.html">
+<meta property="og:title" content="Linux服务器命令">
+<meta property="og:url" content="https://gaoshangs.github.io/2018-02-07-linux-command.html">
 <meta property="og:site_name" content="高尚的网络日志">
-<meta property="og:description" content="官方的文档显示，PHP7可以达到PHP5.x版本两倍的性能。同时还提供了很多其他语言流行的语法格式。另外其PHP7的兼容性也是非常好的。  函数参数支持标量类型声明在PHP5中，可以将函数参数指定为类名、接口名、数组和回调类型中的一种，但是无法将类型指定为标量。PHP7中新增了对函数参数声明为四种标量类型的支持，即可以指定参数类型为整型（int）、浮点型（float）、字符串（string）以及布">
+<meta property="og:description" content="常用命令简单说明grep 命令 grep命令是一种强大的文本搜索工具，它能使用正则表达式搜索文本，并把匹 配的行打印出来  格式grep [option] pattern file 选项-v   –revert-match   #显示不包含匹配文本的所有行-w   –word-regexp   #只显示全字符合的列-h   –no-filename   #在显示符合样式的那一行之前，不标示该行所属">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-23T11:53:49.077Z">
+<meta property="og:image" content="https://dn-linuxcn.qbox.me/data/attachment/album/201501/25/233938qmgppp33dwzi7yzf.png">
+<meta property="og:image" content="https://dn-linuxcn.qbox.me/data/attachment/album/201501/25/233944u3221ih11w94i1e1.png">
+<meta property="og:updated_time" content="2018-02-28T10:00:07.752Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="PHP7 新特性">
-<meta name="twitter:description" content="官方的文档显示，PHP7可以达到PHP5.x版本两倍的性能。同时还提供了很多其他语言流行的语法格式。另外其PHP7的兼容性也是非常好的。  函数参数支持标量类型声明在PHP5中，可以将函数参数指定为类名、接口名、数组和回调类型中的一种，但是无法将类型指定为标量。PHP7中新增了对函数参数声明为四种标量类型的支持，即可以指定参数类型为整型（int）、浮点型（float）、字符串（string）以及布">
+<meta name="twitter:title" content="Linux服务器命令">
+<meta name="twitter:description" content="常用命令简单说明grep 命令 grep命令是一种强大的文本搜索工具，它能使用正则表达式搜索文本，并把匹 配的行打印出来  格式grep [option] pattern file 选项-v   –revert-match   #显示不包含匹配文本的所有行-w   –word-regexp   #只显示全字符合的列-h   –no-filename   #在显示符合样式的那一行之前，不标示该行所属">
+<meta name="twitter:image" content="https://dn-linuxcn.qbox.me/data/attachment/album/201501/25/233938qmgppp33dwzi7yzf.png">
 
 
 
@@ -119,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="https://gaoshangs.github.io/2018-02-23-php7.html"/>
+  <link rel="canonical" href="https://gaoshangs.github.io/2018-02-07-linux-command.html"/>
 
 
 
 
 
-  <title>PHP7 新特性 | 高尚的网络日志</title>
+  <title>Linux服务器命令 | 高尚的网络日志</title>
   
 
 
@@ -296,7 +300,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gaoshangs.github.io/2018-02-23-php7.html">
+    <link itemprop="mainEntityOfPage" href="https://gaoshangs.github.io/2018-02-07-linux-command.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Gason Wong">
@@ -313,7 +317,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">PHP7 新特性</h1>
+          <h1 class="post-title" itemprop="name headline">Linux服务器命令</h1>
         
 
         <div class="post-meta">
@@ -325,8 +329,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-23T18:21:00+08:00">
-                2018-02-23
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-07T01:06:00+08:00">
+                2018-02-07
               </time>
             
 
@@ -343,7 +347,7 @@
 
           
           
-             <span id="/2018-02-23-php7.html" class="leancloud_visitors" data-flag-title="PHP7 新特性">
+             <span id="/2018-02-07-linux-command.html" class="leancloud_visitors" data-flag-title="Linux服务器命令">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -374,41 +378,160 @@
       
 
       
-        <p>官方的文档显示，PHP7可以达到PHP5.x版本<strong>两倍</strong>的性能。同时还提供了很多其他语言流行的语法格式。另外其PHP7的兼容性也是非常好的。</p>
+        <h2 id="常用命令简单说明"><a href="#常用命令简单说明" class="headerlink" title="常用命令简单说明"></a>常用命令简单说明</h2><h3 id="grep-命令"><a href="#grep-命令" class="headerlink" title="grep 命令"></a>grep 命令</h3><blockquote>
+<p>grep命令是一种强大的文本搜索工具，它能使用正则表达式搜索文本，并把匹 配的行打印出来</p>
 <ol>
-<li><p>函数参数支持标量类型声明<br>在PHP5中，可以将函数参数指定为类名、接口名、数组和回调类型中的一种，但是无法将类型指定为标量。PHP7中新增了对函数参数声明为四种标量类型的支持，即可以指定参数类型为整型（int）、浮点型（float）、字符串（string）以及布尔型（bool）。</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="comment">//指定函数参数必须为字符串</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">checkOpenid</span><span class="params">(string $sOpenid)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> preg_match(<span class="string">'/^[a-zA-Z_-]&#123;28&#125;$/'</span>, $sOpenid);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>新增函数返回类型声明<br>PHP7新增了对函数返回类型声明的支持，支持的类型与参数类型相同（在PHP7.1中支持返回void类型）</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="comment">//指定函数返回值必须为整型</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">checkOpenid</span><span class="params">(string $sOpenid)</span>: <span class="title">int</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> preg_match(<span class="string">'/^[a-zA-Z_-]&#123;28&#125;$/'</span>, $sOpenid);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>define定义常量数组<br>PHP5.6及以后版本中可以通过const关键字来定义常量数组，PHP7中新增可以通过define定义常量数组功能。</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="comment">//php5.6中通过const定义常量数组</span></span><br><span class="line">    <span class="keyword">const</span> FRUITS = [<span class="string">'peach'</span>, <span class="string">'banana'</span>, <span class="string">'pear'</span>, <span class="string">'orange'</span>];</span><br><span class="line"></span><br><span class="line">    <span class="comment">//php7 中通过define定义常量数组数组</span></span><br><span class="line">    define(<span class="string">'FRUITS1'</span>, [<span class="string">'peach'</span>,<span class="string">'banana'</span>,<span class="string">'pear'</span>,<span class="string">'orange'</span>]);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>生成器的返回值和引入其他生成器<br>在PHP5.5引入生成器的概念。生成器函数每执行一次就得到一个yield标识的值。在PHP7中，当生成器迭代完成后，可以获取该生成器函数的返回值。通过Generator::getReturn()得到。</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">generator</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">yield</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">yield</span> <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">yield</span> <span class="number">3</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"a"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$generatorClass = (<span class="string">"generator"</span>)();</span><br><span class="line"></span><br><span class="line"><span class="keyword">foreach</span> ($generatorClass <span class="keyword">as</span> $val) &#123;</span><br><span class="line">    <span class="keyword">echo</span> $val.” “;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">echo</span> $generatorClass-&gt;getReturn();</span><br><span class="line"><span class="comment">//运行结果：1 2 3 a</span></span><br></pre></td></tr></table></figure>
+<li>格式<br>grep [option] pattern file</li>
+<li>选项<br>-v   –revert-match   #显示不包含匹配文本的所有行<br>-w   –word-regexp   #只显示全字符合的列<br>-h   –no-filename   #在显示符合样式的那一行之前，不标示该行所属的文件名称</li>
+</ol>
+</blockquote>
+<h3 id="awk命令"><a href="#awk命令" class="headerlink" title="awk命令"></a>awk命令</h3><blockquote>
+<p>是一种处理文本文件的语言，是一个强大的文本分析工具</p>
+<ol>
+<li><strong>规则</strong>：awk [选项参数] ‘条件1{动作1} 条件2{动作2} …’ 文件名<br>（ 如果条件1，执行动作1；如果条件2，执行动作2 ）</li>
+<li><strong>变量</strong> ：$1：提取第一列 ,$2提取第二列,</li>
+<li>选项<br>-F :指定输入文件折分隔符</li>
+<li>输出<br>print：会在每个输出之后自动加入一个换行符<br>printf：标准格式输出命令，需要换行需手动加入</li>
+</ol>
+</blockquote>
+<ol>
+<li>应用<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">awk <span class="string">'&#123;printf $2 "\t" $3"\n"&#125;'</span> user.txt</span><br><span class="line">awk -F, <span class="string">'&#123;print $1,$2&#125;'</span>   log.txt</span><br><span class="line">awk -F <span class="string">'[ ,]'</span>  <span class="string">'&#123;print $1,$2,$5&#125;'</span>   log.txt <span class="comment"># 使用多个分隔符.先使用空格分割，然后对分割结果再使用","分割</span></span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<p>在生成器中可以引入另一个或几个生成器，只需要写yield from functionName1<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">generator1</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">yield</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">yield</span> <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">yield</span> from generator2();</span><br><span class="line">    <span class="keyword">yield</span> from generator3();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">generator2</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">yield</span> <span class="number">3</span>;</span><br><span class="line">    <span class="keyword">yield</span> <span class="number">4</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">generator3</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">yield</span> <span class="number">5</span>;</span><br><span class="line">    <span class="keyword">yield</span> <span class="number">6</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">foreach</span> (generator1() <span class="keyword">as</span> $val)&#123;</span><br><span class="line">    <span class="keyword">echo</span> $val, <span class="string">" "</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//输出：1 2 3 4 5 6</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="cut命令"><a href="#cut命令" class="headerlink" title="cut命令"></a>cut命令</h3><blockquote>
+<p>提取列: cut [选项] 文件</p>
 <ol>
-<li><p>NULL合并运算符<br>后端CGI在接收用户传入的数据时通常会先判断变量是否存在，如果存在获取对应的值，如果不存在，在设置一个默认值或者报错处理。这里就会用到 三元运算符和isset。在PHP7中新增了一个语法糖??。如果第一个操作数存在且不为null则返回第一个操作数的值，否则返回第二个操作数的值。例如：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="comment">//获取用户openid.先从$_GET中获取，如果没有从$_POST中获取，如果还是不存在，就默认空</span></span><br><span class="line">    <span class="comment">//PHP7之前的写法</span></span><br><span class="line">    $sOpenid = <span class="keyword">isset</span>($_GET[<span class="string">'iuin'</span>]) ? $_GET[<span class="string">'iuin'</span>] : (<span class="keyword">isset</span>($_POST[<span class="string">'iuin'</span>]) ? $_POST[<span class="string">'iuin'</span>] : <span class="string">''</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//php7中新增的??语法糖</span></span><br><span class="line">    $sOpenid = $_GET[<span class="string">'iuin'</span>] ?? $_POST[<span class="string">'iuin'</span>] ?? <span class="string">''</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>组合比较符<br>该操作符也称为太空船操作符，用于对2个表达式进行比较并返回比较结果。使用语法：$exp1 &lt;=&gt; $exp2。如果$exp1小于$exp2返回-1，$exp1等于$exp2返回0，$exp1大于$exp2返回1。比较的原则是沿用 PHP 的常规比较规则进行的。</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="keyword">echo</span> <span class="number">10</span> &lt;=&gt; <span class="number">9</span>;</span><br><span class="line">    <span class="keyword">echo</span> <span class="number">10</span> &lt;=&gt; <span class="number">20</span>;</span><br><span class="line">    <span class="keyword">echo</span> <span class="number">10</span> &lt;=&gt; <span class="string">'10'</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br><span class="line"><span class="comment">#输出结果</span></span><br><span class="line"><span class="comment"># 1</span></span><br><span class="line"><span class="comment"># -1</span></span><br><span class="line"><span class="comment"># 0</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Closure::call()<br>Closure::call() 现在有着更好的性能，简短干练的暂时绑定一个方法到对象上闭包并调用它</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span></span>&#123;<span class="keyword">public</span> $name = <span class="string">"lixuan"</span>;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//PHP7和PHP5.6都可以</span></span><br><span class="line">$getNameFunc = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;<span class="keyword">return</span> <span class="keyword">$this</span>-&gt;name;&#125;;</span><br><span class="line">$name = $getNameFunc-&gt;bindTo(<span class="keyword">new</span> Test, <span class="string">'Test'</span>);</span><br><span class="line"><span class="keyword">echo</span> $name();</span><br><span class="line"></span><br><span class="line"><span class="comment">//PHP7可以,PHP5.6报错</span></span><br><span class="line">$getX = <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;<span class="keyword">return</span> <span class="keyword">$this</span>-&gt;name;&#125;;</span><br><span class="line"><span class="keyword">echo</span> $getX-&gt;call(<span class="keyword">new</span> Test);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>foreach不再改变内部数组指针<br>在PHP7之前，当数组通过 foreach 迭代时，数组指针会移动。现在开始，不再如此，见下面代码。</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line">$array = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">foreach</span> ($array <span class="keyword">as</span> &amp;$val) &#123;</span><br><span class="line">    var_dump(current($array));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">PHP5输出：</span></span><br><span class="line"><span class="comment">int(1)</span></span><br><span class="line"><span class="comment">int(2)</span></span><br><span class="line"><span class="comment">bool(false)</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">PHP7输出：</span></span><br><span class="line"><span class="comment">int(0)</span></span><br><span class="line"><span class="comment">int(0)</span></span><br><span class="line"><span class="comment">int(0)</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<li>选项:<br>-f 列号        （ –field 提取第几列 ）<br>-d 分隔符    （ –delimiter 按照指定分隔符分割列 ）</li>
+<li>应用：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cut -d <span class="string">":"</span> -f 1,3 /etc/passwd <span class="comment"># :分隔，输出1，3行</span></span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<h3 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h3><ul>
-<li><a href="http://php.net/manual/zh/migration70.new-features.php" target="_blank" rel="noopener">PHP7新特性</a></li>
-<li><a href="https://cloud.tencent.com/developer/article/1005077" target="_blank" rel="noopener">PHP7 新特性简介</a></li>
-<li><a href="https://www.36nu.com/post/184.html" target="_blank" rel="noopener">PHP7新功能及语法变化总结</a></li>
+</blockquote>
+<h3 id="sed命令"><a href="#sed命令" class="headerlink" title="sed命令"></a>sed命令</h3><blockquote>
+<p>数据进行选取、替换、删除、新增的命令</p>
+<ol>
+<li>使用方法：sed [选项] ‘[动作]’ 文件名</li>
+<li>选项<br>-n    :    一般sed命令会把所有数据都输出到屏幕；如果加入此选项，则只会把经过sed命令处理的行输出到屏幕。(如：sed -n ‘2p’ user.txt    # 输出第二行)</li>
+<li>动作<br>d : 删除，删除指定的行。<br>p : 打印，输出指定的行。<br>s  : 字串替换，用一个字符串替换另外一个字符串。格式为“行范围s/旧字串/新字串/g”（和vim中的替换格式类似）如：sed “s/r//g” user.txt 替换r为空</li>
+<li>实例：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sed -n <span class="string">'2p'</span> user.txt <span class="comment"># 输出第二行, p一般都要和-n使用，不加-n会显示出所有的行</span></span><br><span class="line">sed <span class="string">"s/r//g"</span> user.txt <span class="comment"># 替换r为空</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</blockquote>
+<h3 id="sort命令"><a href="#sort命令" class="headerlink" title="sort命令"></a>sort命令</h3><blockquote>
+<p>排序</p>
+<ol>
+<li>选项<br>-n：按数值排序，默认按ASCII码值排序<br>\u：在输出行中去除重复行<br>-r：降序(默认是降序)<br>-o：输出结果重定向到文件<br>\t：指定间隔符(配合-k指定列数排序)<br>-k: 指定列排序</li>
+</ol>
+</blockquote>
+<h3 id="netstat-命令"><a href="#netstat-命令" class="headerlink" title="netstat 命令"></a>netstat 命令</h3><blockquote>
+<p>用于显示各种网络相关信息，如网络连接，路由表，接口状态</p>
+<ol>
+<li>选项<br>-a (all)显示所有选项，默认不显示LISTEN相关(<strong>如果需要显示LISTEN相关需增加-l选项</strong>)<br>-t (tcp)仅显示tcp相关选项<br>-u (udp)仅显示udp相关选项<br>-n 拒绝显示别名，能显示数字的全部转化成数字。<br>-l 仅列出有在 Listen (监听) 的服務状态<br>-p 显示建立相关链接的程序名<h3 id="ps-命令"><a href="#ps-命令" class="headerlink" title="ps 命令"></a>ps 命令</h3>能够给出当前系统中进程的快照</li>
+</ol>
+</blockquote>
+<p>三种语法格式（一般使用UNIX风格的ps命令）：<br>UNIX 风格，选项可以组合在一起，并且选项前必须有“-”连字符<br>BSD 风格，选项可以组合在一起，但是选项前不能有“-”连字符<br>GNU 风格的长选项，选项前有两个“-”连字符<br><strong>常用参数</strong><br>-A    列出所有的进程<br>-w    显示加宽可以显示较多的资讯<br>-au    显示较详细的资讯<br>-aux    显示所有包含其他使用者的行程(主要包含CPU和memory占比)<br>-ef     </p>
+<ol>
+<li><p>不加参数执行ps命令<br><img src="https://dn-linuxcn.qbox.me/data/attachment/album/201501/25/233938qmgppp33dwzi7yzf.png" alt=""><br>4列信息分别是：PID（进程编号）、TTY（终端）、TIME（命令占用的CPU处理时间）、CMD（进程运行的命令）</p>
+</li>
+<li><p>显示所有进程<br>使用 -a 参数。-a 代表 all。同时加上x参数会显示没有控制终端的进程。<br><code>ps -ax | less</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">PID TTY      STAT   TIME COMMAND</span><br><span class="line">  1 ?        Ss     1:10 /sbin/init</span><br><span class="line">  2 ?        S      0:00 [kthreadd]</span><br><span class="line">  3 ?        S      7:08 [migration/0]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通过cpu使用来过滤进程</p>
+</li>
+</ol>
+<ul>
+<li>使用cpu排序<br><code>ps aux --sort -pcpu | head</code><br><img src="https://dn-linuxcn.qbox.me/data/attachment/album/201501/25/233944u3221ih11w94i1e1.png" alt=""></li>
 </ul>
+<ol>
+<li>ps 与grep 常用组合用法，查找特定进程<br><code>ps -ef|grep ssh</code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">UID        PID  PPID  C STIME TTY          TIME CMD</span><br><span class="line">root      1334     1  0  2016 ?        07:12:57 /usr/sbin/sshd</span><br><span class="line">root      1840 27822  0 17:57 pts/1    00:00:00 grep ssh</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>参考：</p>
+<ul>
+<li><a href="https://linux.cn/article-4743-1.html" target="_blank" rel="noopener">10个重要的Linux ps命令实战</a></li>
+<li><a href="http://www.cnblogs.com/wangkangluo1/archive/2011/09/23/2185938.html" target="_blank" rel="noopener">ps命令详解</a><h2 id="系统连接状态"><a href="#系统连接状态" class="headerlink" title="系统连接状态"></a>系统连接状态</h2></li>
+</ul>
+<p>运行结果：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">netstat -anlp | head</span><br><span class="line">Proto Recv-Q Send-Q Local Address               Foreign Address             State       PID/Program name </span><br><span class="line">tcp        0      0 0.0.0.0:22                  0.0.0.0:*                   LISTEN      1334/sshd</span><br></pre></td></tr></table></figure></p>
+<ol>
+<li>查看TCP连接状态<br>常用：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -ant |awk <span class="string">'&#123;print $6&#125;'</span>|sort|uniq -c|sort -rn</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>可用：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">netstat -n | awk <span class="string">'/^tcp/ &#123;++S[$NF]&#125;;END &#123;for(a in S) print a, S[a]&#125;'</span> </span><br><span class="line">netstat -n | awk <span class="string">'/^tcp/ &#123;++state[$NF]&#125;; END &#123;for(key in state) print key,"t",state[key]&#125;'</span></span><br><span class="line">netstat -n | awk <span class="string">'/^tcp/ &#123;++arr[$NF]&#125;;END &#123;for(k in arr) print k,"t",arr[k]&#125;'</span></span><br><span class="line">netstat -n |awk <span class="string">'/^tcp/ &#123;print $NF&#125;'</span>|sort|uniq -c|sort -rn</span><br></pre></td></tr></table></figure></p>
+<ol>
+<li>查找请求数20个IP<br><code>netstat -anlp|grep 80|grep tcp|awk &#39;{print $5}&#39;|awk -F: &#39;{print $1}&#39;|sort|uniq -c|sort -nr|head -n20</code></li>
+</ol>
+<p><code>netstat -ant |awk &#39;/:80/{split($5,ip,&quot;:&quot;);++A[ip[1]]}END{for(i in A) print A[i],i}&#39; |sort -rn|head -n20</code></p>
+<ol>
+<li><p>用tcpdump嗅探80端口的访问看看谁最高<br><code>tcpdump -i eth0 -tnn dst port 80 -c 1000 | awk -F&quot;.&quot; &#39;{print $1&quot;.&quot;$2&quot;.&quot;$3&quot;.&quot;$4}&#39; | sort | uniq -c | sort -nr |head -20</code></p>
+</li>
+<li><p>查找较多time_wait连接<br><code>netstat -n|grep TIME_WAIT|awk &#39;{print $5}&#39;| cut -d &#39;:&#39; -f 1 | sort|uniq -c|sort -rn|head -n2</code></p>
+</li>
+<li>找查较多的SYN连接<br><code>netstat -an | grep SYN | awk &#39;{print $5}&#39; | awk -F: &#39;{print $1}&#39; | sort | uniq -c | sort -nr | more</code></li>
+<li>根据端口列进程<br><code>netstat -ntlp | grep 80 | awk &#39;{print $NF}&#39; | cut -d &#39;/&#39; -f1</code></li>
+</ol>
+<h2 id="nginx日志知识"><a href="#nginx日志知识" class="headerlink" title="nginx日志知识"></a>nginx日志知识</h2><blockquote>
+<p>nginx有一个非常灵活的日志记录模式。每个级别的配置可以有各自独立的访问日志。日志格式通过log_format命令来定义。</p>
+</blockquote>
+<h3 id="access-log指令"><a href="#access-log指令" class="headerlink" title="access_log指令"></a>access_log指令</h3><p>语法: <code>access_log path [format [buffer=size [flush=time]]];</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">access_log path format gzip [=level] [buffer=size] [flush=time];</span><br><span class="line">access_log syslog:server=address\[,parameter=value] [format];</span><br><span class="line">access_log off;</span><br></pre></td></tr></table></figure></p>
+<p>默认值: <code>access_log logs/access.log combined;</code><br>配置段: <code>http, server, location, if in location, limit_except</code><br><code>gzip</code>：压缩等级。<br><code>buffer</code>：设置内存缓存区大小。<br><code>flush</code>：保存在缓存区中的最长时间。<br>不记录日志：<code>access_log off;</code><br>使用默认<code>combined</code>格式记录日志：<br><code>access_log logs/access.log 或 access_log logs/access.log combined;</code></p>
+<h3 id="log-format指令"><a href="#log-format指令" class="headerlink" title="log_format指令"></a>log_format指令</h3><ol>
+<li>语法: <code>log_format name string …;</code></li>
+<li>默认值: <code>log_format combined “…”;</code></li>
+<li><p>配置段: <code>http</code><br><strong>name表示格式名称，string表示等义的格式。</strong></p>
+</li>
+<li><p>默认配置：log_format有一个默认的无需设置的combined日志格式</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">log_format combined <span class="string">'$remote_addr - $remote_user [$time_local] "$request" $status $body_bytes_sent "$http_referer" "$http_user_agent" "$http_x_forwarded_for"'</span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>对应的日志记录:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1 - - [21/Sep/2016:10:57:04 +0800] <span class="string">"GET / HTTP/1.1"</span> 302 5 <span class="string">"-"</span> <span class="string">"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36"</span> <span class="string">"-"</span> </span><br><span class="line">127.0.0.1 - - [21/Sep/2016:10:57:04 +0800] <span class="string">"GET /dashboard.php HTTP/1.1"</span> 200 26652 <span class="string">"-"</span> <span class="string">"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36"</span> <span class="string">"-"</span></span><br></pre></td></tr></table></figure></p>
+<ol>
+<li><p>日志格式变量含义</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$remote_addr</span>, <span class="variable">$http_x_forwarded_for</span> 记录客户端IP地址</span><br><span class="line"><span class="variable">$remote_user</span> 记录客户端用户名称</span><br><span class="line"><span class="variable">$request</span> 记录请求的URL和HTTP协议</span><br><span class="line"><span class="variable">$status</span> 记录请求状态</span><br><span class="line"><span class="variable">$body_bytes_sent</span> 发送给客户端的字节数，不包括响应头的大小； 该变量与Apache模块mod_log_config里的“%B”参数兼容。</span><br><span class="line"><span class="variable">$bytes_sent</span> 发送给客户端的总字节数。</span><br><span class="line"><span class="variable">$connection</span> 连接的序列号。</span><br><span class="line"><span class="variable">$connection_requests</span> 当前通过一个连接获得的请求数量。</span><br><span class="line"><span class="variable">$msec</span> 日志写入时间。单位为秒，精度是毫秒。</span><br><span class="line"><span class="variable">$pipe</span> 如果请求是通过HTTP流水线(pipelined)发送，pipe值为“p”，否则为“.”。</span><br><span class="line"><span class="variable">$http_referer</span> 记录从哪个页面链接访问过来的</span><br><span class="line"><span class="variable">$http_user_agent</span> 记录客户端浏览器相关信息</span><br><span class="line"><span class="variable">$request_length</span> 请求的长度（包括请求行，请求头和请求正文）。</span><br><span class="line"><span class="variable">$request_time</span> 请求处理时间，单位为秒，精度毫秒； 从读入客户端的第一个字节开始，直到把最后一个字符发送给客户端后进行日志写入为止。</span><br><span class="line"><span class="variable">$time_iso8601</span> ISO8601标准格式下的本地时间。</span><br><span class="line"><span class="variable">$time_local</span> 通用日志格式下的本地时间。</span><br><span class="line">[warning]发送给客户端的响应头拥有“sent_http_”前缀。 比如<span class="variable">$sent_http_content_range</span>。[/warning]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>常见问题</p>
+</li>
+</ol>
+<ul>
+<li>获取真实客户IP：如果nginx位于负载均衡器，squid，nginx反向代理之后，web服务器无法直接获取到客户端真实的IP地址了。 $remote_addr获取反向代理的IP地址。反向代理服务器在转发请求的http头信息中，可以增加X-Forwarded-For信息，用来记录 客户端IP地址和客户端请求的服务器地址。PS: 获取用户真实IP 参见<a href="http://www.ttlsa.com/html/2235.html" target="_blank" rel="noopener">http://www.ttlsa.com/html/2235.html</a></li>
+</ul>
+<h2 id="网站日志分析篇-nginx"><a href="#网站日志分析篇-nginx" class="headerlink" title="网站日志分析篇(nginx)"></a>网站日志分析篇(nginx)</h2><ol>
+<li><p>获得访问前10位的ip地址</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cat nginx.log | awk <span class="string">'&#123;print $1&#125;'</span> | sort | uniq -c | sort -nr | head -n 10 </span><br><span class="line"></span><br><span class="line">cat nginx.log|awk <span class="string">'&#123;counts[$(1)]+=1&#125;; END &#123;for(url in counts) print counts[url], url&#125;'</span> | sort -nr</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>访问次数最多的文件或页面,取前20<br><code>cat nginx.log | awk &#39;{print $7}&#39; | grep -E &quot;^/.*&quot; | sort | uniq -c | sort -nr | head -n 20</code></p>
+</li>
+<li><p>统计404的连接<br><code>cat nginx.log | awk &#39;/ 404 /{print $7}&#39; | sort | uniq -c | sort -nr | more</code></p>
+</li>
+</ol>
+<h2 id="系统Debug分析篇"><a href="#系统Debug分析篇" class="headerlink" title="系统Debug分析篇"></a>系统Debug分析篇</h2><p>1.调试命令<br><code>strace -p pid</code><br>2.跟踪指定进程的PID<br><code>gdb -p pid</code></p>
+<p>参考：</p>
+<ul>
+<li><a href="http://blog.csdn.net/xiangliangyu/article/details/7056937" target="_blank" rel="noopener">Linux Web服务器网站故障分析常用的命令</a></li>
+<li><a href="http://www.ttlsa.com/linux/the-nginx-log-configuration/" target="_blank" rel="noopener">nginx日志配置</a></li>
+</ul>
+<h2 id="crontab定时任务"><a href="#crontab定时任务" class="headerlink" title="crontab定时任务"></a>crontab定时任务</h2><h3 id="etc-crontab中每行任务的描述格式"><a href="#etc-crontab中每行任务的描述格式" class="headerlink" title="/etc/crontab中每行任务的描述格式"></a>/etc/crontab中每行任务的描述格式</h3><p><strong>minute hour day month dayofweek command</strong></p>
+<ul>
+<li>minute    从0到59的整数 </li>
+<li>hour  从0到23的整数 </li>
+<li>day   从1到31的整数 (必须是指定月份的有效日期)</li>
+<li>month   从1到12的整数 (或如Jan或Feb简写的月份)</li>
+<li>dayofweek     从0到7的整数，0或7用来描述周日 (或用Sun或Mon简写来表示)</li>
+<li>command   需要执行的命令(可用as ls /proc &gt;&gt; /tmp/proc或 执行自定义脚本的命令)<br>root: 表示以root用户身份来运行<br>run-parts: 表示后面跟着的是一个文件夹，要执行的是该文件夹下的所有脚本<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># .---------------- minute (0 - 59)</span></span><br><span class="line"><span class="comment"># |  .------------- hour (0 - 23)</span></span><br><span class="line"><span class="comment"># |  |  .---------- day of month (1 - 31)</span></span><br><span class="line"><span class="comment"># |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...</span></span><br><span class="line"><span class="comment"># |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat</span></span><br><span class="line"><span class="comment"># |  |  |  |  |</span></span><br><span class="line"><span class="comment"># *  *  *  *  * user-name command to be executed</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><ul>
+<li>* 表示所有可用的值, 比如每隔10分钟执行一次:*/10 </li>
+<li>整数间的连字号(-)表示整数列: 例如1-4意思是整数1,2,3,4</li>
+<li>逗号：如：3,4,6,8表示这四个指定整数</li>
+<li>符号“/”指定步进设置： “/<interger>”表示步进值。如0-59/2定义每两分钟执行一次。步进值也可用星号表示。如*/3用来运行每三个月份运行指定任务</interger></li>
+<li>井号”#”: 注释行,不会被执行</li>
+</ul>
+<p>参考：</p>
+<ul>
+<li><a href="https://www.linuxidc.com/Linux/2016-02/128323.htm" target="_blank" rel="noopener">Linux Crontab 定时任务 命令详解</a></li>
+</ul>
+<h3 id="定时任务设置"><a href="#定时任务设置" class="headerlink" title="定时任务设置"></a>定时任务设置</h3><p>问题：linux下请设置一个定时任务，要求/data/www/a.php在每天凌晨2点到晚上20点，每10分钟执行一次。<br>答案：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim  /etc/crontab</span><br><span class="line">*/10 2-20 * * * /usr/<span class="built_in">local</span>/bin/php /data/www/a.php</span><br></pre></td></tr></table></figure></p>
+<p><strong>延伸：</strong><br>定时任务在自己系统中是如何使用的，定时任务与持续运行脚本的区别。</p>
+<p>定时任务：每隔一段时间执行一次，缺点：存在任务执行耗费时间过长，上次执行没有结束，下次执行又来了。<br>脚本运行：持续的脚本运行，可以使用supervisor进行管理，不过需要做兼容处理比如redis、mysql异常中断重连。</p>
 
       
     </div>
@@ -429,7 +552,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://gaoshangs.github.io/2018-02-23-php7.html" title="PHP7 新特性">https://gaoshangs.github.io/2018-02-23-php7.html</a>
+    <a href="https://gaoshangs.github.io/2018-02-07-linux-command.html" title="Linux服务器命令">https://gaoshangs.github.io/2018-02-07-linux-command.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -442,6 +565,14 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/故障分析/" rel="tag"># 故障分析</a>
+          
+            <a href="/tags/Linux命令/" rel="tag"># Linux命令</a>
+          
+        </div>
+      
 
       
       
@@ -451,8 +582,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018-02-09-php-interview-knowledge-point.html" rel="next" title="PHP面试知识点汇总">
-                <i class="fa fa-chevron-left"></i> PHP面试知识点汇总
+              <a href="/2018-02-06-design-pattern-interview-question.html" rel="next" title="设计模式面试题">
+                <i class="fa fa-chevron-left"></i> 设计模式面试题
               </a>
             
           </div>
@@ -461,8 +592,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018-02-26-start-from-input-url.html" rel="prev" title="浏览器输入url之后的技术栈">
-                浏览器输入url之后的技术栈 <i class="fa fa-chevron-right"></i>
+              <a href="/2018-02-07-algorithm-merging-sorting.html" rel="prev" title="归并排序算法">
+                归并排序算法 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -622,7 +753,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#参考："><span class="nav-number">1.</span> <span class="nav-text">参考：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#常用命令简单说明"><span class="nav-number">1.</span> <span class="nav-text">常用命令简单说明</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#grep-命令"><span class="nav-number">1.1.</span> <span class="nav-text">grep 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#awk命令"><span class="nav-number">1.2.</span> <span class="nav-text">awk命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cut命令"><span class="nav-number">1.3.</span> <span class="nav-text">cut命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sed命令"><span class="nav-number">1.4.</span> <span class="nav-text">sed命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sort命令"><span class="nav-number">1.5.</span> <span class="nav-text">sort命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#netstat-命令"><span class="nav-number">1.6.</span> <span class="nav-text">netstat 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ps-命令"><span class="nav-number">1.7.</span> <span class="nav-text">ps 命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统连接状态"><span class="nav-number">2.</span> <span class="nav-text">系统连接状态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nginx日志知识"><span class="nav-number">3.</span> <span class="nav-text">nginx日志知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#access-log指令"><span class="nav-number">3.1.</span> <span class="nav-text">access_log指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#log-format指令"><span class="nav-number">3.2.</span> <span class="nav-text">log_format指令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网站日志分析篇-nginx"><span class="nav-number">4.</span> <span class="nav-text">网站日志分析篇(nginx)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统Debug分析篇"><span class="nav-number">5.</span> <span class="nav-text">系统Debug分析篇</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#crontab定时任务"><span class="nav-number">6.</span> <span class="nav-text">crontab定时任务</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#etc-crontab中每行任务的描述格式"><span class="nav-number">6.1.</span> <span class="nav-text">/etc/crontab中每行任务的描述格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#语法"><span class="nav-number">6.2.</span> <span class="nav-text">语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定时任务设置"><span class="nav-number">6.3.</span> <span class="nav-text">定时任务设置</span></a></li></ol></li></ol></div>
             
 
           </div>

@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+
+
+
+
+<html class="theme-next pisces" lang="zh-Hans">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="面试题," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="高尚的网络日志" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="1. 输入地址浏览器url自动补全，匹配 2. 浏览器查找域名的ip： 本地hosts文件查找 浏览器发出DNS请求到本地DNS(公司DNS服务器或网络接入服务商的DNS服务器) 本地DNS服务器从缓存记录中查找，递归查询，找到则返回，没找到向DNS根服务器(13台根服务器)进行查询 根DNS服务器不记录具体的域名和IP对应关系，而是告诉本地DNS服务器域服务器地址(13台顶级域名服务器)，找域服">
+<meta name="keywords" content="面试题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浏览器输入url之后的技术栈">
+<meta property="og:url" content="https://gaoshangs.github.io/2018-02-26-start-from-input-url.html">
+<meta property="og:site_name" content="高尚的网络日志">
+<meta property="og:description" content="1. 输入地址浏览器url自动补全，匹配 2. 浏览器查找域名的ip： 本地hosts文件查找 浏览器发出DNS请求到本地DNS(公司DNS服务器或网络接入服务商的DNS服务器) 本地DNS服务器从缓存记录中查找，递归查询，找到则返回，没找到向DNS根服务器(13台根服务器)进行查询 根DNS服务器不记录具体的域名和IP对应关系，而是告诉本地DNS服务器域服务器地址(13台顶级域名服务器)，找域服">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://www.maixj.net/wp-content/uploads/2015/10/dns.jpg">
+<meta property="og:image" content="http://s16.sinaimg.cn/mw690/4078ccd6hcdcf48aab7af&690">
+<meta property="og:image" content="http://s12.sinaimg.cn/mw690/4078ccd6h7afb21339ebb&690">
+<meta property="og:image" content="http://img1.51cto.com/attachment/201203/171409287.jpg">
+<meta property="og:image" content="http://www.2cto.com/uploadfile/2013/1022/20131022025346218.png">
+<meta property="og:image" content="http://www.2cto.com/uploadfile/Collfiles/20150518/201505180932502.jpg">
+<meta property="og:image" content="https://segmentfault.com/img/bVCZ1H?w=694&h=340">
+<meta property="og:updated_time" content="2018-02-27T06:51:18.859Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="浏览器输入url之后的技术栈">
+<meta name="twitter:description" content="1. 输入地址浏览器url自动补全，匹配 2. 浏览器查找域名的ip： 本地hosts文件查找 浏览器发出DNS请求到本地DNS(公司DNS服务器或网络接入服务商的DNS服务器) 本地DNS服务器从缓存记录中查找，递归查询，找到则返回，没找到向DNS根服务器(13台根服务器)进行查询 根DNS服务器不记录具体的域名和IP对应关系，而是告诉本地DNS服务器域服务器地址(13台顶级域名服务器)，找域服">
+<meta name="twitter:image" content="http://www.maixj.net/wp-content/uploads/2015/10/dns.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://gaoshangs.github.io/2018-02-26-start-from-input-url.html"/>
+
+
+
+
+
+  <title>浏览器输入url之后的技术栈 | 高尚的网络日志</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?ddd9a48d55301ab5332da26b873f6c72";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">高尚的网络日志</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://gaoshangs.github.io/2018-02-26-start-from-input-url.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Gason Wong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="高尚的网络日志">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">浏览器输入url之后的技术栈</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-26T16:58:00+08:00">
+                2018-02-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018-02-26-start-from-input-url.html" class="leancloud_visitors" data-flag-title="浏览器输入url之后的技术栈">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="1-输入地址"><a href="#1-输入地址" class="headerlink" title="1. 输入地址"></a>1. 输入地址</h2><p>浏览器url自动补全，匹配</p>
+<h2 id="2-浏览器查找域名的ip："><a href="#2-浏览器查找域名的ip：" class="headerlink" title="2. 浏览器查找域名的ip："></a>2. 浏览器查找域名的ip：</h2><ul>
+<li>本地hosts文件查找</li>
+<li>浏览器发出DNS请求到本地DNS(公司DNS服务器或网络接入服务商的DNS服务器)</li>
+<li>本地DNS服务器从缓存记录中查找，<strong>递归查询</strong>，找到则返回，没找到向DNS根服务器(13台根服务器)进行查询</li>
+<li>根DNS服务器不记录具体的域名和IP对应关系，而是告诉本地DNS服务器域服务器地址(13台顶级域名服务器)，找域服务器<strong>迭代查询</strong></li>
+<li>本地DNS服务器向域服务器发出请求，比如对象是.com域服务器，.com域服务器也不会直接返回域名和ip对应关系，而是告诉本地DNS域名解析服务器的地址</li>
+<li>本地DNS服务器向域名的解析服务器发出请求，这时就能收到一个域名和IP地址对应关系，本地DNS把ip返回给用户电脑，同时本地DNS也会缓存方便供下次查询<br><img src="http://www.maixj.net/wp-content/uploads/2015/10/dns.jpg" alt=""></li>
+</ul>
+<p>知识扩展：</p>
+<h3 id="2-1-常用域名解析linux命令"><a href="#2-1-常用域名解析linux命令" class="headerlink" title="2.1 常用域名解析linux命令"></a>2.1 常用域名解析linux命令</h3><p>dig、nslookup，host</p>
+<h3 id="2-2-DNS查询的两种方式：递归查询和迭代查询"><a href="#2-2-DNS查询的两种方式：递归查询和迭代查询" class="headerlink" title="2.2 DNS查询的两种方式：递归查询和迭代查询"></a>2.2 DNS查询的两种方式：递归查询和迭代查询</h3><ul>
+<li><p>递归查询：一般是本地DNS服务器向根域名服务器查询，然后由跟域名服务器一级级向下查询，查找到结果后返回给本地DNS服务器，然后返回给客户端<br><img src="http://s16.sinaimg.cn/mw690/4078ccd6hcdcf48aab7af&amp;690" alt=""></p>
+</li>
+<li><p>迭代查询:局部DNS服务器不是自己向其他DNS服务器进行查询,而是把能解析该域名的其他DNS服务器的IP地址返回给客户端DNS程序，客户端DNS程序再继续向这些DNS服务器进行查询，直到得到查询结果为止<br><img src="http://s12.sinaimg.cn/mw690/4078ccd6h7afb21339ebb&amp;690" alt=""></p>
+</li>
+</ul>
+<h3 id="2-3-什么是DNS"><a href="#2-3-什么是DNS" class="headerlink" title="2.3 什么是DNS"></a>2.3 什么是DNS</h3><p>域名和IP地址相互映射的一个分布式数据库</p>
+<h3 id="2-4-DNS域名称空间的组织方式"><a href="#2-4-DNS域名称空间的组织方式" class="headerlink" title="2.4 DNS域名称空间的组织方式"></a>2.4 DNS域名称空间的组织方式</h3><p><img src="http://img1.51cto.com/attachment/201203/171409287.jpg" alt=""></p>
+<h2 id="3-浏览器向-web-服务器发送一个-HTTP-请求"><a href="#3-浏览器向-web-服务器发送一个-HTTP-请求" class="headerlink" title="3. 浏览器向 web 服务器发送一个 HTTP 请求"></a>3. 浏览器向 web 服务器发送一个 HTTP 请求</h2><h3 id="3-1-TCP三次握手建立连接"><a href="#3-1-TCP三次握手建立连接" class="headerlink" title="3.1 TCP三次握手建立连接"></a>3.1 TCP三次握手建立连接</h3><p><img src="http://www.2cto.com/uploadfile/2013/1022/20131022025346218.png" alt=""></p>
+<h3 id="3-2-http请求信息"><a href="#3-2-http请求信息" class="headerlink" title="3.2 http请求信息"></a>3.2 http请求信息</h3><p>请求信息包含三个部分:<br>第一部分：请求方法URI 协议/版本<br>第二部分：请求头(Request Header)<br>第三部分：请求正文<br>ps: 请求头和请求正文之间是一个空行，这个行非常重要，它表示请求头已经结束，接下来的是请求正文</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">GET /s?wd=tinyint%20mysql%20%E8%8C%83%E5%9B%B4&amp;rsv_spt=1&amp;rsv_iqid=0xdc5b82ba0000f8f1&amp;issp=1&amp;f=8&amp;rsv_bp=0&amp;rsv_idx=2&amp;ie=utf-8&amp;tn=92821989_s_hao_pg&amp;rsv_enter=1&amp;rsv_sug3=1 HTTP/1.1</span><br><span class="line">Host: www.baidu.com</span><br><span class="line">Connection: keep-alive</span><br><span class="line">Upgrade-Insecure-Requests: 1</span><br><span class="line">User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36</span><br><span class="line">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8</span><br><span class="line">Accept-Encoding: gzip, deflate, br</span><br><span class="line">Accept-Language: zh-CN,zh;q=0.9,de;q=0.8,en;q=0.7</span><br><span class="line">Cookie: BAIDUID=112214E2FB5B1B92AE076721859B590F:FG=1; BIDUPSID=112214E2FB5B1B92AE076721859B590F; </span><br><span class="line"></span><br><span class="line">wd=tinyint%20mysql%20%E8%8C%83%E5%9B%B4&amp;rsv_spt=1&amp;rsv_iqid=0xdc5b82ba0000f8f1&amp;issp=1&amp;f=8&amp;rsv_bp=0&amp;rsv_idx=2&amp;ie=utf-8&amp;tn=92821989_s_hao_pg&amp;rsv_enter=1&amp;rsv_sug3=1</span><br></pre></td></tr></table></figure>
+<h3 id="3-3-HTTP请求方法-get-put-post-delete含义与区别"><a href="#3-3-HTTP请求方法-get-put-post-delete含义与区别" class="headerlink" title="3.3 HTTP请求方法-get,put,post,delete含义与区别"></a>3.3 HTTP请求方法-get,put,post,delete含义与区别</h3><blockquote>
+<p>一个URL地址，它用于描述一个网络上的资源，而HTTP中的POST，GET，PUT，DELETE，PATCH就对应着对这个资源的创建，查看，创建或更新，删除，部分更新等五种操作</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>作用</th>
+<th>幂等</th>
+<th>安全</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>用于信息获取</td>
+<td>是</td>
+<td>是</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>一般用于创建数据</td>
+<td>否</td>
+<td>否</td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>创建或完整更新数据</td>
+<td>是</td>
+<td>是</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>一般用于删除数据</td>
+<td>是</td>
+<td>是</td>
+</tr>
+<tr>
+<td>PATCH</td>
+<td>一般用于更新部分数据( 对PUT请求的补充</td>
+<td>否</td>
+<td>否</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-4-http-code与缓存层"><a href="#3-4-http-code与缓存层" class="headerlink" title="3.4 http code与缓存层"></a>3.4 http code与缓存层</h3><ul>
+<li>200状态：当浏览器本地没有缓存或下一层失效时或用户点击CTRL+F5，直接去服务器下载最新数据</li>
+<li>304状态：这一层由last-modify/etag控制。当下一层失效或用户点击F5时，浏览器会发送请求给服务器，如果服务端没有变化，则返回304给浏览器<br>  ps:etag是对url进行标记，检测标记是否存在，但是由于分布式系统中各个机器生成的标记不同，所以一般会关闭掉</li>
+<li>200(from cache)：这一层由expires/cache-control控制。<br>  <strong>1. expires(http1.0版有效)是绝对时间。</strong><br>  <strong>2. cache-control(http1.1版本有效)，相对时间，两者都存在时，cache-control覆盖expires</strong>只要没有失效，浏览器只访问自己的缓存<br>总结：expires和cache-control都是本地的缓存过期时间，缓存期不会请求服务端，last-modify会发生服务端的请求，检测服务端是否有更改。</li>
+</ul>
+<h2 id="4-服务器的永久重定向响应"><a href="#4-服务器的永久重定向响应" class="headerlink" title="4. 服务器的永久重定向响应"></a>4. 服务器的永久重定向响应</h2><h3 id="4-1-为什么使用永久重定向-301"><a href="#4-1-为什么使用永久重定向-301" class="headerlink" title="4.1 为什么使用永久重定向(301)"></a>4.1 为什么使用永久重定向(301)</h3><ul>
+<li>提升搜索引擎排名(就像<a href="http://www.yy.com/和http://yy.com/，搜索引擎会认为它们是两个网站，结果造成每个搜索链接都减少从而降低排名，设定为301后，搜索引擎会认为是一个网站" target="_blank" rel="noopener">http://www.yy.com/和http://yy.com/，搜索引擎会认为它们是两个网站，结果造成每个搜索链接都减少从而降低排名，设定为301后，搜索引擎会认为是一个网站</a>)</li>
+<li>缓存友好性变差（同一个页面有好几个url时，会被重复缓存多次）</li>
+</ul>
+<h3 id="4-2-301和302的区别"><a href="#4-2-301和302的区别" class="headerlink" title="4.2 301和302的区别"></a>4.2 301和302的区别</h3><p>共同点：都是重定向，重定向地址可以在响应头location中获取，效果是：用户输入A瞬间变成B<br>区别：301表示旧地址A的资源已经被永久地移除了（这个资源不可访问了），搜索引擎在抓取新内容的同时也将旧的网址交换为重定向之后的网址；302表示旧地址A的资源还在（仍然可以访问），这个重定向只是临时地从旧地址A跳转到地址B，<strong>搜索引擎会抓取新的内容而保存旧的网址</strong>。 <strong>SEO302好于301</strong></p>
+<h3 id="4-3-重定向原因："><a href="#4-3-重定向原因：" class="headerlink" title="4.3 重定向原因："></a>4.3 重定向原因：</h3><ul>
+<li>网站调整</li>
+<li>网页被移到一个新的地址</li>
+<li>多域名网站重定向到主站</li>
+</ul>
+<h3 id="4-4-什么时候进行301或者302跳转呢？"><a href="#4-4-什么时候进行301或者302跳转呢？" class="headerlink" title="4.4 什么时候进行301或者302跳转呢？"></a>4.4 什么时候进行301或者302跳转呢？</h3><ul>
+<li>域名到期不想续费（或者发现了更适合网站的域名），想换个域名。</li>
+<li>在搜索引擎的搜索结果中出现了不带www的域名，而带www的域名却没有收录，这个时候可以用301重定向来告诉搜索引擎我们目标的域名是哪一个。</li>
+<li>空间服务器不稳定，换空间的时候。</li>
+</ul>
+<h2 id="5-服务器处理请求"><a href="#5-服务器处理请求" class="headerlink" title="5. 服务器处理请求"></a>5. 服务器处理请求</h2><h3 id="5-1-什么是反向代理，正反向代理区别"><a href="#5-1-什么是反向代理，正反向代理区别" class="headerlink" title="5.1 什么是反向代理，正反向代理区别"></a>5.1 什么是反向代理，正反向代理区别</h3><h4 id="5-1-1-正向代理"><a href="#5-1-1-正向代理" class="headerlink" title="5.1.1 正向代理"></a>5.1.1 正向代理</h4><p>原理：就是代理，原理就像一个跳板，访问不了某个网站，通过代理服务器就可以访问。比如通过vpn访问公司内网<br>特点：客户端为了访问原始服务器，通过请求代理服务器，然后代理向原始服务器转交请求获取内容后，转给客户端。必须要进行一些特别的设置才能使用正向代理</p>
+<h4 id="5-1-2-反向代理"><a href="#5-1-2-反向代理" class="headerlink" title="5.1.2. 反向代理"></a>5.1.2. 反向代理</h4><p>原理：对于客户端而言，它更像是原始服务器，客户端不需要特别的设置，直接向反向代理服务器发送请求，反向代理服务器自己判断向应用服务器转发请求，获取内容后返回给客户端。<br>特点：客户端不需要特别的设置，从反向代理服务器获取内容就像从原始服务器获取一样。<br><img src="http://www.2cto.com/uploadfile/Collfiles/20150518/201505180932502.jpg" alt=""></p>
+<h4 id="5-1-3-区别"><a href="#5-1-3-区别" class="headerlink" title="5.1.3. 区别"></a>5.1.3. 区别</h4><p>用途：</p>
+<ul>
+<li>正向代理的典型用途是为在防火墙内的局域网客户端提供访问Internet的途径。正向代理还可以使用缓冲特性减少网络使用率。</li>
+<li>反向代理的典型用途是将 防火墙后面的服务器提供给Internet用户访问。反向代理还可以为后端的多台服务器提供负载平衡，或为后端较慢的服务器提供缓冲服务。</li>
+<li>反向代理还可以启用高级URL策略和管理技术，从而使处于不同web服务器系统的web页面同时存在于同一个URL空间下</li>
+</ul>
+<p>安全性：</p>
+<ul>
+<li>正向代理允许客户端通过它访问任意网站并且隐藏客户端自身，因此你必须采取安全措施以确保仅为经过授权的客户端提供服务</li>
+<li>反向代理对外都是透明的，访问者并不知道自己访问的是一个代理</li>
+</ul>
+<p>参考：</p>
+<ul>
+<li><a href="http://blog.csdn.net/m13666368773/article/details/8060481" target="_blank" rel="noopener">正向代理与反向代理的区别</a></li>
+</ul>
+<h3 id="5-2-阿里云负载均衡-SLB-最佳实践"><a href="#5-2-阿里云负载均衡-SLB-最佳实践" class="headerlink" title="5.2 阿里云负载均衡(SLB)最佳实践"></a>5.2 阿里云负载均衡(SLB)最佳实践</h3><p>负载均衡（Server Load Balancer，下文简称 SLB）的引入，可以降低单台云服务器 ECS（下文简称 ECS）出现异常时对业务的冲击，提升业务的可用性。同时，结合弹性伸缩服务，通过动态调整后端服务器，可以快速对业务进行弹性调整（扩容或缩容），以快速应对业务的发展。</p>
+<p>参考：</p>
+<ul>
+<li><a href="https://yq.aliyun.com/articles/80055" target="_blank" rel="noopener">负载均衡（SLB）使用最佳实践</a></li>
+</ul>
+<h3 id="5-3-Nginx-Keepalived实现站点高可用"><a href="#5-3-Nginx-Keepalived实现站点高可用" class="headerlink" title="5.3 Nginx+Keepalived实现站点高可用"></a>5.3 Nginx+Keepalived实现站点高可用</h3><p>参考：</p>
+<ul>
+<li><a href="http://seanlook.com/2015/05/18/nginx-keepalived-ha/" target="_blank" rel="noopener">Nginx+Keepalived实现站点高可用</a></li>
+</ul>
+<h3 id="5-4-服务器内部处理"><a href="#5-4-服务器内部处理" class="headerlink" title="5.4 服务器内部处理"></a>5.4 服务器内部处理</h3><ul>
+<li>redis缓存</li>
+<li>mysql优化</li>
+<li>代码优化</li>
+<li>…</li>
+</ul>
+<h2 id="6-服务器返回一个-HTTP-响应"><a href="#6-服务器返回一个-HTTP-响应" class="headerlink" title="6. 服务器返回一个 HTTP 响应"></a>6. 服务器返回一个 HTTP 响应</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">HTTP/1.1 301 Moved Permanently</span><br><span class="line">Server: nginx</span><br><span class="line">Date: Mon, 26 Feb 2018 09:36:40 GMT</span><br><span class="line">Content-Encoding:gzip</span><br><span class="line">Content-Type: text/html</span><br><span class="line"><span class="built_in">set</span>-cookie:sf_remember=1e055cc0983b652de8e2d2fd02ff068d; expires=Tue, 06-Mar-2018 02:25:12 GMT; Max-Age=604800; path=/</span><br><span class="line">Location: http://www.sina.com.cn/</span><br><span class="line">Expires: Mon, 26 Feb 2018 10:36:40 GMT</span><br><span class="line">Cache-Control: max-age=3600</span><br><span class="line">Age: 14</span><br><span class="line">Content-Length: 122</span><br><span class="line">X-Cache: HIT from cnc.xidan.sinacache.24.nb.sinaedge.com</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">＜html＞</span><br><span class="line">＜head＞</span><br><span class="line">＜title＞http＜/title＞</span><br><span class="line">＜/head＞</span><br><span class="line">＜body＞</span><br><span class="line">＜!-- body goes here --＞</span><br><span class="line">＜/body＞</span><br><span class="line">＜/html＞</span><br></pre></td></tr></table></figure>
+<h3 id="6-1-状态行"><a href="#6-1-状态行" class="headerlink" title="6.1 状态行"></a>6.1 状态行</h3><blockquote>
+<p>状态行由协议版本、数字形式的状态代码、及相应的状态描述，各元素之间以空格分隔</p>
+</blockquote>
+<p>格式:    HTTP-Version Status-Code Reason-Phrase CRLF<br>例如:    HTTP/1.1 200 OK \r\n</p>
+<ul>
+<li>1xx：信息性状态码，表示服务器已接收了客户端请求，客户端可继续发送请求。</li>
+</ul>
+<p>100 Continue<br>101 Switching Protocols</p>
+<ul>
+<li>2xx：成功状态码，表示服务器已成功接收到请求并进行处理</li>
+</ul>
+<p>200 OK 表示客户端请求成功<br>204 No Content 成功，但不返回任何实体的主体部分</p>
+<ul>
+<li>3xx：重定向状态码，表示服务器要求客户端重定向</li>
+</ul>
+<p>301 永久重定向<br>302 临时重定向<br>304 页面未修改</p>
+<ul>
+<li>4xx：客户端错误状态码，表示客户端的请求有非法内容</li>
+</ul>
+<p>400 Bad Request 表示客户端请求有语法错误，不能被服务器所理解<br>401 Unauthonzed 表示请求未经授权，该状态代码必须与 WWW-Authenticate 报头域一起使用<br>403 Forbidden 表示服务器收到请求，但是拒绝提供服务，通常会在响应正文中给出不提供服务的原因<br>404 Not Found 请求的资源不存在，例如，输入了错误的URL</p>
+<ul>
+<li>5xx：服务器错误状态码，表示服务器未能正常处理客户端的请求而出现意外错误。</li>
+</ul>
+<p>500 服务器内部未知错误<br>502 错误的网关<br>503 服务临时不可用<br>504 网关超时</p>
+<h3 id="6-2-响应头"><a href="#6-2-响应头" class="headerlink" title="6.2 响应头"></a>6.2 响应头</h3><p>响应头部：由关键字/值对组成，每行一对，关键字和值用英文冒号”:”分隔<br>典型的响应头有：<br>| 应答头              | 说明                                       |<br>| —————- | —————————————- |<br>| Allow            | 服务器支持哪些请求方法（如GET、POST）                   |<br>| Content-Encoding | 文档的编码（Encode）方法。只有在解码之后才可以得到Content-Type头指定的内容类型。利用gzip压缩文档能够显著地减少HTML文档的下载时间。Servlet可以通过查看Accept-Encoding头检查浏览器是否支持gzip(即request.getHeader(‘Accept-Encoding’))，为支持gzip的浏览器返回经gzip压缩的HTML页面，为其他浏览器返回普通页面。 |<br>| Content-Length   | 表示内容长度。                                  |<br>| Content-Type     | 表示文档属于什么MIME类型。默认为text/plain，通常设置为text/html |<br>| Date             | 当前的GMT时间(世界标准时间，加8小时为北京时间）               |<br>| Expires          | 文档过期时间，浏览器缓存失效                           |<br>| Last-Modified    | 文档的最后改动时间。客户可以通过If-Modified-Since请求头提供一个日期，只有改动时间晚于指定时间的文档才会返回，否则返回一个304(Not Modified)状态。 |<br>| Location         | 重定向后的地址，状态代码一般为301(永久重定向)或302（临时重定向）     |<br>| Refresh          | 表示浏览器多少时间后刷新文档，以秒计。注意Refresh的意义是”N秒后刷新页面或访问指定页面”，而不是”每隔N秒刷新本页面或访问指定页面”。想要连续刷新要求每次都发送一个Refresh头。 |<br>| Server           | 服务器名字。Servlet一般不设置这个值，而是由Web服务器自己设置。     |<br>| Set-Cookie       | 设置和页面关联的Cookie。                          |<br>| WWW-Authenticate | 客户应该在Authorization头中提供什么类型的授权信息？在包含401（Unauthorized）状态行的应答中这个头是必需的。一般由Web服务器来控制受密码保护页面的访问(如.htaccess) |</p>
+<p>源图片参考：<a href="https://images2015.cnblogs.com/blog/776370/201703/776370-20170322193336611-2098719977.png" target="_blank" rel="noopener">典型的响应头</a></p>
+<h3 id="6-3-响应正文"><a href="#6-3-响应正文" class="headerlink" title="6.3 响应正文"></a>6.3 响应正文</h3><p>包含着我们需要的一些具体信息，比如cookie，html,image，后端返回的请求数据等等.<br><strong>响应正文和响应头之间有一行空格，表示响应头的信息到空格为止</strong></p>
+<h2 id="7-浏览器显示-HTML和加载静态资源"><a href="#7-浏览器显示-HTML和加载静态资源" class="headerlink" title="7. 浏览器显示 HTML和加载静态资源"></a>7. 浏览器显示 HTML和加载静态资源</h2><p>不同浏览器可能解析的过程不太一样，这里我们只介绍webkit的渲染过程，下图对应的就是WebKit渲染的过程，这个过程包括：<br>解析html以构建dom树 -&gt; 构建render树 -&gt; 布局render树 -&gt; 绘制render树<br><img src="https://segmentfault.com/img/bVCZ1H?w=694&amp;h=340" alt=""></p>
+<ul>
+<li>浏览器在解析html文件时，会”自上而下“加载，并在加载过程中进行解析渲染。在解析过程中，如果遇到请求外部资源时，如图片、外链的CSS、iconfont等，请求过程是异步的，并不会影响html文档进行加载</li>
+<li>解析过程中，浏览器首先会解析HTML文件构建DOM树，然后解析CSS文件构建渲染树，等到渲染树构建完成后，浏览器开始布局渲染树并将其绘制到屏幕上</li>
+<li>这个过程比较复杂，涉及到两个概念: reflow(回流)和repain(重绘)<h3 id="7-1-reflow和repain"><a href="#7-1-reflow和repain" class="headerlink" title="7.1 reflow和repain"></a>7.1 reflow和repain</h3>DOM节点中的各个元素都是以盒模型的形式存在，这些都需要浏览器去计算其位置和大小等，这个过程称为relow;<br>当盒模型的位置,大小以及其他属性，如颜色,字体,等确定下来之后，浏览器便开始绘制内容，这个过程称为repain</li>
+</ul>
+<h3 id="7-2-为什么把js文件一般放到文档末尾"><a href="#7-2-为什么把js文件一般放到文档末尾" class="headerlink" title="7.2 为什么把js文件一般放到文档末尾"></a>7.2 为什么把js文件一般放到文档末尾</h3><blockquote>
+<p>加载js文件时，html会挂起渲染，等待文档js文件加载完毕，并且等待解析执行完毕后，才能恢复html文档的渲染线程。</p>
+</blockquote>
+<p>当文档加载过程中遇到js文件，html文档会挂起渲染（加载解析渲染同步）的线程，不仅要等待文档中js文件加载完毕，还要等待解析执行完毕，<br>才可以恢复html文档的渲染线程。因为JS有可能会修改DOM，最为经典的document.write，这意味着，在JS执行完成前，后续所有资源的下载可能是没有必要的，这是js阻塞后续资源下载的根本原因。<br>所以我们平时的代码中，js是放在html文档末尾的</p>
+<h3 id="7-3-浏览器发送请求获取嵌入在-HTML-中的资源（如图片、音频、视频、CSS、JS等等）"><a href="#7-3-浏览器发送请求获取嵌入在-HTML-中的资源（如图片、音频、视频、CSS、JS等等）" class="headerlink" title="7.3 浏览器发送请求获取嵌入在 HTML 中的资源（如图片、音频、视频、CSS、JS等等）"></a>7.3 浏览器发送请求获取嵌入在 HTML 中的资源（如图片、音频、视频、CSS、JS等等）</h3><p>图片、CSS式样表、JavaScript 文件，这些地址都要经历一个和HTML读取类似的过程。所以浏览器会在DNS中查找这些域名，发送请求，重定向等等。<br>不像动态页面，静态文件会允许浏览器对其进行缓存。有的文件可能会不需要与服务器通讯，而从缓存中直接读取，或者可以放到CDN中。</p>
+<p>参考：</p>
+<ul>
+<li><a href="http://www.cnblogs.com/xianyulaodi/p/6547807.html" target="_blank" rel="noopener">老生常谈-从输入url到页面展示到底发生了什么</a></li>
+<li><a href="https://blog.minhow.com/2016/10/29/http/rest-mean/" target="_blank" rel="noopener">REST模式：POST，GET，PUT，DELETE，PATCH的含义与区别</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Gason Wong
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://gaoshangs.github.io/2018-02-26-start-from-input-url.html" title="浏览器输入url之后的技术栈">https://gaoshangs.github.io/2018-02-26-start-from-input-url.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/面试题/" rel="tag"># 面试题</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018-02-23-php7.html" rel="next" title="PHP7 新特性">
+                <i class="fa fa-chevron-left"></i> PHP7 新特性
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018-02-27-load-balance-knowledge-point.html" rel="prev" title="负载均衡知识点">
+                负载均衡知识点 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/avatar.jpeg"
+                alt="Gason Wong" />
+            
+              <p class="site-author-name" itemprop="name">Gason Wong</p>
+              <p class="site-description motion-element" itemprop="description">当你的才华还撑不起你的野心时，就应该静下心来学习</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/gaoshangs" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/u/3056545597" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-输入地址"><span class="nav-number">1.</span> <span class="nav-text">1. 输入地址</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-浏览器查找域名的ip："><span class="nav-number">2.</span> <span class="nav-text">2. 浏览器查找域名的ip：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-常用域名解析linux命令"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 常用域名解析linux命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-DNS查询的两种方式：递归查询和迭代查询"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 DNS查询的两种方式：递归查询和迭代查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-什么是DNS"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 什么是DNS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-DNS域名称空间的组织方式"><span class="nav-number">2.4.</span> <span class="nav-text">2.4 DNS域名称空间的组织方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-浏览器向-web-服务器发送一个-HTTP-请求"><span class="nav-number">3.</span> <span class="nav-text">3. 浏览器向 web 服务器发送一个 HTTP 请求</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-TCP三次握手建立连接"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 TCP三次握手建立连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-http请求信息"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 http请求信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-HTTP请求方法-get-put-post-delete含义与区别"><span class="nav-number">3.3.</span> <span class="nav-text">3.3 HTTP请求方法-get,put,post,delete含义与区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-http-code与缓存层"><span class="nav-number">3.4.</span> <span class="nav-text">3.4 http code与缓存层</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-服务器的永久重定向响应"><span class="nav-number">4.</span> <span class="nav-text">4. 服务器的永久重定向响应</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-为什么使用永久重定向-301"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 为什么使用永久重定向(301)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-301和302的区别"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 301和302的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-重定向原因："><span class="nav-number">4.3.</span> <span class="nav-text">4.3 重定向原因：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-什么时候进行301或者302跳转呢？"><span class="nav-number">4.4.</span> <span class="nav-text">4.4 什么时候进行301或者302跳转呢？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-服务器处理请求"><span class="nav-number">5.</span> <span class="nav-text">5. 服务器处理请求</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-什么是反向代理，正反向代理区别"><span class="nav-number">5.1.</span> <span class="nav-text">5.1 什么是反向代理，正反向代理区别</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#5-1-1-正向代理"><span class="nav-number">5.1.1.</span> <span class="nav-text">5.1.1 正向代理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-1-2-反向代理"><span class="nav-number">5.1.2.</span> <span class="nav-text">5.1.2. 反向代理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-1-3-区别"><span class="nav-number">5.1.3.</span> <span class="nav-text">5.1.3. 区别</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-阿里云负载均衡-SLB-最佳实践"><span class="nav-number">5.2.</span> <span class="nav-text">5.2 阿里云负载均衡(SLB)最佳实践</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3-Nginx-Keepalived实现站点高可用"><span class="nav-number">5.3.</span> <span class="nav-text">5.3 Nginx+Keepalived实现站点高可用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-4-服务器内部处理"><span class="nav-number">5.4.</span> <span class="nav-text">5.4 服务器内部处理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-服务器返回一个-HTTP-响应"><span class="nav-number">6.</span> <span class="nav-text">6. 服务器返回一个 HTTP 响应</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-1-状态行"><span class="nav-number">6.1.</span> <span class="nav-text">6.1 状态行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-2-响应头"><span class="nav-number">6.2.</span> <span class="nav-text">6.2 响应头</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-3-响应正文"><span class="nav-number">6.3.</span> <span class="nav-text">6.3 响应正文</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-浏览器显示-HTML和加载静态资源"><span class="nav-number">7.</span> <span class="nav-text">7. 浏览器显示 HTML和加载静态资源</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-1-reflow和repain"><span class="nav-number">7.1.</span> <span class="nav-text">7.1 reflow和repain</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-2-为什么把js文件一般放到文档末尾"><span class="nav-number">7.2.</span> <span class="nav-text">7.2 为什么把js文件一般放到文档末尾</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-3-浏览器发送请求获取嵌入在-HTML-中的资源（如图片、音频、视频、CSS、JS等等）"><span class="nav-number">7.3.</span> <span class="nav-text">7.3 浏览器发送请求获取嵌入在 HTML 中的资源（如图片、音频、视频、CSS、JS等等）</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Gason Wong</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a></div>
+
+
+
+
+        
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=1272110208&web_id=1272110208" language="JavaScript"></script>
+  </div>
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("sdlsFo914vIIIzYUKRm4HA76-gzGzoHsz", "gwGJvvUPkUsCmXqsXLip0lMQ");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+  
+
+  
+
+</body>
+</html>

@@ -79,16 +79,21 @@
 
 
 
-<meta name="description" content="当你的才华还撑不起你的野心时，就应该静下心来学习">
-<meta property="og:type" content="website">
-<meta property="og:title" content="高尚的网络日志">
-<meta property="og:url" content="https://gaoshangs.github.io/tags/一致性HASH/index.html">
+<meta name="description" content="Nginx、LVS及HAProxy负载均衡软件的优缺点LVS1、抗负载能力强。抗负载能力强、性能高，能达到F5硬件的60%；对内存和cpu资源消耗比较低2、工作在网络4层，通过vrrp协议转发（仅作分发之用），具体的流量由linux内核处理，因此没有流量的产生。2、稳定性、可靠性好，自身有完美的热备方案；（如：LVS+Keepalived）3、应用范围比较广，可以对所有应用做负载均衡；4、不支持正">
+<meta property="og:type" content="article">
+<meta property="og:title" content="负载均衡知识点">
+<meta property="og:url" content="https://gaoshangs.github.io/2018-02-27-load-balance-knowledge-point.html">
 <meta property="og:site_name" content="高尚的网络日志">
-<meta property="og:description" content="当你的才华还撑不起你的野心时，就应该静下心来学习">
+<meta property="og:description" content="Nginx、LVS及HAProxy负载均衡软件的优缺点LVS1、抗负载能力强。抗负载能力强、性能高，能达到F5硬件的60%；对内存和cpu资源消耗比较低2、工作在网络4层，通过vrrp协议转发（仅作分发之用），具体的流量由linux内核处理，因此没有流量的产生。2、稳定性、可靠性好，自身有完美的热备方案；（如：LVS+Keepalived）3、应用范围比较广，可以对所有应用做负载均衡；4、不支持正">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2591074-e1f9125abd395dd4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/606622-ca095362074407e9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2591074-a63f477f08bb86a0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700">
+<meta property="og:updated_time" content="2018-02-28T02:09:40.569Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="高尚的网络日志">
-<meta name="twitter:description" content="当你的才华还撑不起你的野心时，就应该静下心来学习">
+<meta name="twitter:title" content="负载均衡知识点">
+<meta name="twitter:description" content="Nginx、LVS及HAProxy负载均衡软件的优缺点LVS1、抗负载能力强。抗负载能力强、性能高，能达到F5硬件的60%；对内存和cpu资源消耗比较低2、工作在网络4层，通过vrrp协议转发（仅作分发之用），具体的流量由linux内核处理，因此没有流量的产生。2、稳定性、可靠性好，自身有完美的热备方案；（如：LVS+Keepalived）3、应用范围比较广，可以对所有应用做负载均衡；4、不支持正">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/2591074-e1f9125abd395dd4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700">
 
 
 
@@ -118,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="https://gaoshangs.github.io/tags/一致性HASH/"/>
+  <link rel="canonical" href="https://gaoshangs.github.io/2018-02-27-load-balance-knowledge-point.html"/>
 
 
 
 
 
-  <title>标签: 一致性HASH | 高尚的网络日志</title>
+  <title>负载均衡知识点 | 高尚的网络日志</title>
   
 
 
@@ -153,7 +158,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-right ">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -281,54 +286,200 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>一致性HASH<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://gaoshangs.github.io/2018-02-27-load-balance-knowledge-point.html">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Gason Wong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="高尚的网络日志">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018-02-08-algorithm-consistent-hashing.html" itemprop="url">
-              
-                <span itemprop="name">一致性hash算法和应用</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">负载均衡知识点</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-02-08T22:39:00+08:00"
-              content="2018-02-08" >
-          02-08
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-27T17:18:00+08:00">
+                2018-02-27
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018-02-27-load-balance-knowledge-point.html" class="leancloud_visitors" data-flag-title="负载均衡知识点">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Nginx、LVS及HAProxy负载均衡软件的优缺点"><a href="#Nginx、LVS及HAProxy负载均衡软件的优缺点" class="headerlink" title="Nginx、LVS及HAProxy负载均衡软件的优缺点"></a>Nginx、LVS及HAProxy负载均衡软件的优缺点</h2><h3 id="LVS"><a href="#LVS" class="headerlink" title="LVS"></a>LVS</h3><p>1、抗负载能力强。抗负载能力强、性能高，能达到F5硬件的60%；对内存和cpu资源消耗比较低<br>2、工作在网络4层，通过vrrp协议转发（仅作分发之用），具体的流量由linux内核处理，因此没有流量的产生。<br>2、稳定性、可靠性好，自身有完美的热备方案；（如：LVS+Keepalived）<br>3、应用范围比较广，可以对所有应用做负载均衡；<br>4、不支持正则处理，不能做动静分离。<br>5、支持负载均衡算法：rr（轮循）、wrr（带权轮循）、lc（最小连接）、wlc（权重最小连接）<br>6、配置 复杂，对网络依赖比较大，稳定性很高。</p>
+<h3 id="Ngnix"><a href="#Ngnix" class="headerlink" title="Ngnix"></a>Ngnix</h3><p>1、工作在网络的7层之上，可以针对http应用做一些分流的策略，比如针对域名、目录结构；<br>2、Nginx对网络的依赖比较小，理论上能ping通就就能进行负载功能；<br>3、Nginx安装和配置比较简单，测试起来比较方便；<br>4、也可以承担高的负载压力且稳定，一般能支撑超过1万次的并发；<br>5、对后端服务器的健康检查，只支持通过端口来检测，不支持通过url来检测。<br>6、Nginx对请求的异步处理可以帮助节点服务器减轻负载；<br>7、Nginx仅能支持http、https和Email协议，这样就在适用范围较小。<br>8、不支持Session的直接保持，但能通过ip_hash来解决。对Big request header的支持不是很好，<br>9、支持负载均衡算法：Round-robin（轮循）、Weight-round-robin（带权轮循）、Ip-hash（Ip哈希）<br>10、Nginx还能做Web服务器即Cache功能。</p>
+<h3 id="HAProxy"><a href="#HAProxy" class="headerlink" title="HAProxy"></a>HAProxy</h3><p>1、支持两种代理模式：TCP（四层）和HTTP（七层），支持虚拟主机；<br>2、能够补充Nginx的一些缺点比如Session的保持，Cookie的引导等工作<br>3、支持url检测后端的服务器出问题的检测会有很好的帮助。<br>4、更多的负载均衡策略比如：动态加权轮循(Dynamic Round Robin)，加权源地址哈希(Weighted Source Hash)，加权URL哈希和加权参数哈希(Weighted Parameter Hash)已经实现<br>5、单纯从效率上来讲HAProxy更会比Nginx有更出色的负载均衡速度。<br>6、HAProxy可以对Mysql进行负载均衡，对后端的DB节点进行检测和负载均衡。<br>9、支持负载均衡算法：Round-robin（轮循）、Weight-round-robin（带权轮循）、source（原地址保持）、RI（请求URL）、rdp-cookie（根据cookie）<br>10、不能做Web服务器即Cache。<br>11，自带强大的监控页面。</p>
+<h2 id="四层、七层负载均衡的区别"><a href="#四层、七层负载均衡的区别" class="headerlink" title="四层、七层负载均衡的区别"></a>四层、七层负载均衡的区别</h2><h3 id="四层负载均衡"><a href="#四层负载均衡" class="headerlink" title="四层负载均衡"></a>四层负载均衡</h3><p><strong>所谓四层就是基于IP+端口的负载均衡，四层交换机在OSI第4层工作，主要分析IP层及TCP/UDP层，实现四层流量负载均衡</strong><br>就是通过发布三层的IP地址（VIP），然后加四层的端口号，来决定哪些流量需要做负载均衡，对需要处理的流量进行NAT处理，转发至后台服务器，并记录下这个TCP或者UDP的流量是由哪台服务器处理的，后续这个连接的所有流量都同样转发到同一台服务器处理。</p>
+<h3 id="七层"><a href="#七层" class="headerlink" title="七层"></a>七层</h3><p>七层OSI的最高层(应用层)就是基于URL等应用层信息的负载均衡。<br>七层交换机除了支持四层负载均衡以外，还有分析应用层的信息，如HTTP协议URI或Cookie信息。就是在四层的基础上（没有四层是绝对不可能有七层的），再考虑应用层的特征，比如同一个Web服务器的负载均衡，除了根据VIP加80端口辨别是否需要处理的流量，还可根据七层的URL、浏览器类别、语言来决定是否要进行负载均衡。</p>
+<h3 id="keepalived"><a href="#keepalived" class="headerlink" title="keepalived"></a>keepalived</h3><ol>
+<li>作用：Keepalived的作用是检测web服务器的状态，及时踢出故障机器和恢复正常机器。</li>
+<li>原理：工作在IP/TCP协议栈的IP层，TCP层，及应用层（3&amp;4&amp;5层）。</li>
+</ol>
+<p>2.1 Layer3工作方式：<br>Keepalived会定期向服务器群中的服务器，发送一个ICMP的数据包（既我们平时用的Ping程序）,如果发现某台服务的IP地址没有激活，Keepalived便报告这台服务器失效，并将它从服务器群中剔除，这种情况的典型例子是某台服务器被非法关机。<br>Layer3的方式是以服务器的IP地址是否有效作为服务器工作正常与否的标准</p>
+<p>2.2 Layer4工作方式:<br>Layer4主要以TCP端口的状态来决定服务器工作正常与否。如web server的服务端口一般是80，如果Keepalived检测到80端口没有启动，则Keepalived将把这台服务器从服务器群中剔除</p>
+<p>2.3 Layer5工作方式:<br>Layer5就是工作在具体的应用层了,Keepalived将根据用户的设定检查服务器程序的运行是否正常，如果与用户的设定不相符，则Keepalived将把服务器从服务器群中剔除</p>
+<h3 id="Nginx-Keepalived实现站点高可用"><a href="#Nginx-Keepalived实现站点高可用" class="headerlink" title="Nginx+Keepalived实现站点高可用"></a>Nginx+Keepalived实现站点高可用</h3><p><img src="https://upload-images.jianshu.io/upload_images/2591074-e1f9125abd395dd4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt=""><br><img src="https://upload-images.jianshu.io/upload_images/606622-ca095362074407e9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt=""><br><img src="https://upload-images.jianshu.io/upload_images/2591074-a63f477f08bb86a0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt=""></p>
+<p>参考：</p>
+<ul>
+<li><a href="http://seanlook.com/2015/05/18/nginx-keepalived-ha" target="_blank" rel="noopener">Nginx+Keepalived实现站点高可用</a></li>
+<li><a href="https://www.jianshu.com/p/b147a719f740" target="_blank" rel="noopener">Nginx+Keepalived主主模式-负载均衡高可用</a></li>
+<li><a href="https://www.jianshu.com/p/da26df4f7d60" target="_blank" rel="noopener">Keepalived+Nginx实现高可用Web负载均衡</a></li>
+</ul>
+<h2 id="负载均衡（SLB）使用最佳实践"><a href="#负载均衡（SLB）使用最佳实践" class="headerlink" title="负载均衡（SLB）使用最佳实践"></a>负载均衡（SLB）使用最佳实践</h2><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://www.jianshu.com/p/fa937b8e6712" target="_blank" rel="noopener">四层、七层负载均衡的区别</a></li>
+<li><a href="http://www.21yunwei.com/archives/5824" target="_blank" rel="noopener">三大主流软件负载均衡器对比(LVS 、 Nginx 、Haproxy)</a></li>
+<li><a href="https://www.jianshu.com/p/b147a719f740" target="_blank" rel="noopener">Nginx+Keepalived主主模式-负载均衡高可用</a></li>
+<li><a href="http://www.cnblogs.com/micro-chen/p/6697889.html" target="_blank" rel="noopener">阿里云负载均衡技术原理浅析</a></li>
+<li><a href="https://yq.aliyun.com/articles/80055" target="_blank" rel="noopener">阿里云负载均衡（SLB）使用最佳实践</a></li>
+<li><a href="http://blog.51cto.com/peaceweb/757587" target="_blank" rel="noopener">keepalived 学习</a></li>
+</ul>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Gason Wong
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://gaoshangs.github.io/2018-02-27-load-balance-knowledge-point.html" title="负载均衡知识点">https://gaoshangs.github.io/2018-02-27-load-balance-knowledge-point.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018-02-26-start-from-input-url.html" rel="next" title="浏览器输入url之后的技术栈">
+                <i class="fa fa-chevron-left"></i> 浏览器输入url之后的技术栈
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018-02-27-php-Interview-question-4.html" rel="prev" title="PHP面试题汇总(四)">
+                PHP面试题汇总(四) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -336,6 +487,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -356,8 +511,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -444,6 +608,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Nginx、LVS及HAProxy负载均衡软件的优缺点"><span class="nav-number">1.</span> <span class="nav-text">Nginx、LVS及HAProxy负载均衡软件的优缺点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#LVS"><span class="nav-number">1.1.</span> <span class="nav-text">LVS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ngnix"><span class="nav-number">1.2.</span> <span class="nav-text">Ngnix</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HAProxy"><span class="nav-number">1.3.</span> <span class="nav-text">HAProxy</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四层、七层负载均衡的区别"><span class="nav-number">2.</span> <span class="nav-text">四层、七层负载均衡的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#四层负载均衡"><span class="nav-number">2.1.</span> <span class="nav-text">四层负载均衡</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#七层"><span class="nav-number">2.2.</span> <span class="nav-text">七层</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#keepalived"><span class="nav-number">2.3.</span> <span class="nav-text">keepalived</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Nginx-Keepalived实现站点高可用"><span class="nav-number">2.4.</span> <span class="nav-text">Nginx+Keepalived实现站点高可用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#负载均衡（SLB）使用最佳实践"><span class="nav-number">3.</span> <span class="nav-text">负载均衡（SLB）使用最佳实践</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -590,6 +770,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
