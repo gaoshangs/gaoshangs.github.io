@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://gaoshangs.github.io/"/>
-  <updated>2018-02-28T08:42:09.396Z</updated>
+  <updated>2018-02-28T16:07:06.222Z</updated>
   <id>https://gaoshangs.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>PHP面试知识点汇总</title>
+    <link href="https://gaoshangs.github.io/2018-03-01-php-interview-knowledge-point.html"/>
+    <id>https://gaoshangs.github.io/2018-03-01-php-interview-knowledge-point.html</id>
+    <published>2018-02-28T16:06:00.000Z</published>
+    <updated>2018-02-28T16:07:06.222Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><ul><li><a href="https://gaoshangs.github.io/2018-01-15-knowledge-point.html">面试知识点总结(持续更新~~)</a></li><li><a href="https://www.kancloud.cn/daniu945/php/408801" target="_blank" rel="noopener">全网最全php面试题目</a><h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2></li><li><a href="https://gaoshangs.github.io/2018-02-05-algorithm-php.html">常见算法</a></li><li><a href="https://gaoshangs.github.io/2018-02-07-algorithm-merging-sorting.html">归并排序算法</a></li><li><a href="https://gaoshangs.github.io/2018-02-08-algorithm-consistent-hashing.html">一致性hash算法和应用</a></li><li><a href="https://gaoshangs.github.io/2018-02-09-algorithm-skip-list.html">跳跃表算法</a></li></ul><h2 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h2><ul><li><a href="https://gaoshangs.github.io/2018-02-09-php-Interview-question-1.html">PHP面试题汇总(一)</a></li><li><a href="https://gaoshangs.github.io/2018-02-09-php-interview-question-2.html">php面试题汇总(二)</a></li><li><a href="https://gaoshangs.github.io/2018-02-09-php-Interview-question-3.html">PHP面试题汇总(三)</a></li><li><a href="https://gaoshangs.github.io/2018-02-27-php-Interview-question-4.html">PHP面试题汇总(四)</a></li><li><a href="https://gaoshangs.github.io/2018-02-05-design-pattern.html">设计模式</a></li><li><a href="https://gaoshangs.github.io/2018-02-06-design-pattern-interview-question.html">设计模式面试题</a></li><li><a href="http://www.cnblogs.com/datang6777/p/6747764.html" target="_blank" rel="noopener">2017最新PHP面试题</a></li><li><a href="https://gaoshangs.github.io/2018-02-06-regular-expression.html">正则表达式知识点</a></li><li><a href="https://gaoshangs.github.io/2018-02-23-php7.html">PHP7 新特性</a></li><li><a href="https://gaoshangs.github.io/2018-02-28-regular-expression.html">正则表达式知识点</a></li></ul><h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><ul><li><a href="https://gaoshangs.github.io/2018-02-09-http.html">http协议详解</a></li><li><a href="https://gaoshangs.github.io/2018-02-07-linux-command.html">Linux服务器网站故障分析常用的命令</a></li><li><a href="https://gaoshangs.github.io/2018-02-05-linux-network-program.html">linux网络编程</a></li><li><a href="https://gaoshangs.github.io/2018-01-31-tcp_ip_point.html">TCP/IP知识点</a></li><li><a href="https://gaoshangs.github.io/2018-02-28-curl-usage.html">CURL用法</a></li></ul><h2 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h2><ul><li><a href="https://gaoshangs.github.io/2018-02-07-mysql-innodb-index.html">MySQL InnoDB索引底层原理详解</a></li><li><a href="https://gaoshangs.github.io/2018-02-05-mysql.html">MySQL知识点</a></li><li><a href="http://www.cnblogs.com/datang6777/p/6888659.html" target="_blank" rel="noopener">MySQL性能优化总结</a></li></ul><h2 id="NoSQL"><a href="#NoSQL" class="headerlink" title="NoSQL"></a>NoSQL</h2><ul><li><a href="https://gaoshangs.github.io/2018-02-09-redis-memecached-diff.html">redis和memcached的区别</a></li></ul><h2 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h2><ul><li><a href="https://gaoshangs.github.io/2018-02-27-load-balance-knowledge-point.html">负载均衡知识点</a></li><li><a href="https://gaoshangs.github.io/2018-02-26-start-from-input-url.html">浏览器输入url之后的技术栈</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;知识点&quot;&gt;&lt;a href=&quot;#知识点&quot; class=&quot;headerlink&quot; title=&quot;知识点&quot;&gt;&lt;/a&gt;知识点&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://gaoshangs.github.io/2018-01-15-knowledge-po
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>正则表达式知识点</title>
@@ -123,28 +145,6 @@
         &lt;p&gt;官方的文档显示，PHP7可以达到PHP5.x版本&lt;strong&gt;两倍&lt;/strong&gt;的性能。同时还提供了很多其他语言流行的语法格式。另外其PHP7的兼容性也是非常好的。&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;函数参数支持标量类型声明&lt;br&gt;在PHP5中，可以将函数参数指定为类名
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>PHP面试知识点汇总</title>
-    <link href="https://gaoshangs.github.io/2018-02-09-php-interview-knowledge-point.html"/>
-    <id>https://gaoshangs.github.io/2018-02-09-php-interview-knowledge-point.html</id>
-    <published>2018-02-09T02:50:00.000Z</published>
-    <updated>2018-02-28T08:56:03.195Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><ul><li><a href="https://gaoshangs.github.io/2018-01-15-knowledge-point.html">面试知识点总结(持续更新~~)</a></li><li><a href="https://www.kancloud.cn/daniu945/php/408801" target="_blank" rel="noopener">全网最全php面试题目</a><h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2></li><li><a href="https://gaoshangs.github.io/2018-02-05-algorithm-php.html">常见算法</a></li><li><a href="https://gaoshangs.github.io/2018-02-07-algorithm-merging-sorting.html">归并排序算法</a></li><li><a href="https://gaoshangs.github.io/2018-02-08-algorithm-consistent-hashing.html">一致性hash算法和应用</a></li><li><a href="https://gaoshangs.github.io/2018-02-09-algorithm-skip-list.html">跳跃表算法</a></li></ul><h2 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h2><ul><li><a href="https://gaoshangs.github.io/2018-02-09-php-Interview-question-1.html">PHP面试题汇总(一)</a></li><li><a href="https://gaoshangs.github.io/2018-02-09-php-interview-question-2.html">php面试题汇总(二)</a></li><li><a href="https://gaoshangs.github.io/2018-02-09-php-Interview-question-3.html">PHP面试题汇总(三)</a></li><li><a href="https://gaoshangs.github.io/2018-02-09-php-Interview-question-4.html">PHP面试题汇总(四)</a></li><li><a href="https://gaoshangs.github.io/2018-02-05-design-pattern.html">设计模式</a></li><li><a href="https://gaoshangs.github.io/2018-02-06-design-pattern-interview-question.html">设计模式面试题</a></li><li><a href="http://www.cnblogs.com/datang6777/p/6747764.html" target="_blank" rel="noopener">2017最新PHP面试题</a></li><li><a href="https://gaoshangs.github.io/2018-02-06-regular-expression.html">正则表达式知识点</a></li></ul><h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><ul><li><a href="https://gaoshangs.github.io/2018-02-09-http.html">http协议详解</a></li><li><a href="https://gaoshangs.github.io/2018-02-07-linux-command.html">Linux服务器网站故障分析常用的命令</a></li><li><a href="https://gaoshangs.github.io/2018-02-05-linux-network-program.html">linux网络编程</a></li><li><a href="https://gaoshangs.github.io/2018-01-31-tcp_ip_point.html">TCP/IP知识点</a></li><li><a href="https://gaoshangs.github.io/2018-02-28-curl-usage.html">CURL用法</a></li></ul><h2 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h2><ul><li><a href="https://gaoshangs.github.io/2018-02-07-mysql-innodb-index.html">MySQL InnoDB索引底层原理详解</a></li><li><a href="https://gaoshangs.github.io/2018-02-05-mysql.html">MySQL知识点</a></li><li><a href="http://www.cnblogs.com/datang6777/p/6888659.html" target="_blank" rel="noopener">MySQL性能优化总结</a></li></ul><h2 id="NoSQL"><a href="#NoSQL" class="headerlink" title="NoSQL"></a>NoSQL</h2><ul><li><a href="https://gaoshangs.github.io/2018-02-09-redis-memecached-diff.html">redis和memcached的区别</a></li></ul><h2 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h2><ul><li><a href="https://gaoshangs.github.io/2018-02-27-load-balance-knowledge-point.md.html">负载均衡知识点</a></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;知识点&quot;&gt;&lt;a href=&quot;#知识点&quot; class=&quot;headerlink&quot; title=&quot;知识点&quot;&gt;&lt;/a&gt;知识点&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://gaoshangs.github.io/2018-01-15-knowledge-po
       
     
     </summary>
