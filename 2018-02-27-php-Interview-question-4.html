@@ -88,7 +88,7 @@
 <meta property="og:description" content="Nginx+Keepalived主主模式-负载均衡高可用 nginx可以提供负载均衡服务，如果单台nginx提供服务存在单点隐患，请问有哪些方案可以解决？  解决方案： 阿里云：SLB（付费） 硬件负载均衡器（F5，Radware） 软件方式实现高可用或负载均衡:Keepalived、LVS  参考 负载均衡知识点  日志系统架构思路有赞日志架构图 有赞统一日志系统，负责收集所有系统日志和业务日志">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://7xtb4n.com1.z0.glb.clouddn.com/track-pic-2-1.png">
-<meta property="og:updated_time" content="2018-03-01T00:08:48.561Z">
+<meta property="og:updated_time" content="2018-03-01T08:40:09.024Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PHP面试题汇总(四)">
 <meta name="twitter:description" content="Nginx+Keepalived主主模式-负载均衡高可用 nginx可以提供负载均衡服务，如果单台nginx提供服务存在单点隐患，请问有哪些方案可以解决？  解决方案： 阿里云：SLB（付费） 硬件负载均衡器（F5，Radware） 软件方式实现高可用或负载均衡:Keepalived、LVS  参考 负载均衡知识点  日志系统架构思路有赞日志架构图 有赞统一日志系统，负责收集所有系统日志和业务日志">
@@ -404,6 +404,9 @@
 <li><a href="https://tech.meituan.com/CAT_in_Depth_Java_Application_Monitoring.html" target="_blank" rel="noopener">深度剖析开源分布式监控CAT</a></li>
 <li><a href="http://www.yunweipai.com/archives/23874.html" target="_blank" rel="noopener">从零开始搭建ELK+GPE监控预警系统</a></li>
 </ul>
+<h2 id="不停机分库分表方案"><a href="#不停机分库分表方案" class="headerlink" title="不停机分库分表方案"></a>不停机分库分表方案</h2><ul>
+<li><a href="https://mp.weixin.qq.com/s/uKGdK-1jP0q6xiJyczGwFw" target="_blank" rel="noopener">不停机分库分表迁移</a></li>
+</ul>
 
       
     </div>
@@ -625,7 +628,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Nginx-Keepalived主主模式-负载均衡高可用"><span class="nav-number">1.</span> <span class="nav-text">Nginx+Keepalived主主模式-负载均衡高可用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方案："><span class="nav-number">1.1.</span> <span class="nav-text">解决方案：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">1.2.</span> <span class="nav-text">参考</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#日志系统架构思路"><span class="nav-number">2.</span> <span class="nav-text">日志系统架构思路</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#有赞日志架构图"><span class="nav-number">2.1.</span> <span class="nav-text">有赞日志架构图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考-1"><span class="nav-number">2.2.</span> <span class="nav-text">参考</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#监控系统"><span class="nav-number">3.</span> <span class="nav-text">监控系统</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Nginx-Keepalived主主模式-负载均衡高可用"><span class="nav-number">1.</span> <span class="nav-text">Nginx+Keepalived主主模式-负载均衡高可用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方案："><span class="nav-number">1.1.</span> <span class="nav-text">解决方案：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">1.2.</span> <span class="nav-text">参考</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#日志系统架构思路"><span class="nav-number">2.</span> <span class="nav-text">日志系统架构思路</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#有赞日志架构图"><span class="nav-number">2.1.</span> <span class="nav-text">有赞日志架构图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考-1"><span class="nav-number">2.2.</span> <span class="nav-text">参考</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#监控系统"><span class="nav-number">3.</span> <span class="nav-text">监控系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不停机分库分表方案"><span class="nav-number">4.</span> <span class="nav-text">不停机分库分表方案</span></a></li></ol></div>
             
 
           </div>
