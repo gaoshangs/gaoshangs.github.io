@@ -93,7 +93,7 @@
 <meta property="og:image" content="https://pic002.cnblogs.com/images/2012/270324/2012040114105477.png">
 <meta property="og:image" content="http://images0.cnblogs.com/blog2015/487276/201505/191926445106317.png">
 <meta property="og:image" content="http://images0.cnblogs.com/blog2015/487276/201505/191937431352964.png">
-<meta property="og:updated_time" content="2018-03-01T00:23:36.301Z">
+<meta property="og:updated_time" content="2018-03-01T00:30:49.608Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL知识点">
 <meta name="twitter:description" content="数据库三大范式1. 第一范式(确保每列保持原子性) 第一范式是最基本的范式。如果数据库表中的所有字段值都是不可分解的原子值，就说明该数据库表满足了第一范式  第一范式需要按照系统的实际需求来定。比如一般”地址”这个属性都是一个字段就可以了，但是如果系统经常访问城市，那就可以对地址进行拆分，这样在对地址进行查询的时候就比较的方便。  上表所示的用户信息遵循了第一范式的要求，这样在对用户使用城市进行分">
@@ -554,7 +554,7 @@
 </tr>
 </tbody>
 </table>
-<p>取值范围如果加了unsigned，则最大值翻倍，如tinyint unsigned的取值范围为(0~256)。<br>int(m)里的m是表示SELECT查询结果集中的显示宽度，并不影响实际的取值范围，没有影响到显示的宽度，不知道这个m有什么用。</p>
+<p>取值范围如果加了unsigned，则最大值翻倍，如tinyint unsigned的取值范围为(0~255)。<br>int(m)里的m是表示SELECT查询结果集中的显示宽度，并不影响实际的取值范围，没有影响到显示的宽度，不知道这个m有什么用。</p>
 <p><strong>2、浮点型(float和double)</strong></p>
 <table>
 <thead>
