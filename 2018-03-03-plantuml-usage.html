@@ -66,7 +66,7 @@
 
 
 
-  <meta name="keywords" content="一致性HASH,算法," />
+  <meta name="keywords" content="UML," />
 
 
 
@@ -79,26 +79,25 @@
 
 
 
-<meta name="description" content="一致性HASH原理和应用 问题：单机redis20G如何承载500G的cache（考虑redis集群应用）  应用场景如何对请求与缓存服务器之间进行精准映射,以及优雅的扩展，剔除缓存服务器，提升缓存服务的容错性和扩展性  容错性：指当系统中某一个或几个服务器变得不可用时，整个系统是否可以正确高效运行； 扩展性：指当加入新的服务器后，整个系统是否可以正确高效运行。  算法概述一致性哈希将整个哈希空间">
-<meta name="keywords" content="一致性HASH,算法">
+<meta name="description" content="安装java环境安装Graphviz graphviz 是个开源的图片渲染库，可将 PlantUML 脚本转换为图片。  两种安装方式：1、终端执行brew install graphviz2、官网下载安装（推荐） webstorm安装plantUML插件 jetbrains系列IDE基本都行   打开IntelliJ IDEA，选择菜单File-&amp;gt;Settings 选择Plugins项，在">
+<meta name="keywords" content="UML">
 <meta property="og:type" content="article">
-<meta property="og:title" content="一致性hash算法和应用">
-<meta property="og:url" content="https://gaoshangs.github.io/2018-02-08-algorithm-consistent-hashing.html">
+<meta property="og:title" content="PlantUML工具使用和常用语法">
+<meta property="og:url" content="https://gaoshangs.github.io/2018-03-03-plantuml-usage.html">
 <meta property="og:site_name" content="高尚的网络日志">
-<meta property="og:description" content="一致性HASH原理和应用 问题：单机redis20G如何承载500G的cache（考虑redis集群应用）  应用场景如何对请求与缓存服务器之间进行精准映射,以及优雅的扩展，剔除缓存服务器，提升缓存服务的容错性和扩展性  容错性：指当系统中某一个或几个服务器变得不可用时，整个系统是否可以正确高效运行； 扩展性：指当加入新的服务器后，整个系统是否可以正确高效运行。  算法概述一致性哈希将整个哈希空间">
+<meta property="og:description" content="安装java环境安装Graphviz graphviz 是个开源的图片渲染库，可将 PlantUML 脚本转换为图片。  两种安装方式：1、终端执行brew install graphviz2、官网下载安装（推荐） webstorm安装plantUML插件 jetbrains系列IDE基本都行   打开IntelliJ IDEA，选择菜单File-&amp;gt;Settings 选择Plugins项，在">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2836699-761c7ac38078a2e5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/425">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2836699-cdb684dc8afcafbe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/572">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2836699-99c54dadceb7f18b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/572">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2836699-10c77e305faab998.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/572">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2836699-620c26159a2f672d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/572">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2836699-c1d68874c041557d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/539">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2836699-03901e612ee8c8fe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/628">
-<meta property="og:updated_time" content="2018-02-23T05:38:38.722Z">
+<meta property="og:image" content="http://www.plantuml.com/plantuml/svg/Aov9B2hXidhPsljyxpglnBB4vtthdovgjbRWidgoe_l5thq5YNabfRavUbc9HTPSLi_tJ7lQDlDPV_-B_HkUJMj_idiRIEMppkKl5lO0MSKb-GK0">
+<meta property="og:image" content="http://www.plantuml.com/plantuml/svg/RP7DIiD058Ntzodc1SpEJI5IzKcgHWt45EguS6Vz8LeemH8njVujWXRHfgKwqQZ9osHk9c_XDAD28RlXt7FEns7gkxJHedix5W0rgMKGl6GyTlaW0T1rKfozuirHuJCSlH5T1rYsp7M3B2oHbUPQZOWmmiaXoFTCAcyrmcClV_7AE5wCiJlAtZlPrtr5N1sK2UmcDOXbR59Pc_RH3z5FyY3crqCUFOZa8xywve63qo4edYnPRTZslhH_FsTny5kZQPhixGfs8bA7B9ByiLVqxeYKeRINmPAUTnWUj4NgyS6jehVChUqAl3kjmF_FdQkPZLQ2Yi-F_ajyzeNpnAC9Ty-HdM8xXBfXRyXF-040">
+<meta property="og:image" content="http://www.plantuml.com/plantuml/svg/SoWkIImgAStDuUBAIKqhKIZ9LoZAJCyeKKZ9B4fDBidCp-DAJ2x9Br9ujgtZnPQTBnfQeVoNKngUJbdtTE8CBf2wnBpqd5I59pitFEsTgb3D1LUieAkhe04HrkI2CHJqx822ksSyMxDFKy5A8JClEQSq9PLBu-cETK-xLaAbeKgj558hIbBpKeeHke568YolvU9o04e3FG00">
+<meta property="og:image" content="http://www.plantuml.com/plantuml/svg/SoWkIImgAStDuU82ixYib9wjNVforHB3fqjQdazeKxA6YnZ1HJBJ53IKdirT-6JtDiEd7KkUJLkhfAbGaf6Qfw1HKbIQgicb00HMK0NFEYOyNztzRFgsPvtBNopiUJwhvMdNYYTxvrY3LO6DUjhHzcpAUeXw8pG3y_8Xne6DX5fgz6H7BovZbI3cfkOKfyBr8RdN6CtuojHYXFd8TXZ3BK0t6cOygjjGz2Ax3wlsl9JCD2vKbfNIouMxdkxgXmIsCJom8IgGmzm4cnzWTfj0B4Qs5HuMI6QOuWi7c5ccE3s1wN-u7dn-X_W5GXQNv1TmEG3PmCG70000">
+<meta property="og:image" content="http://www.plantuml.com/plantuml/svg/SoWkIImgAStDuU8gI4pEJanFLL1wlhlboUvjXaeArLmAG10D4z0pL8fLq4NY6od5egam0gcmWmiOWRHmrN9nvUMdm0qsGZVO2CrW8mo3ZI06Wqn-iMN-YxrxdyvjVx5muRCvlK-x5ZwTkG9iHt9EVcaAp6Zioi1kUzcm-yM-YN11mrXITHYHhCCOxC2Kn9B4fCHYO43uLWONvi228Iq_9oMrI44f92EpM068SYkXGZ05OClS8AgC8NO3JGDhBKhC1Hhdbf-FgXOiR09J2bICwMb8Q29CnVGaL0NCB4m_eIdWSaZDIm6c9000">
+<meta property="og:image" content="http://www.plantuml.com/plantuml/svg/dP8_QyCm4CLtVOgR0uOcb0mUYY4aq2MO2hg43CA-sWgg1DRP7aA-UoN5IgoaKpH9x_tUdVuLbaH7_QzYp5P28QpVts2KDRMC7HP7oB8Fs1lYhJ4aTUCe4eHp2SuCt8ZmPwqm27uIbB8p5Lhhq1ouRBHGsm4r1UZktS8vxAIMjasBR8p-aKtVUJA7xN1T1sPknI9pvX8tFGVJJUzn_1QgHuuAAv961_T9JTYomq7Y63f5BOb5uDy6IUmBJqx5-iKu5yEKdHxdeSBrh7vmxo_1LGopLJ0k_eOArBNx1Ny0">
+<meta property="og:updated_time" content="2018-03-03T09:44:27.641Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="一致性hash算法和应用">
-<meta name="twitter:description" content="一致性HASH原理和应用 问题：单机redis20G如何承载500G的cache（考虑redis集群应用）  应用场景如何对请求与缓存服务器之间进行精准映射,以及优雅的扩展，剔除缓存服务器，提升缓存服务的容错性和扩展性  容错性：指当系统中某一个或几个服务器变得不可用时，整个系统是否可以正确高效运行； 扩展性：指当加入新的服务器后，整个系统是否可以正确高效运行。  算法概述一致性哈希将整个哈希空间">
-<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/2836699-761c7ac38078a2e5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/425">
+<meta name="twitter:title" content="PlantUML工具使用和常用语法">
+<meta name="twitter:description" content="安装java环境安装Graphviz graphviz 是个开源的图片渲染库，可将 PlantUML 脚本转换为图片。  两种安装方式：1、终端执行brew install graphviz2、官网下载安装（推荐） webstorm安装plantUML插件 jetbrains系列IDE基本都行   打开IntelliJ IDEA，选择菜单File-&amp;gt;Settings 选择Plugins项，在">
+<meta name="twitter:image" content="http://www.plantuml.com/plantuml/svg/Aov9B2hXidhPsljyxpglnBB4vtthdovgjbRWidgoe_l5thq5YNabfRavUbc9HTPSLi_tJ7lQDlDPV_-B_HkUJMj_idiRIEMppkKl5lO0MSKb-GK0">
 
 
 
@@ -128,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="https://gaoshangs.github.io/2018-02-08-algorithm-consistent-hashing.html"/>
+  <link rel="canonical" href="https://gaoshangs.github.io/2018-03-03-plantuml-usage.html"/>
 
 
 
 
 
-  <title>一致性hash算法和应用 | 高尚的网络日志</title>
+  <title>PlantUML工具使用和常用语法 | 高尚的网络日志</title>
   
 
 
@@ -305,7 +304,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gaoshangs.github.io/2018-02-08-algorithm-consistent-hashing.html">
+    <link itemprop="mainEntityOfPage" href="https://gaoshangs.github.io/2018-03-03-plantuml-usage.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Gason Wong">
@@ -322,7 +321,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">一致性hash算法和应用</h1>
+          <h1 class="post-title" itemprop="name headline">PlantUML工具使用和常用语法</h1>
         
 
         <div class="post-meta">
@@ -334,8 +333,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-08T22:39:00+08:00">
-                2018-02-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-03T16:58:00+08:00">
+                2018-03-03
               </time>
             
 
@@ -345,6 +344,50 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/研发工具/" itemprop="url" rel="index">
+                    <span itemprop="name">研发工具</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/研发工具/思维导图-建模/" itemprop="url" rel="index">
+                    <span itemprop="name">思维导图&建模</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/研发工具/思维导图-建模/UML/" itemprop="url" rel="index">
+                    <span itemprop="name">UML</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -352,7 +395,7 @@
 
           
           
-             <span id="/2018-02-08-algorithm-consistent-hashing.html" class="leancloud_visitors" data-flag-title="一致性hash算法和应用">
+             <span id="/2018-03-03-plantuml-usage.html" class="leancloud_visitors" data-flag-title="PlantUML工具使用和常用语法">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -383,43 +426,109 @@
       
 
       
-        <h2 id="一致性HASH原理和应用"><a href="#一致性HASH原理和应用" class="headerlink" title="一致性HASH原理和应用"></a>一致性HASH原理和应用</h2><blockquote>
-<p>问题：单机redis20G如何承载500G的cache（考虑redis集群应用）</p>
+        <h2 id="安装java环境"><a href="#安装java环境" class="headerlink" title="安装java环境"></a>安装java环境</h2><h2 id="安装Graphviz"><a href="#安装Graphviz" class="headerlink" title="安装Graphviz"></a>安装Graphviz</h2><blockquote>
+<p>graphviz 是个开源的图片渲染库，可将 PlantUML 脚本转换为图片。</p>
 </blockquote>
-<h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><p>如何对<strong>请求与缓存服务器之间进行精准映射,以及优雅的扩展，剔除缓存服务器</strong>，提升缓存服务的容错性和扩展性</p>
-<ul>
-<li>容错性：指当系统中某一个或几个服务器变得不可用时，整个系统是否可以正确高效运行；</li>
-<li>扩展性：指当加入新的服务器后，整个系统是否可以正确高效运行。</li>
-</ul>
-<h3 id="算法概述"><a href="#算法概述" class="headerlink" title="算法概述"></a>算法概述</h3><p>一致性哈希将整个哈希空间组织成一个虚拟的圆环，假如整个哈希函数的值空间为0 - 2^32 -1(一个32位的无符号整形)，如下图:整个空间按顺时针方向组织,0和2^32-1在零点中方向重合</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/2836699-761c7ac38078a2e5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/425" alt="一致性HASH闭环"></p>
-<p><strong>第一步：在哈希闭环中确定各台服务器位置</strong></p>
-<p>将各台服务器的ip或主机名为关键字通过H函数得到一个哈希值，然后在哈希闭环中标注位置。如下图3台redis服务：</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/2836699-cdb684dc8afcafbe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/572" alt=""></p>
-<p><strong>第二步：定位数据访问的服务器</strong></p>
-<p>将数据key使用相同的函数H计算出哈希值h，通根据h确定此数据在环上的位置，<strong>从此位置沿环顺时针“行走”</strong>，第一台遇到的服务器就是其应该定位到的服务器</p>
-<p>例如我们缓存服务器中有A、B、C、D四个key对应的数据对象，经过哈希计算后，在环空间上的位置如下：</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/2836699-99c54dadceb7f18b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/572" alt="一致性hash函数值空间"></p>
-<p><strong>容错性与可扩展性分析</strong></p>
+<p>两种安装方式：<br>1、<strong>终端执行brew install graphviz</strong><br>2、官网下载安装（推荐）</p>
+<h2 id="webstorm安装plantUML插件"><a href="#webstorm安装plantUML插件" class="headerlink" title="webstorm安装plantUML插件"></a>webstorm安装plantUML插件</h2><blockquote>
+<p>jetbrains系列IDE基本都行</p>
+</blockquote>
 <ol>
-<li><p>假设redis-2宕机：ACD节点并不受影响，只有B节点被重定向至Redis-0</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/2836699-10c77e305faab998.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/572" alt="删除节点"></p>
+<li>打开IntelliJ IDEA，选择菜单File-&gt;Settings</li>
+<li>选择Plugins项，在中间的搜索输入框输入“plantuml”，会提示本地插件库中没有该插件。选择“Search in repositories”</li>
+<li>选中PlantUML integration plugin，然后选择安装。</li>
+<li>重启IDE，让PlantUML插件生效。</li>
+<li>验证PlantUML插件安装成功:file-&gt;new-&gt;UML *</li>
+</ol>
+<h2 id="hexo支持PlantUML"><a href="#hexo支持PlantUML" class="headerlink" title="hexo支持PlantUML"></a>hexo支持PlantUML</h2><h3 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h3><p><code>npm install hexo-tag-plantuml --save</code></p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% plantuml %&#125;</span><br><span class="line">    Bob-&gt;Alice : hello</span><br><span class="line">&#123;% endplantuml %&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;% plantuml %&#125;</span><br><span class="line">start</span><br><span class="line">:配置Java环境; </span><br><span class="line">:下载pantuml.jar;</span><br><span class="line">:编写描述文件; </span><br><span class="line">:执行; </span><br><span class="line">stop</span><br><span class="line">&#123;% endplantuml %&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="效果如下"><a href="#效果如下" class="headerlink" title="效果如下"></a>效果如下</h3><img src="http://www.plantuml.com/plantuml/svg/Aov9B2hXidhPsljyxpglnBB4vtthdovgjbRWidgoe_l5thq5YNabfRavUbc9HTPSLi_tJ7lQDlDPV_-B_HkUJMj_idiRIEMppkKl5lO0MSKb-GK0">
+<h2 id="PlantULM-快速入门"><a href="#PlantULM-快速入门" class="headerlink" title="PlantULM 快速入门"></a>PlantULM 快速入门</h2><h3 id="时序图"><a href="#时序图" class="headerlink" title="时序图"></a>时序图</h3><ol>
+<li><p>效果图</p>
+<img src="http://www.plantuml.com/plantuml/svg/RP7DIiD058Ntzodc1SpEJI5IzKcgHWt45EguS6Vz8LeemH8njVujWXRHfgKwqQZ9osHk9c_XDAD28RlXt7FEns7gkxJHedix5W0rgMKGl6GyTlaW0T1rKfozuirHuJCSlH5T1rYsp7M3B2oHbUPQZOWmmiaXoFTCAcyrmcClV_7AE5wCiJlAtZlPrtr5N1sK2UmcDOXbR59Pc_RH3z5FyY3crqCUFOZa8xywve63qo4edYnPRTZslhH_FsTny5kZQPhixGfs8bA7B9ByiLVqxeYKeRINmPAUTnWUj4NgyS6jehVChUqAl3kjmF_FdQkPZLQ2Yi-F_ajyzeNpnAC9Ty-HdM8xXBfXRyXF-040">
 </li>
-<li><p>如果我们在系统中增加一台服务器Redis-3 Server：对于C这个key，重新定位至Redis-3 服务器，其他非C的key均不受影响</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/2836699-620c26159a2f672d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/572" alt="添加节点"></p>
+<li><p>源码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">@startuml</span><br><span class="line"></span><br><span class="line">title 时序图</span><br><span class="line"></span><br><span class="line">== 鉴权阶段 ==</span><br><span class="line"></span><br><span class="line">Alice -&gt; Bob: 请求</span><br><span class="line">Bob -&gt; Alice: 应答</span><br><span class="line"></span><br><span class="line">== 数据上传 ==</span><br><span class="line"></span><br><span class="line">Alice -&gt; Bob: 上传数据</span><br><span class="line">note left: 这是显示在左边的备注</span><br><span class="line"></span><br><span class="line">Bob --&gt; Canny: 转交数据</span><br><span class="line">... 不超过 5 秒钟 ...</span><br><span class="line">Canny --&gt; Bob: 状态返回</span><br><span class="line">note right: 这是显示在右边的备注</span><br><span class="line"></span><br><span class="line">Bob -&gt; Alice: 状态返回</span><br><span class="line"></span><br><span class="line">== 状态显示 ==</span><br><span class="line"></span><br><span class="line">Alice -&gt; Alice: 给自己发消息</span><br><span class="line"></span><br><span class="line">@enduml</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>语法</p>
 </li>
 </ol>
-<h3 id="数据倾斜问题"><a href="#数据倾斜问题" class="headerlink" title="数据倾斜问题"></a>数据倾斜问题</h3><p><strong>1. 问题概述</strong></p>
-<p>一致性哈希算法在服务节点太少时，容易因为节点分部不均匀而造成数据倾斜问题，必然造成大量数据集中到Redis-1上，而只有极少量会定位到Redis-0上。如下图</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/2836699-c1d68874c041557d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/539" alt=""></p>
-<p><strong>2. 使用虚拟节点解决</strong></p>
-<p>对每一个服务节点多计算N个哈希，每个计算结果位置都放置一个此服务节点，称为虚拟节点。<strong>在实际应用中，通常将虚拟节点数设置为32甚至更大</strong>，因此即使很少的服务节点也能做到相对均匀的数据分布</p>
-<p><strong>第一步：为每个机器多增加N个虚拟节点</strong></p>
-<p>为每个机器多计算三个虚拟节点，分别计算“Redis-1 #1”、“Redis-1 #2”、“Redis-1 #3”、“Redis-0 #1”、“Redis-0 #2”、“Redis-0 #3”的哈希值，于是形成六个虚拟节点:</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/2836699-03901e612ee8c8fe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/628" alt=""></p>
-<p><strong>第二步：将虚拟节点映射到实际节点</strong></p>
-<p>数据定位算法不变，只是<strong>多了一步虚拟节点到实际节点的映射</strong>，例如定位到“Redis-1#1”、“Redis-1#2”、“Redis-1#3”三个虚拟节点的数据均定位到Redis-1上</p>
-<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="https://www.jianshu.com/p/793c76ee84fc" target="_blank" rel="noopener">一致性哈希算法在分布式缓存中的应用</a></p>
+<p>使用 title 来指定标题<br>‘-&gt;’ 和 ‘–&gt;’ 来指示线条的形式<br>在每个时序后面加冒号 : 来添加注释<br>使用 note 来显示备注，备注可以指定显示在左边或右边<br>使用 == xxx == 来分隔时序图<br>使用 … 来表示延迟省略号<br>节点可以给自己发送消息，方法是发送方和接收方使用同一个主体即可</p>
+<h3 id="用例图"><a href="#用例图" class="headerlink" title="用例图"></a>用例图</h3><ol>
+<li>效果图<img src="http://www.plantuml.com/plantuml/svg/SoWkIImgAStDuUBAIKqhKIZ9LoZAJCyeKKZ9B4fDBidCp-DAJ2x9Br9ujgtZnPQTBnfQeVoNKngUJbdtTE8CBf2wnBpqd5I59pitFEsTgb3D1LUieAkhe04HrkI2CHJqx822ksSyMxDFKy5A8JClEQSq9PLBu-cETK-xLaAbeKgj558hIbBpKeeHke568YolvU9o04e3FG00"></li>
+<li><p>源码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">@startuml</span><br><span class="line"></span><br><span class="line">left to right direction</span><br><span class="line">actor 消费者</span><br><span class="line">actor 销售员</span><br><span class="line">rectangle 买单 &#123;</span><br><span class="line">消费者 -- (买单)</span><br><span class="line">(买单) .&gt; (付款) : include</span><br><span class="line">(帮助) .&gt; (买单) : extends</span><br><span class="line">(买单) -- 销售员</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@enduml</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>语法</p>
+</li>
+</ol>
+<ul>
+<li>用例图<ul>
+<li>用例图是指由参与者（Actor）、用例（Use Case）以及它们之间的关系构成的用于描述系统功能的静态视图</li>
+<li>百度百科上有简易的入门资料，其中用例之间的关系 (include, extends) 是关键</li>
+</ul>
+</li>
+<li>使用 actor 来定义参与者</li>
+<li>使用括号 (xxx) 来表示用例，用例用椭圆形表达</li>
+<li>使用不同的线条表达不同的关系。包括参与者与用例的关系，用例与用例的关系</li>
+</ul>
+<h3 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h3><ol>
+<li>效果图<img src="http://www.plantuml.com/plantuml/svg/SoWkIImgAStDuU82ixYib9wjNVforHB3fqjQdazeKxA6YnZ1HJBJ53IKdirT-6JtDiEd7KkUJLkhfAbGaf6Qfw1HKbIQgicb00HMK0NFEYOyNztzRFgsPvtBNopiUJwhvMdNYYTxvrY3LO6DUjhHzcpAUeXw8pG3y_8Xne6DX5fgz6H7BovZbI3cfkOKfyBr8RdN6CtuojHYXFd8TXZ3BK0t6cOygjjGz2Ax3wlsl9JCD2vKbfNIouMxdkxgXmIsCJom8IgGmzm4cnzWTfj0B4Qs5HuMI6QOuWi7c5ccE3s1wN-u7dn-X_W5GXQNv1TmEG3PmCG70000"></li>
+<li><p>源码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">@startuml</span><br><span class="line"></span><br><span class="line">start</span><br><span class="line">:<span class="string">"步骤1处理"</span>;</span><br><span class="line">:<span class="string">"步骤2处理"</span>;</span><br><span class="line"><span class="keyword">if</span> (<span class="string">"条件1判断"</span>) <span class="keyword">then</span> (<span class="literal">true</span>)</span><br><span class="line">    :条件1成立时执行的动作;</span><br><span class="line">    <span class="keyword">if</span> (<span class="string">"分支条件2判断"</span>) <span class="keyword">then</span> (no)</span><br><span class="line">        :<span class="string">"条件2不成立时执行的动作"</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="string">"条件3判断"</span>) <span class="keyword">then</span> (yes)</span><br><span class="line">            :<span class="string">"条件3成立时的动作"</span>;</span><br><span class="line">        <span class="keyword">else</span> (no)</span><br><span class="line">            :<span class="string">"条件3不成立时的动作"</span>;</span><br><span class="line">        endif</span><br><span class="line">    endif</span><br><span class="line">    :<span class="string">"顺序步骤3处理"</span>;</span><br><span class="line">endif</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (<span class="string">"条件4判断"</span>) <span class="keyword">then</span> (yes)</span><br><span class="line">:<span class="string">"条件4成立的动作"</span>;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="string">"条件5判断"</span>) <span class="keyword">then</span> (yes)</span><br><span class="line">        :<span class="string">"条件5成立时的动作"</span>;</span><br><span class="line">    <span class="keyword">else</span> (no)</span><br><span class="line">        :<span class="string">"条件5不成立时的动作"</span>;</span><br><span class="line">    endif</span><br><span class="line">endif</span><br><span class="line">stop</span><br><span class="line">@enduml</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>语法</p>
+</li>
+</ol>
+<ul>
+<li>使用 start 来表示流程开始，使用 stop 来表示流程结束</li>
+<li>顺序流程使用冒号和分号 :xxx; 来表示</li>
+<li>条件语句使用 if (“condition 1”) then (true/yes/false/no) 来表示</li>
+<li>条件语句可以嵌套</li>
+</ul>
+<h3 id="组件图"><a href="#组件图" class="headerlink" title="组件图"></a>组件图</h3><blockquote>
+<p>我们经常使用组件图来画部署视图，或者用来画系统的拓扑结构图。</p>
+</blockquote>
+<ol>
+<li>效果图<img src="http://www.plantuml.com/plantuml/svg/SoWkIImgAStDuU8gI4pEJanFLL1wlhlboUvjXaeArLmAG10D4z0pL8fLq4NY6od5egam0gcmWmiOWRHmrN9nvUMdm0qsGZVO2CrW8mo3ZI06Wqn-iMN-YxrxdyvjVx5muRCvlK-x5ZwTkG9iHt9EVcaAp6Zioi1kUzcm-yM-YN11mrXITHYHhCCOxC2Kn9B4fCHYO43uLWONvi228Iq_9oMrI44f92EpM068SYkXGZ05OClS8AgC8NO3JGDhBKhC1Hhdbf-FgXOiR09J2bICwMb8Q29CnVGaL0NCB4m_eIdWSaZDIm6c9000"></li>
+<li><p>源码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">@startuml</span><br><span class="line"></span><br><span class="line">package <span class="string">"组件1"</span> &#123;</span><br><span class="line">    [<span class="string">"组件1.1"</span>] - [<span class="string">"组件1.2"</span>]</span><br><span class="line">    [<span class="string">"组件1.2"</span>] -&gt; [<span class="string">"组件2.1"</span>]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">node <span class="string">"组件2"</span> &#123;</span><br><span class="line">    [<span class="string">"组件2.1"</span>] - [<span class="string">"组件2.2"</span>]</span><br><span class="line">    [<span class="string">"组件2.2"</span>] --&gt; [负载均衡服务器]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">cloud &#123;</span><br><span class="line">    [负载均衡服务器] -&gt; [逻辑服务器1]</span><br><span class="line">    [负载均衡服务器] -&gt; [逻辑服务器2]</span><br><span class="line">    [负载均衡服务器] -&gt; [逻辑服务器3]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">database <span class="string">"MySql"</span> &#123;</span><br><span class="line">    folder <span class="string">"This is my folder"</span> &#123;</span><br><span class="line">        [Folder 3]</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    frame <span class="string">"Foo"</span> &#123;</span><br><span class="line">        [Frame 4]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">[逻辑服务器1] --&gt; [Folder 3]</span><br><span class="line">[逻辑服务器2] --&gt; [Frame 4]</span><br><span class="line">[逻辑服务器3] --&gt; [Frame 4]</span><br><span class="line"></span><br><span class="line">@enduml</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>语法</p>
+</li>
+</ol>
+<ul>
+<li>使用方括号 [xxx] 来表示组件</li>
+<li>可以把几个组件合并成一个包，可以使用的关键字为 package, node, folder, frame, cloud, database。不同的关键字图形不一样。</li>
+<li>可以在包内部用不同的箭头表达同一个包的组件之间的关系</li>
+<li>可以在包内部直接表达到另外一个包内部的组件的交互关系</li>
+<li>可以在流程图外部直接表达包之间或包的组件之间的交互关系</li>
+</ul>
+<h3 id="状态图"><a href="#状态图" class="headerlink" title="状态图"></a>状态图</h3><blockquote>
+<p>我们一般使用状态图来画状态机</p>
+</blockquote>
+<ol>
+<li>效果图<img src="http://www.plantuml.com/plantuml/svg/dP8_QyCm4CLtVOgR0uOcb0mUYY4aq2MO2hg43CA-sWgg1DRP7aA-UoN5IgoaKpH9x_tUdVuLbaH7_QzYp5P28QpVts2KDRMC7HP7oB8Fs1lYhJ4aTUCe4eHp2SuCt8ZmPwqm27uIbB8p5Lhhq1ouRBHGsm4r1UZktS8vxAIMjasBR8p-aKtVUJA7xN1T1sPknI9pvX8tFGVJJUzn_1QgHuuAAv961_T9JTYomq7Y63f5BOb5uDy6IUmBJqx5-iKu5yEKdHxdeSBrh7vmxo_1LGopLJ0k_eOArBNx1Ny0"></li>
+<li><p>源码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&#123;% plantuml %&#125;</span><br><span class="line">@startuml</span><br><span class="line"></span><br><span class="line">scale 640 width</span><br><span class="line"></span><br><span class="line">[*] --&gt; NotShooting</span><br><span class="line"></span><br><span class="line">state NotShooting &#123;</span><br><span class="line">    [*] --&gt; Idle</span><br><span class="line">    Idle --&gt; Processing: SignalEvent</span><br><span class="line">    Processing --&gt; Idle: Finish</span><br><span class="line">    Idle --&gt; Configuring : EvConfig</span><br><span class="line">    Configuring --&gt; Idle : EvConfig</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">state Configuring &#123;</span><br><span class="line">    [*] --&gt; NewValueSelection</span><br><span class="line">    NewValueSelection --&gt; NewValuePreview : EvNewValue</span><br><span class="line">    NewValuePreview --&gt; NewValueSelection : EvNewValueRejected</span><br><span class="line">    NewValuePreview --&gt; NewValueSelection : EvNewValueSaved</span><br><span class="line">    state NewValuePreview &#123;</span><br><span class="line">        State1 -&gt; State2</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@enduml</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>语法</p>
+</li>
+</ol>
+<ul>
+<li>使用 [*] 来表示状态的起点</li>
+<li>使用 state 来定义子状态图</li>
+<li>状态图可以嵌套</li>
+<li>使用 scale 命令来指定生成的图片的尺寸</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>不需要去记这些标记，在需要的时候去使用它，通过不断地使用来熟悉不同的图的语法。可以下载 <a href="https://link.jianshu.com/?t=http://plantuml.com/PlantUML_Language_Reference_Guide.pdf" target="_blank" rel="noopener">PlanUML</a> 官方文档 作为参考，遇到问题的时候翻一翻，这样很快就可以学会使用 PlantUML 高效地画图。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="http://wgh.me/archives/326" target="_blank" rel="noopener">Mac上使用 Sublime + PlantUML 画图（环境配置）</a></li>
+<li><a href="https://www.jianshu.com/p/6c4071eac339" target="_blank" rel="noopener">IntelliJ IDEA安装使用PlantUML插件</a></li>
+<li><a href="https://www.jianshu.com/p/e92a52770832" target="_blank" rel="noopener">使用 Sublime + PlantUML 高效地画图</a></li>
+<li><a href="http://www.zhaiqianfeng.com/2017/05/hexo-plantuml.html" target="_blank" rel="noopener">在hexo中使用PlantUML来画UML</a></li>
+</ul>
 
       
     </div>
@@ -440,7 +549,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://gaoshangs.github.io/2018-02-08-algorithm-consistent-hashing.html" title="一致性hash算法和应用">https://gaoshangs.github.io/2018-02-08-algorithm-consistent-hashing.html</a>
+    <a href="https://gaoshangs.github.io/2018-03-03-plantuml-usage.html" title="PlantUML工具使用和常用语法">https://gaoshangs.github.io/2018-03-03-plantuml-usage.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -455,9 +564,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/一致性HASH/" rel="tag"># 一致性HASH</a>
-          
-            <a href="/tags/算法/" rel="tag"># 算法</a>
+            <a href="/tags/UML/" rel="tag"># UML</a>
           
         </div>
       
@@ -470,8 +577,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018-02-08-curl-usage.html" rel="next" title="CURL用法">
-                <i class="fa fa-chevron-left"></i> CURL用法
+              <a href="/2018-03-01-php-interview-knowledge-point.html" rel="next" title="PHP面试知识点汇总">
+                <i class="fa fa-chevron-left"></i> PHP面试知识点汇总
               </a>
             
           </div>
@@ -479,10 +586,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018-02-09-redis-memecached-diff.html" rel="prev" title="redis和memcached的区别">
-                redis和memcached的区别 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -641,7 +744,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一致性HASH原理和应用"><span class="nav-number">1.</span> <span class="nav-text">一致性HASH原理和应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#应用场景"><span class="nav-number">1.1.</span> <span class="nav-text">应用场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法概述"><span class="nav-number">1.2.</span> <span class="nav-text">算法概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据倾斜问题"><span class="nav-number">1.3.</span> <span class="nav-text">数据倾斜问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">1.4.</span> <span class="nav-text">参考</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装java环境"><span class="nav-number">1.</span> <span class="nav-text">安装java环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Graphviz"><span class="nav-number">2.</span> <span class="nav-text">安装Graphviz</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#webstorm安装plantUML插件"><span class="nav-number">3.</span> <span class="nav-text">webstorm安装plantUML插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo支持PlantUML"><span class="nav-number">4.</span> <span class="nav-text">hexo支持PlantUML</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装插件"><span class="nav-number">4.1.</span> <span class="nav-text">安装插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#语法"><span class="nav-number">4.2.</span> <span class="nav-text">语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#示例"><span class="nav-number">4.3.</span> <span class="nav-text">示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#效果如下"><span class="nav-number">4.4.</span> <span class="nav-text">效果如下</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PlantULM-快速入门"><span class="nav-number">5.</span> <span class="nav-text">PlantULM 快速入门</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#时序图"><span class="nav-number">5.1.</span> <span class="nav-text">时序图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用例图"><span class="nav-number">5.2.</span> <span class="nav-text">用例图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#流程图"><span class="nav-number">5.3.</span> <span class="nav-text">流程图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组件图"><span class="nav-number">5.4.</span> <span class="nav-text">组件图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#状态图"><span class="nav-number">5.5.</span> <span class="nav-text">状态图</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">6.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">7.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
